@@ -1,4 +1,4 @@
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% include 'includes/messages.html' %}
 
 <form action="{% url 'contact:submit' %}" method="post">
     {% csrf_token %}
