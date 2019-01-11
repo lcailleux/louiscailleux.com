@@ -18,4 +18,4 @@ before_script:
   - mysql -u travis -e "CREATE DATABASE travisci"
 
 script:
-  - python louiscailleux/manage.py test
+  - cd louiscailleux && ./manage.py test --pattern="tests/test_*.py"
