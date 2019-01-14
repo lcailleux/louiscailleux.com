@@ -1,3 +1,6 @@
+{% extends 'global/base.html' %}
+{% block content %}
+
 {% include 'includes/messages.html' %}
 
 <form action="{% url 'contact:submit' %}" method="post">
@@ -23,3 +26,4 @@
     </div>
     <input class="btn" type="submit" value="Save" />
 </form>
+{% endblock %}
