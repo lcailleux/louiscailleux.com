@@ -1,9 +1,9 @@
 # core/urls.py
 from django.conf.urls import url
-from core import views
+from frontend import views
 
 app_name = 'core'
 urlpatterns = [
-    url(r'^$', views.HomePageView.as_view(), name='home'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^about/$', views.AboutPageView.as_view(), name='about')
 ]

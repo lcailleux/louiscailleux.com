@@ -1,0 +1,33 @@
+{
+  "name": "louiscailleux.com",
+  "version": "1.0.0",
+  "description": "Website created with Django",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development ./louiscailleux/frontend/src/index.js --output ./louiscailleux/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./louiscailleux/frontend/src/index.js --output ./louiscailleux/frontend/static/frontend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcailleux/louiscailleux.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lcailleux/louiscailleux.com/issues"
+  },
+  "homepage": "https://github.com/lcailleux/louiscailleux.com#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  }
+}

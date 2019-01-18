@@ -1,8 +1,9 @@
 ### Python ###
-__pycache__/
-*.py[cod]
-.idea/
-env/
-db.sqlite3
 .env
 .coverage
+.idea/
+*.py[cod]
+__pycache__/
+env/
+db.sqlite3
+node_modules/

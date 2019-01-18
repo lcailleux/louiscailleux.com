@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'core.apps.CoreConfig',
     'core.apps.LouisCailleuxAdminConfig',
-    'contact.apps.ContactConfig'
+    'contact.apps.ContactConfig',
+    'frontend.apps.FrontendConfig'
 ]
 
 MIDDLEWARE = [
