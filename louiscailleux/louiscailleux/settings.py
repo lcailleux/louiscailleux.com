@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -40,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_user_agents',
     'core.apps.CoreConfig',
-    'contact.apps.ContactConfig',
+    'core.apps.LouisCailleuxAdminConfig',
+    'contact.apps.ContactConfig'
 ]
 
 MIDDLEWARE = [

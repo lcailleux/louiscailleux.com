@@ -30,7 +30,7 @@ def submit(request):
             return HttpResponseRedirect(reverse_lazy('contact:view'))
         else:
             messages.error(request, "Invalid contact data, could you try again?")
-            return render(request, 'contact.html')
+            return render(request, 'contact/view.html')
     elif request.method == 'GET':
         return HttpResponse(status=404)
 
@@ -39,6 +39,6 @@ class ContactView(FormView):
     form_class = ContactForm
 
     def get(self, request, **kwargs):
-        return render(request, 'contact.html', {
+        return render(request, 'contact/view.html', {
             'form': self.form_class,
         })
