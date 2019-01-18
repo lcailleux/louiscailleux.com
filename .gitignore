@@ -1,12 +1,8 @@
 ### Python ###
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
-# Distribution / packaging
 .idea/
 env/
 db.sqlite3
-
-# Configuration
 .env
+.coverage

@@ -6,7 +6,14 @@ from django.views.generic.edit import FormView
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from rest_framework import generics
 from contact.models import Contact
+from contact.serializers import ContactSerializer
+
+
+class ContactListCreate(generics.ListCreateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
 
 
 class ContactForm(forms.ModelForm):
