@@ -5,7 +5,7 @@ from django.contrib.messages import constants as MSG
 
 class ContactViewTests(TestCase):
     def test_contact_view_status_code(self):
-        response = self.client.get('/')
+        response = self.client.get('/en/contact/')
         self.assertEquals(response.status_code, 200)
 
     def test_view_url_by_name(self):
@@ -15,7 +15,7 @@ class ContactViewTests(TestCase):
     def test_view_uses_correct_template(self):
         response = self.client.get(reverse('contact:view'))
         self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'contact.html')
+        self.assertTemplateUsed(response, 'contact/view.html')
 
 
 class ContactSubmitTests(TestCase):
@@ -30,7 +30,7 @@ class ContactSubmitTests(TestCase):
         self.assertEqual(len(messages), 1)
         self.assertEqual(messages[0].level, MSG.ERROR)
         self.assertEqual(str(messages[0]), "Invalid contact data, could you try again?")
-        self.assertTemplateUsed('contact.html')
+        self.assertTemplateUsed('contact/view.html')
 
     def test_post_call_with_valid_data(self):
         response = self.client.post(reverse('contact:submit'), {
@@ -40,5 +40,5 @@ class ContactSubmitTests(TestCase):
             "subject": "test subject",
             "message": "test message",
         })
-        self.assertTemplateUsed('contact.html')
+        self.assertTemplateUsed('contact/view.html')
         self.assertRedirects(response, reverse('contact:view'))
