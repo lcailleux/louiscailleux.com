@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+
+import axios from 'axios';
+
+/* React bulma components */
 import Field from "react-bulma-components/lib/components/form/components/field";
 import Label from "react-bulma-components/lib/components/form/components/label";
 import Control from "react-bulma-components/lib/components/form/components/control";
@@ -8,12 +12,45 @@ import Help from "react-bulma-components/lib/components/form/components/help";
 import Button from "react-bulma-components/lib/components/button/button";
 
 class Contact extends Component {
+  state = {
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0)
   }
 
   onChange(event) {
-    this.setState({typed: event.target.value})
+    this.setState({[event.target.name]: event.target.value})
+  }
+
+  validate = () => {
+    return true;
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const data = {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      subject: this.state.subject,
+      message: this.state.message
+    };
+
+
+    if (this.validate()) {
+      axios.post('api/contact', data)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+    }
   }
 
   render() {
@@ -24,25 +61,25 @@ class Contact extends Component {
             <h1 className="content-title col-sm-12">Contact Me</h1>
           </header>
           <div className="content">
-            <form className="form-horizontal cmd-line" method="POST" action="my_redirect_url">
+            <form className="form-horizontal cmd-line" onSubmit={this.handleSubmit}>
                 <div className="personal-information">
                   <Field>
                     <Label>Name</Label>
                     <Control>
-                      <Input type="text" placeholder="Name" onChange={this.onChange.bind(this)}/>
+                      <Input type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.onChange.bind(this)}/>
                     </Control>
                   </Field>
                   <Field>
                     <Label>Email</Label>
                     <Control>
-                      <Input type="email" placeholder="Email" onChange={this.onChange.bind(this)} />
+                      <Input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.onChange.bind(this)} />
                     </Control>
                     <Help color="danger">This email is invalid</Help>
                   </Field>
                   <Field>
                     <Label>Phone</Label>
                     <Control>
-                      <Input type="tel" placeholder="Phone number" onChange={this.onChange.bind(this)} />
+                      <Input type="tel" name="phone" placeholder="Phone number" value={this.state.phone} onChange={this.onChange.bind(this)} />
                     </Control>
                     <Help color="danger">This phone number is invalid</Help>
                   </Field>
@@ -51,13 +88,13 @@ class Contact extends Component {
                   <Field>
                     <Label>Subject</Label>
                     <Control>
-                      <Input type="text" placeholder="Subject" onChange={this.onChange.bind(this)} />
+                      <Input type="text" name="subject" placeholder="Subject" value={this.state.subject} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                   <Field>
                     <Label>Message</Label>
                     <Control>
-                      <Textarea placeholder="Message" onChange={this.onChange.bind(this)} />
+                      <Textarea name="message" placeholder="Message" value={this.state.message} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                 </div>
