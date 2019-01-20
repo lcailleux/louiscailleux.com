@@ -62,30 +62,30 @@ class Contact extends Component {
   render() {
     return (
       <main className="container-wrap inside-content">
-        <article className="container">
+        <div className="container">
           <header className="inside-header row">
             <h1 className="content-title col-sm-12">Contact Me</h1>
           </header>
           <div className="content">
-            <form className="form-horizontal cmd-line" onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <div className="personal-information">
                   <Field>
                     <Label>Name</Label>
                     <Control>
-                      <Input type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.onChange.bind(this)}/>
+                      <Input type="text" name="name" placeholder="Name" size="large" value={this.state.name} onChange={this.onChange.bind(this)}/>
                     </Control>
                   </Field>
                   <Field>
                     <Label>Email</Label>
                     <Control>
-                      <Input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.onChange.bind(this)} />
+                      <Input type="email" name="email" placeholder="Email" size="large" value={this.state.email} onChange={this.onChange.bind(this)} />
                     </Control>
                     <Help color="danger">This email is invalid</Help>
                   </Field>
                   <Field>
                     <Label>Phone</Label>
                     <Control>
-                      <Input type="tel" name="phone" placeholder="Phone number" value={this.state.phone} onChange={this.onChange.bind(this)} />
+                      <Input type="tel" name="phone" placeholder="Phone number" size="large" value={this.state.phone} onChange={this.onChange.bind(this)} />
                     </Control>
                     <Help color="danger">This phone number is invalid</Help>
                   </Field>
@@ -94,13 +94,13 @@ class Contact extends Component {
                   <Field>
                     <Label>Subject</Label>
                     <Control>
-                      <Input type="text" name="subject" placeholder="Subject" value={this.state.subject} onChange={this.onChange.bind(this)} />
+                      <Input type="text" name="subject" placeholder="Subject" size="large" value={this.state.subject} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                   <Field>
                     <Label>Message</Label>
                     <Control>
-                      <Textarea name="message" placeholder="Message" value={this.state.message} onChange={this.onChange.bind(this)} />
+                      <Textarea name="message" placeholder="Message" size="large" value={this.state.message} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                 </div>
@@ -109,7 +109,7 @@ class Contact extends Component {
                 </Control>
             </form>
           </div>
-        </article>
+        </div>
       </main>
     )
   }
