@@ -1,9 +1,12 @@
 # contact/urls.py
-from django.conf.urls import url
-from contact import views
+from rest_framework import routers
+from contact.views import ContactViewSet
 
 app_name = 'contact'
-urlpatterns = [
-    url('^$', views.ContactView.as_view(), name='view'),
-    url('post', views.submit, name='submit')
-]
+
+router = routers.DefaultRouter()
+router.register(r'api/contact', ContactViewSet)
+
+urlpatterns = []
+urlpatterns += router.urls
+
