@@ -10,8 +10,9 @@ import Input from "react-bulma-components/lib/components/form/components/input";
 import Textarea from "react-bulma-components/lib/components/form/components/textarea";
 import Help from "react-bulma-components/lib/components/form/components/help";
 import Button from "react-bulma-components/lib/components/button/button";
+import Heading from 'react-bulma-components/lib/components/heading';
 
-import {contact} from '.././helpers/urls';
+import {contact} from '../helpers/urls';
 
 class Contact extends Component {
   state = {
@@ -63,9 +64,7 @@ class Contact extends Component {
     return (
       <main className="container-wrap inside-content">
         <div className="container">
-          <header className="inside-header row">
-            <h1 className="content-title col-sm-12">Contact Me</h1>
-          </header>
+          <Heading size={8}>{contact.name}</Heading>
           <div className="content">
             <form onSubmit={this.handleSubmit}>
                 <div className="personal-information">

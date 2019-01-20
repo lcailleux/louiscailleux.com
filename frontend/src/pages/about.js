@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+
+import Heading from 'react-bulma-components/lib/components/heading';
+
 import {about} from '.././helpers/urls';
 
 
@@ -14,6 +17,7 @@ class About extends Component {
   render() {
     return (
       <main className="container-wrap inside-content">
+       <Heading size={8}>{about.name}</Heading>
       </main>
     );
   }
