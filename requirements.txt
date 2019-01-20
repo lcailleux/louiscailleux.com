@@ -9,3 +9,4 @@ django-user-agents
 django-messages
 coverage
 djangorestframework
+django-cors-headers

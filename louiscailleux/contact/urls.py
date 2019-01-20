@@ -4,7 +4,7 @@ from contact.views import ContactViewSet
 
 app_name = 'contact'
 
-router = routers.DefaultRouter()
+router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'api/contact', ContactViewSet)
 
 urlpatterns = []
