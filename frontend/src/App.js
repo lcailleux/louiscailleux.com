@@ -3,7 +3,10 @@ import {Helmet} from "react-helmet";
 
 import Routes from './configuration/routes';
 
+import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
+
+import './styles/app.scss';
 
 class App extends Component {
   render() {
@@ -15,6 +18,7 @@ class App extends Component {
            </Helmet>
            <NavigationBar />
            <Routes/>
+           <FooterInfo />
        </div>
     );
   }

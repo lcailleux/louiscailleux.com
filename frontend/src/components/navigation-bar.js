@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from "react-bulma-components/lib/components/navbar/navbar";
+import {about, contact} from '.././helpers/urls';
 
 class NavigationBar extends Component {
   constructor(props){
@@ -25,14 +26,6 @@ class NavigationBar extends Component {
       <div className="nav-wrap nav-flatusual transit-all" id="header">
         <Navbar color="primary" fixed="top" active={true} transparent={false}>
         <Navbar.Brand>
-          <Navbar.Item renderAs="a" href="#">
-            <img
-              src="https://bulma.io/images/bulma-logo.png"
-              alt="Bulma: a modern CSS framework based on Flexbox"
-              width="112"
-              height="28"
-            />
-          </Navbar.Item>
           <Navbar.Burger
             active={open}
             onClick={() =>
@@ -44,10 +37,10 @@ class NavigationBar extends Component {
         </Navbar.Brand>
         <Navbar.Menu active={open}>
           <Navbar.Container>
-            <Navbar.Item href="#">Second</Navbar.Item>
+            <Navbar.Item href={about.url}>{about.name}</Navbar.Item>
           </Navbar.Container>
           <Navbar.Container position="end">
-            <Navbar.Item href="#">At the end</Navbar.Item>
+            <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
           </Navbar.Container>
         </Navbar.Menu>
         </Navbar>

@@ -11,6 +11,8 @@ import Textarea from "react-bulma-components/lib/components/form/components/text
 import Help from "react-bulma-components/lib/components/form/components/help";
 import Button from "react-bulma-components/lib/components/button/button";
 
+import {contact} from '.././helpers/urls';
+
 class Contact extends Component {
   state = {
     name: '',
@@ -18,6 +20,10 @@ class Contact extends Component {
     phone: '',
     subject: '',
     message: ''
+  }
+
+  componentWillMount() {
+    document.title = contact.documentTitle;
   }
 
   componentDidMount() {
