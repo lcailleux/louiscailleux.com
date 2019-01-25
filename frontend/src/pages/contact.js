@@ -14,6 +14,8 @@ import Heading from 'react-bulma-components/lib/components/heading';
 
 import {contact} from '../helpers/urls';
 
+import i18n from '../i18n'
+
 class Contact extends Component {
   state = {
     name: '',
@@ -24,7 +26,7 @@ class Contact extends Component {
   }
 
   componentWillMount() {
-    document.title = contact.documentTitle;
+    document.title = i18n.t(contact.documentTitle);
   }
 
   componentDidMount() {
@@ -64,7 +66,7 @@ class Contact extends Component {
     return (
       <main className="container-wrap inside-content">
         <div className="container">
-          <Heading size={8}>{contact.name}</Heading>
+          <Heading size={6}>{contact.name}</Heading>
           <div className="content">
             <form onSubmit={this.handleSubmit}>
                 <div className="personal-information">
@@ -91,9 +93,9 @@ class Contact extends Component {
                 </div>
                 <div className="message-detail">
                   <Field>
-                    <Label>Subject</Label>
+                    <Label>{i18n.t('Subject')}</Label>
                     <Control>
-                      <Input type="text" name="subject" placeholder="Subject" size="large" value={this.state.subject} onChange={this.onChange.bind(this)} />
+                      <Input type="text" name="subject" placeholder={i18n.t('Subject')} size="large" value={this.state.subject} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                   <Field>
@@ -104,7 +106,7 @@ class Contact extends Component {
                   </Field>
                 </div>
                 <Control>
-                    <Button type="primary">Send Message</Button>
+                    <Button type="primary">{i18n.t('Send Message')}</Button>
                 </Control>
             </form>
           </div>
