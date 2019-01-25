@@ -1,7 +1,14 @@
 {
   "About": "About",
   "About | Louis Cailleux": "About | Louis Cailleux",
+  "Contact": "Contact",
   "Copyright © 2019 Louis Cailleux. All rights reserved.": "Copyright © 2019 Louis Cailleux. All rights reserved.",
+  "Email": "Email",
+  "Message": "Message",
+  "Full Name": "Full Name",
+  "Phone Number": "Phone Number",
   "Send Message": "Send Message",
-  "Subject": "Subject"
+  "Subject": "Subject",
+  "This email is invalid": "This email is invalid",
+  "This phone number is invalid": "This phone number is invalid"
 }

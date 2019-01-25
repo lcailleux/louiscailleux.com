@@ -4,6 +4,7 @@ import { reactI18nextModule } from "react-i18next";
 
 import translationEN from '../public/locales/en/translation.json';
 import translationFR from '../public/locales/fr/translation.json';
+import translationKO from '../public/locales/ko/translation.json';
 
 // the translations
 const resources = {
@@ -12,6 +13,9 @@ const resources = {
   },
   fr: {
     translation: translationFR
+  },
+  ko: {
+    translation: translationKO
   }
 };
 
@@ -44,7 +48,7 @@ i18n
   .init({
     detection: detectionOptions,
     resources,
-    fallbackLng: ['en', 'fr'],
+    fallbackLng: ['en', 'fr', 'ko'],
 
     keySeparator: false, // we do not use keys in form messages.welcome
 

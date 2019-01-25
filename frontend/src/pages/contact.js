@@ -66,29 +66,29 @@ class Contact extends Component {
     return (
       <main className="container-wrap inside-content">
         <div className="container">
-          <Heading size={6}>{contact.name}</Heading>
+          <Heading size={6}>{i18n.t(contact.name)}</Heading>
           <div className="content">
             <form onSubmit={this.handleSubmit}>
                 <div className="personal-information">
                   <Field>
-                    <Label>Name</Label>
+                    <Label>{i18n.t("Full Name")}</Label>
                     <Control>
-                      <Input type="text" name="name" placeholder="Name" size="large" value={this.state.name} onChange={this.onChange.bind(this)}/>
+                      <Input type="text" name="name" placeholder={i18n.t("Full Name")} size="large" value={this.state.name} onChange={this.onChange.bind(this)}/>
                     </Control>
                   </Field>
                   <Field>
-                    <Label>Email</Label>
+                    <Label>{i18n.t("Email")}</Label>
                     <Control>
-                      <Input type="email" name="email" placeholder="Email" size="large" value={this.state.email} onChange={this.onChange.bind(this)} />
+                      <Input type="email" name="email" placeholder={i18n.t("Email")} size="large" value={this.state.email} onChange={this.onChange.bind(this)} />
                     </Control>
-                    <Help color="danger">This email is invalid</Help>
+                    <Help color="danger">{i18n.t("This email is invalid")}</Help>
                   </Field>
                   <Field>
-                    <Label>Phone</Label>
+                    <Label>{i18n.t("Phone Number")}</Label>
                     <Control>
-                      <Input type="tel" name="phone" placeholder="Phone number" size="large" value={this.state.phone} onChange={this.onChange.bind(this)} />
+                      <Input type="tel" name="phone" placeholder={i18n.t("Phone Number")} size="large" value={this.state.phone} onChange={this.onChange.bind(this)} />
                     </Control>
-                    <Help color="danger">This phone number is invalid</Help>
+                    <Help color="danger">{i18n.t("This phone number is invalid")}</Help>
                   </Field>
                 </div>
                 <div className="message-detail">
@@ -99,9 +99,9 @@ class Contact extends Component {
                     </Control>
                   </Field>
                   <Field>
-                    <Label>Message</Label>
+                    <Label>{i18n.t('Message')}</Label>
                     <Control>
-                      <Textarea name="message" placeholder="Message" size="large" value={this.state.message} onChange={this.onChange.bind(this)} />
+                      <Textarea name="message" placeholder={i18n.t("Message")} size="large" value={this.state.message} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                 </div>

@@ -14,6 +14,7 @@ class LanguageSwitcher extends Component {
         <div>
             <button onClick={() => changeLanguage('en')}>en</button>
             <button onClick={() => changeLanguage('fr')}>fr</button>
+            <button onClick={() => changeLanguage('ko')}>ko</button>
         </div>
     )
   }
