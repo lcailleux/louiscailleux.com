@@ -1,6 +1,6 @@
 # contact/urls.py
 from rest_framework import routers
-from contact.views import ContactViewSet
+from .views import ContactViewSet
 
 app_name = 'contact'
 

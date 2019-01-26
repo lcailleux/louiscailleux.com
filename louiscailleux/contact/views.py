@@ -1,9 +1,11 @@
 # contact/views.py
-from rest_framework import viewsets
-from contact.models import Contact
-from contact.serializers import ContactSerializer
+from rest_framework import mixins, viewsets
+from .models import Contact
+from .serializers import ContactSerializer
 
 
-class ContactViewSet(viewsets.ModelViewSet):
+class ContactViewSet(mixins.CreateModelMixin,
+                     mixins.ListModelMixin,
+                     viewsets.GenericViewSet):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
