@@ -10,3 +10,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.subject
+
+    def get_email(self):
+        return self.email

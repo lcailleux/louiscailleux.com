@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django_user_agents',
     'corsheaders',
     'rest_framework',
-    'core.apps.CoreConfig',
+    'cms',
+    'contact',
+    'core',
     'core.apps.LouisCailleuxAdminConfig',
-    'contact.apps.ContactConfig'
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,9 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000/'
 )
+
+# REST framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
