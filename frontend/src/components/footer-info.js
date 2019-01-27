@@ -8,25 +8,25 @@ import Hero from 'react-bulma-components/lib/components/hero';
 import i18n from '../i18n'
 
 class FooterInfo extends Component {
-  render() {
-    return (
-     <Hero size="fullheight">
-        <Hero.Head renderAs="header" />
-        <Hero.Body />
-        <Hero.Footer>
-          <Footer>
-            <Container>
-              <Content style={{ textAlign: 'center' }}>
-                <p>
-                  {i18n.t("Copyright © 2019 Louis Cailleux. All rights reserved.")}
-                </p>
-              </Content>
-            </Container>
-          </Footer>
-        </Hero.Footer>
-     </Hero>
-    )
-  }
+    render() {
+        return (
+            <Hero size="fullheight">
+                <Hero.Head renderAs="header" />
+                <Hero.Body />
+                <Hero.Footer>
+                    <Footer>
+                        <Container>
+                            <Content style={{ textAlign: 'center' }}>
+                                <p>
+                                    {i18n.t("Copyright © 2019 Louis Cailleux. All rights reserved.")}
+                                </p>
+                            </Content>
+                        </Container>
+                    </Footer>
+                </Hero.Footer>
+            </Hero>
+        )
+    }
 }
 
 export default FooterInfo;

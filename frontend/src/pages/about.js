@@ -17,9 +17,9 @@ class About extends Component {
 
   render() {
     return (
-      <main className="container-wrap inside-content">
-       <Heading size={6}>{i18n.t(about.name)}</Heading>
-      </main>
+        <main className="container-wrap inside-content">
+          <Heading size={6}>{i18n.t(about.name)}</Heading>
+        </main>
     );
   }
 }

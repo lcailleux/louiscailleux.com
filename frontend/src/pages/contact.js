@@ -55,20 +55,20 @@ class Contact extends Component {
 
     if (this.validate()) {
       axios.post('api/contact', data)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
     }
   }
 
   render() {
     return (
-      <main className="container-wrap inside-content">
-        <div className="container">
-          <Heading size={6}>{i18n.t(contact.name)}</Heading>
-          <div className="content">
-            <form onSubmit={this.handleSubmit}>
+        <main className="container-wrap inside-content">
+          <div className="container">
+            <Heading size={6}>{i18n.t(contact.name)}</Heading>
+            <div className="content">
+              <form onSubmit={this.handleSubmit}>
                 <div className="personal-information">
                   <Field>
                     <Label>{i18n.t("Full Name")}</Label>
@@ -106,12 +106,12 @@ class Contact extends Component {
                   </Field>
                 </div>
                 <Control>
-                    <Button type="primary">{i18n.t('Send Message')}</Button>
+                  <Button type="primary">{i18n.t('Send Message')}</Button>
                 </Control>
-            </form>
+              </form>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
     )
   }
 }
