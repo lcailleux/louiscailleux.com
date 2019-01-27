@@ -1,3 +1,9 @@
-from django.shortcuts import render
+# cms/views.py
+from rest_framework import viewsets
+from .models import Block
+from .serializers import BlockSerializer
 
-# Create your views here.
+
+class BlockReadOnlyViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Block.objects.all()
+    serializer_class = BlockSerializer

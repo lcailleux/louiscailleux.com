@@ -1,12 +1,11 @@
 # contact/urls.py
 from rest_framework import routers
-from .views import ContactViewSet
+from .views import BlockReadOnlyViewSet
 
-app_name = 'contact'
+app_name = 'cms'
 
 router = routers.SimpleRouter()
-router.register(r'V1/api/contact', ContactViewSet)
+router.register(r'V1/api/block', BlockReadOnlyViewSet)
 
 urlpatterns = []
 urlpatterns += router.urls
-
