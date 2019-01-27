@@ -54,7 +54,7 @@ class Contact extends Component {
 
 
     if (this.validate()) {
-      axios.post('api/contact', data)
+      axios.post('V1/api/contact', data)
           .then(res => {
             console.log(res);
             console.log(res.data);
