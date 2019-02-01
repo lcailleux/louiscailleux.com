@@ -2,9 +2,9 @@ import i18n from "i18next";
 import detector from "i18next-browser-languagedetector";
 import { reactI18nextModule } from "react-i18next";
 
-import translationEN from '../public/locales/en/translation.json';
-import translationFR from '../public/locales/fr/translation.json';
-import translationKO from '../public/locales/ko/translation.json';
+import translationEN from './locales/en/translation.json';
+import translationFR from './locales/fr/translation.json';
+import translationKO from './locales/ko/translation.json';
 
 // the translations
 const resources = {

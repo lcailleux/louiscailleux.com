@@ -5,16 +5,17 @@ import i18n from '../i18n'
 
 class LanguageSwitcher extends Component {
     render() {
-        const changeLanguage = (lng) => {
+        const changeLanguage = (lng, e) => {
+            e.preventDefault();
             i18n.changeLanguage(lng);
             window.location.reload();
         };
 
         return (
             <div>
-                <button onClick={() => changeLanguage('en')}>en</button>
-                <button onClick={() => changeLanguage('fr')}>fr</button>
-                <button onClick={() => changeLanguage('ko')}>ko</button>
+                <button className="link-button" onClick={(e) => changeLanguage('en', e)}>EN</button>
+                <button className="link-button" onClick={(e) => changeLanguage('fr', e)}>FR</button>
+                <button className="link-button" onClick={(e) => changeLanguage('ko', e)}>KO</button>
             </div>
         )
     }

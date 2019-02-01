@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Navbar from "react-bulma-components/lib/components/navbar/navbar";
+import Navbar from 'react-bulma-components/lib/components/navbar';
 import {about, contact} from '.././helpers/urls';
 import LanguageSwitcher from './language-switcher'
 
@@ -26,31 +26,19 @@ class NavigationBar extends Component {
     render() {
         var {open} = this.state;
         return (
-            <div className="nav-wrap nav-flatusual transit-all" id="header">
-                <Navbar color="primary" fixed="top" active={true} transparent={false}>
-                    <Navbar.Brand>
-                        <Navbar.Burger
-                            active={open}
-                            onClick={() =>
-                                this.setState(state => {
-                                    open = !state.open;
-                                })
-                            }
-                        />
-                    </Navbar.Brand>
-                    <Navbar.Menu active={open}>
-                        <Navbar.Container>
-                            <Navbar.Item href={about.url}>{i18n.t("About")}</Navbar.Item>
-                        </Navbar.Container>
-                        <Navbar.Container>
+            <Navbar color="dark" active={false} transparent={false} >
+                <Navbar.Menu active={open}>
+                    <Navbar.Container position="start">
+                        <Navbar.Item href={about.url}>{i18n.t("About")}</Navbar.Item>
+                        <Navbar.Item href={contact.url}>{i18n.t(contact.name)}</Navbar.Item>
+                    </Navbar.Container>
+                    <Navbar.Container position="end">
+                        <Navbar.Item active={false} hoverable={false} renderAs="span">
                             <LanguageSwitcher />
-                        </Navbar.Container>
-                        <Navbar.Container position="end">
-                            <Navbar.Item href={contact.url}>{i18n.t(contact.name)}</Navbar.Item>
-                        </Navbar.Container>
-                    </Navbar.Menu>
-                </Navbar>
-            </div>
+                        </Navbar.Item>
+                    </Navbar.Container>
+                </Navbar.Menu>
+            </Navbar>
         );
     }
 }

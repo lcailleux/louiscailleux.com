@@ -11,12 +11,10 @@ class FooterInfo extends Component {
     render() {
         return (
             <Hero size="fullheight">
-                <Hero.Head renderAs="header" />
-                <Hero.Body />
                 <Hero.Footer>
                     <Footer>
-                        <Container>
-                            <Content style={{ textAlign: 'center' }}>
+                        <Container >
+                            <Content style={{ textAlign: 'center'}}>
                                 <p>
                                     {i18n.t("Copyright © 2019 Louis Cailleux. All rights reserved.")}
                                 </p>
