@@ -4,7 +4,7 @@ from .models import Block
 from .serializers import BlockSerializer
 
 
-class BlockReadOnlyViewSet(generics.ListAPIView):
+class BlockApiView(generics.ListAPIView):
     queryset = Block.objects.all()
     serializer_class = BlockSerializer
 
