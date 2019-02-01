@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import axios from 'axios';
+import i18n from '../i18n'
 
 class Block extends Component {
     state = {
@@ -14,14 +15,26 @@ class Block extends Component {
     }
 
     fetchBlock() {
-        axios.get("V1/api/block/1")
+        if (!this.props.identifier) {
+            this.setState({
+                error: {
+                    message: i18n.t('Block identifier is a required field.')
+                },
+                isLoading: false
+            });
+            return false;
+        }
+
+        axios.get("V1/api/block?identifier=" + this.props.identifier + '&language=' + i18n.languages[0])
             .then(response => {
+                var blockResult = response.data[0] !== undefined ? response.data[0] : null;
                 this.setState({
-                    block: response.data,
+                    block: blockResult,
                     isLoading: false
                 });
             })
             .catch(error => this.setState({error, isLoading: false}));
+        return true;
     }
 
     render() {
