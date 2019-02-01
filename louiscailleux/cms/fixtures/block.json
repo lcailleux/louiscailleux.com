@@ -6,6 +6,7 @@
       "title": "Test Block 1",
       "identifier": "test_block_1",
       "content": "Content block 1",
+      "language_code": "fr",
       "is_active": true
     }
   },
@@ -13,9 +14,21 @@
     "model": "cms.block",
     "pk": 2,
     "fields": {
+      "title": "Test Block 1",
+      "identifier": "test_block_1",
+      "content": "Content block 1",
+      "language_code": "kr",
+      "is_active": true
+    }
+  },
+  {
+    "model": "cms.block",
+    "pk": 3,
+    "fields": {
       "title": "Test Block 2",
       "identifier": "test_block_2",
       "content": "Content block 2",
+      "language_code": "en",
       "is_active": true
     }
   }

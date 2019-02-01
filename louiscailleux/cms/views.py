@@ -1,15 +1,20 @@
 # cms/views.py
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets, mixins, generics
 from .models import Block
 from .serializers import BlockSerializer
 
 
-class BlockIdentifierDetailViewSet(mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    lookup_field = 'identifier'
+class BlockReadOnlyViewSet(generics.ListAPIView):
     queryset = Block.objects.all()
     serializer_class = BlockSerializer
 
+    def get_queryset(self):
+        queryset = Block.objects.all()
+        identifier = self.request.query_params.get('identifier', None)
+        language = self.request.query_params.get('language', None)
+        if identifier:
+            queryset = queryset.filter(identifier=identifier)
+        if language:
+            queryset = queryset.filter(language_code=language)
 
-class BlockReadOnlyViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Block.objects.all()
-    serializer_class = BlockSerializer
+        return queryset

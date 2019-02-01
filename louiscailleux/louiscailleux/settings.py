@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django_user_agents',
     'corsheaders',
     'rest_framework',
+    'django_filters',
     'cms',
     'contact',
     'core',
