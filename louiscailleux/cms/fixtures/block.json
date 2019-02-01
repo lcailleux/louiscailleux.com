@@ -5,7 +5,7 @@
     "fields": {
       "title": "Test Block 1",
       "identifier": "test_block_1",
-      "content": "Content block 1",
+      "content": "Contenu du block 1",
       "language_code": "fr",
       "is_active": true
     }
@@ -16,7 +16,7 @@
     "fields": {
       "title": "Test Block 1",
       "identifier": "test_block_1",
-      "content": "Content block 1",
+      "content": "내용 블록 1",
       "language_code": "kr",
       "is_active": true
     }
