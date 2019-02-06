@@ -23,7 +23,6 @@ class Profile extends Component {
                     </Media>
                     <Content>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#1">#css</a> <a href="#2">#responsive</a>
                         <br />
                     </Content>
                 </Card.Content>

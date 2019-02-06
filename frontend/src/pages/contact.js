@@ -8,7 +8,6 @@ import Label from "react-bulma-components/lib/components/form/components/label";
 import Control from "react-bulma-components/lib/components/form/components/control";
 import Input from "react-bulma-components/lib/components/form/components/input";
 import Textarea from "react-bulma-components/lib/components/form/components/textarea";
-import Help from "react-bulma-components/lib/components/form/components/help";
 import Button from "react-bulma-components/lib/components/button/button";
 import Heading from 'react-bulma-components/lib/components/heading';
 import Columns from 'react-bulma-components/lib/components/columns';
@@ -71,50 +70,50 @@ class Contact extends Component {
             <Columns.Column>
               <Profile/>
             </Columns.Column>
-            <Columns.Column mobile={{size: 'three-quarters'}} tablet={{size: 'two-thirds'}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
+            <Columns.Column tablet={{size: 'two-thirds'}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
               <div>
-                <Heading size={6}>{i18n.t(contact.name)}</Heading>
-                <div className="content">
+                <Heading size={1}>{i18n.t(contact.name)}</Heading>
+                <div className="form-container">
                   <form onSubmit={this.handleSubmit}>
                     <fieldset className="personal-information">
-                      <Field>
+                      <Field className="row">
                         <Label>{i18n.t("Full Name")}</Label>
-                        <Control>
+                        <Control className="col">
                           <Input type="text" name="name" placeholder={i18n.t("Full Name")} size="large" value={this.state.name} onChange={this.onChange.bind(this)}/>
                         </Control>
                       </Field>
-                      <Field>
+                      <Field className="row">
                         <Label>{i18n.t("Email")}</Label>
-                        <Control>
+                        <Control className="col">
                           <Input type="email" name="email" placeholder={i18n.t("Email")} size="large" value={this.state.email} onChange={this.onChange.bind(this)} />
                         </Control>
-                        <Help color="danger">{i18n.t("This email is invalid")}</Help>
                       </Field>
-                      <Field>
+                      <Field className="row">
                         <Label>{i18n.t("Phone Number")}</Label>
-                        <Control>
+                        <Control className="col">
                           <Input type="tel" name="phone" placeholder={i18n.t("Phone Number")} size="large" value={this.state.phone} onChange={this.onChange.bind(this)} />
                         </Control>
-                        <Help color="danger">{i18n.t("This phone number is invalid")}</Help>
                       </Field>
                     </fieldset>
                     <fieldset className="message-detail">
-                      <Field>
+                      <Field className="row">
                         <Label>{i18n.t('Subject')}</Label>
-                        <Control>
+                        <Control className="col">
                           <Input type="text" name="subject" placeholder={i18n.t('Subject')} size="large" value={this.state.subject} onChange={this.onChange.bind(this)} />
                         </Control>
                       </Field>
-                      <Field>
+                      <Field className="row">
                         <Label>{i18n.t('Message')}</Label>
-                        <Control>
+                        <Control className="col">
                           <Textarea name="message" placeholder={i18n.t("Message")} size="large" value={this.state.message} onChange={this.onChange.bind(this)} />
                         </Control>
                       </Field>
                     </fieldset>
-                    <Control>
-                      <Button type="primary">{i18n.t('Send Message')}</Button>
-                    </Control>
+                    <fieldset className="action">
+                      <Control>
+                        <Button type="primary">{i18n.t('Send Message')}</Button>
+                      </Control>
+                    </fieldset>
                   </form>
                 </div>
               </div>

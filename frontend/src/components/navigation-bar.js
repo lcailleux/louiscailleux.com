@@ -27,6 +27,9 @@ class NavigationBar extends Component {
         var {open} = this.state;
         return (
             <Navbar color="dark" active={false} transparent={false} >
+                <Navbar.Brand>
+                    <Navbar.Burger active={open} onClick={() => this.setState(state => {open: !state.open;})}/>
+                </Navbar.Brand>
                 <Navbar.Menu active={open}>
                     <Navbar.Container position="start">
                         <Navbar.Item href={about.url}>{i18n.t("About")}</Navbar.Item>

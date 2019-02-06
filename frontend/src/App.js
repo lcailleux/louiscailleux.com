@@ -7,7 +7,7 @@ import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
 
 
-import './scss/app.sass';
+import './scss/app.scss';
 
 class App extends Component {
     render() {
