@@ -6,6 +6,7 @@ import Routes from './configuration/routes';
 import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
 
+
 import './scss/app.sass';
 
 class App extends Component {
