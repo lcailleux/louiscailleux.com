@@ -5,6 +5,7 @@
   "proxy": "http://127.0.0.1:8000",
   "dependencies": {
     "axios": "^0.18.0",
+    "cypress": "^3.1.5",
     "i18next": "^14.0.1",
     "i18next-browser-languagedetector": "^2.2.4",
     "node-sass": "^4.11.0",
@@ -24,7 +25,9 @@
     "start": "NODE_PATH=./src react-app-rewired start",
     "build": "NODE_PATH=./src react-app-rewired build",
     "test": "NODE_PATH=./src react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flush": "pipenv run python ./project/manage.py flush --no-input",
+    "e2e": "cypress open --project ./"
   },
   "eslintConfig": {
     "extends": "react-app"
