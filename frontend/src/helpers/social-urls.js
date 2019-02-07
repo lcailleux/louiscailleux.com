@@ -9,3 +9,9 @@ export const linkedIn = {
   url: 'https://linkedin.com/in/louis-cailleux',
   icon: 'https://unpkg.com/simple-icons@latest/icons/linkedin.svg'
 };
+
+export const stackOverflow = {
+  name: 'StackOverflow',
+  url: '',
+  icon: 'https://unpkg.com/simple-icons@latest/icons/stackoverflow.svg'
+};

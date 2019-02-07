@@ -21,16 +21,8 @@ class About extends Component {
     render() {
         return (
             <main className="container-wrap inside-content">
-                <Columns>
-                    <Columns.Column>
-                        <Profile/>
-                    </Columns.Column>
-                    <Columns.Column tablet={{size: 'two-thirds'}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
-                        <Heading size={1}>{i18n.t(about.name)}</Heading>
-                        <Block identifier="test_block_1" />
-                    </Columns.Column>
-                    <Columns.Column />
-                </Columns>
+                <Heading size={1}>{i18n.t(about.name)}</Heading>
+                <Block identifier="test_block_1" />
             </main>
         );
     }
