@@ -127,6 +127,17 @@ button {
     background-color: white;
 }
 
+.footer .content .social-links {
+  margin: 0.5em 0.5em;
+}
+
+.footer .content .social-links a {
+  margin: 12px 8px;
+}
+
+.footer .content .social-links a:hover {
+    color: rgb(255, 5, 5);
+}
 
 @import 'responsive/phone';
 @import 'responsive/tablet';
