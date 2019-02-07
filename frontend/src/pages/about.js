@@ -25,7 +25,7 @@ class About extends Component {
                     <Columns.Column>
                         <Profile/>
                     </Columns.Column>
-                    <Columns.Column mobile={{size: 'three-quarters'}} tablet={{size: 'two-thirds'}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
+                    <Columns.Column tablet={{size: 'two-thirds'}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
                         <Heading size={1}>{i18n.t(about.name)}</Heading>
                         <Block identifier="test_block_1" />
                     </Columns.Column>

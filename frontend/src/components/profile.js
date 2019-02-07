@@ -22,7 +22,7 @@ class Profile extends Component {
                         </Media.Item>
                     </Media>
                     <Content>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                         <br />
                     </Content>
                 </Card.Content>
