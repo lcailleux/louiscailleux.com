@@ -123,12 +123,10 @@ button {
   float: right;
 }
 
-// Responsive
-@media (min-width: 992px) {
-  .form-container {
-    max-width: 960px;
-  }
+.footer {
+    background-color: white;
 }
+
 
 @import 'responsive/phone';
 @import 'responsive/tablet';

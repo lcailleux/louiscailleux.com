@@ -6,18 +6,30 @@ import Content from 'react-bulma-components/lib/components/content';
 import Hero from 'react-bulma-components/lib/components/hero';
 
 import i18n from '../i18n'
+import {about, contact} from "../helpers/urls";
+import SocialLinks from "./social-links";
 
 class FooterInfo extends Component {
+    constructor(props) {
+        super(props);
+        this.year = (new Date()).getFullYear();
+    }
+
     render() {
         return (
             <Hero size="fullheight">
                 <Hero.Footer>
                     <Footer>
                         <Container >
+                            <Content>
+                                <ul>
+                                    <li><a href={about.url}>{i18n.t("About")}</a></li>
+                                    <li><a href={contact.url}>{i18n.t(contact.name)}</a></li>
+                                </ul>
+                            </Content>
                             <Content style={{ textAlign: 'center'}}>
-                                <p>
-                                    {i18n.t("Copyright © 2019 Louis Cailleux. All rights reserved.")}
-                                </p>
+                                <SocialLinks/>
+                                <p>Copyright © {this.year} Louis Cailleux. {i18n.t('All rights reserved.')}</p>
                             </Content>
                         </Container>
                     </Footer>
