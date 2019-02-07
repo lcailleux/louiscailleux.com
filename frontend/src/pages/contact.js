@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import axios from 'axios';
+import ReCAPTCHA from "react-google-recaptcha";
 
 /* React bulma components */
 import Field from "react-bulma-components/lib/components/form/components/field";
@@ -22,6 +23,11 @@ class Contact extends Component {
     phone: '',
     subject: '',
     message: ''
+  };
+
+  constructor(props) {
+    super(props);
+    this.recaptchaRef = React.createRef();
   }
 
   componentWillMount() {
@@ -38,7 +44,7 @@ class Contact extends Component {
 
   validate = () => {
     return true;
-  }
+  };
 
   handleSubmit = event => {
     event.preventDefault();
@@ -51,6 +57,7 @@ class Contact extends Component {
       message: this.state.message
     };
 
+    this.recaptchaRef.current.execute();
 
     if (this.validate()) {
       axios.post('V1/api/contact', data)
@@ -59,7 +66,7 @@ class Contact extends Component {
             console.log(res.data);
           })
     }
-  }
+  };
 
   render() {
     return (
@@ -99,6 +106,12 @@ class Contact extends Component {
                     <Label>{i18n.t('Message')}</Label>
                     <Control className="col">
                       <Textarea name="message" placeholder={i18n.t("Message")} size="large" value={this.state.message} onChange={this.onChange.bind(this)} />
+                    </Control>
+                  </Field>
+                  <Field className="row">
+                    <Label />
+                    <Control className="col">
+                      <ReCAPTCHA ref={this.recaptchaRef} sitekey="Your client site key"/>
                     </Control>
                   </Field>
                 </fieldset>
