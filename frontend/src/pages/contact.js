@@ -12,9 +12,8 @@ import Textarea from "react-bulma-components/lib/components/form/components/text
 import Button from "react-bulma-components/lib/components/button/button";
 import Heading from 'react-bulma-components/lib/components/heading';
 
-import {contact} from '../helpers/urls';
-
-import i18n from '../i18n'
+import {contact} from "../helpers/urls";
+import {contactStrings} from "../helpers/strings";
 
 class Contact extends Component {
   state = {
@@ -31,7 +30,7 @@ class Contact extends Component {
   }
 
   componentWillMount() {
-    document.title = i18n.t(contact.documentTitle);
+    document.title = contact.documentTitle;
   }
 
   componentDidMount() {
@@ -72,40 +71,40 @@ class Contact extends Component {
     return (
         <main className="container-wrap inside-content">
           <div>
-            <Heading size={1}>{i18n.t(contact.name)}</Heading>
+            <Heading size={1}>{contact.name}</Heading>
             <div className="form-container">
               <form onSubmit={this.handleSubmit}>
                 <fieldset className="personal-information">
                   <Field className="row">
-                    <Label>{i18n.t("Full Name")}</Label>
+                    <Label>{contactStrings.full_name}</Label>
                     <Control className="col">
-                      <Input type="text" name="name" placeholder={i18n.t("Full Name")} size="large" value={this.state.name} onChange={this.onChange.bind(this)}/>
+                      <Input type="text" name="name" placeholder={contactStrings.full_name} size="large" value={this.state.name} onChange={this.onChange.bind(this)}/>
                     </Control>
                   </Field>
                   <Field className="row">
-                    <Label>{i18n.t("Email")}</Label>
+                    <Label>{contactStrings.email}</Label>
                     <Control className="col">
-                      <Input type="email" name="email" placeholder={i18n.t("Email")} size="large" value={this.state.email} onChange={this.onChange.bind(this)} />
+                      <Input type="email" name="email" placeholder={contactStrings.email} size="large" value={this.state.email} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                   <Field className="row">
-                    <Label>{i18n.t("Phone Number")}</Label>
+                    <Label>{contactStrings.phone_number}</Label>
                     <Control className="col">
-                      <Input type="tel" name="phone" placeholder={i18n.t("Phone Number")} size="large" value={this.state.phone} onChange={this.onChange.bind(this)} />
+                      <Input type="tel" name="phone" placeholder={contactStrings.phone_number} size="large" value={this.state.phone} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                 </fieldset>
                 <fieldset className="message-detail">
                   <Field className="row">
-                    <Label>{i18n.t('Subject')}</Label>
+                    <Label>{contactStrings.subject}</Label>
                     <Control className="col">
-                      <Input type="text" name="subject" placeholder={i18n.t('Subject')} size="large" value={this.state.subject} onChange={this.onChange.bind(this)} />
+                      <Input type="text" name="subject" placeholder={contactStrings.subject} size="large" value={this.state.subject} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                   <Field className="row">
-                    <Label>{i18n.t('Message')}</Label>
+                    <Label>{contactStrings.message}</Label>
                     <Control className="col">
-                      <Textarea name="message" placeholder={i18n.t("Message")} size="large" value={this.state.message} onChange={this.onChange.bind(this)} />
+                      <Textarea name="message" placeholder={contactStrings.message} size="large" value={this.state.message} onChange={this.onChange.bind(this)} />
                     </Control>
                   </Field>
                   <Field className="row">
@@ -117,7 +116,7 @@ class Contact extends Component {
                 </fieldset>
                 <fieldset className="action">
                   <Control>
-                    <Button type="primary">{i18n.t('Send Message')}</Button>
+                    <Button type="primary">{contactStrings.send_message}</Button>
                   </Control>
                 </fieldset>
               </form>

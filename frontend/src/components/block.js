@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 
 import axios from 'axios';
-import i18n from '../i18n'
+import {errorStrings} from "../helpers/strings";
+import i18n from "../i18n"
 
 class Block extends Component {
     state = {
         isLoading: true,
         block: null,
         error: null
-    }
+    };
 
     componentDidMount() {
         this.fetchBlock();
@@ -18,7 +19,7 @@ class Block extends Component {
         if (!this.props.identifier) {
             this.setState({
                 error: {
-                    message: i18n.t('Block identifier is a required field.')
+                    message: errorStrings.required_identifier
                 },
                 isLoading: false
             });

@@ -1,11 +1,13 @@
+import i18n from "../i18n"
+
 export const about = {
-  name: 'About',
-  documentTitle: 'About | Louis Cailleux',
+  name: i18n.t('About'),
+  documentTitle: i18n.t('About | Louis Cailleux'),
   url: '/about'
 };
 
 export const contact = {
-  name: 'Contact',
-  documentTitle: 'Contact | Louis Cailleux',
+  name: i18n.t('Contact'),
+  documentTitle: i18n.t('Contact | Louis Cailleux'),
   url: '/contact'
 };

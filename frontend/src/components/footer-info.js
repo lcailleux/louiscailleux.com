@@ -4,8 +4,8 @@ import Footer from 'react-bulma-components/lib/components/footer';
 import Content from 'react-bulma-components/lib/components/content';
 import Hero from 'react-bulma-components/lib/components/hero';
 
-import i18n from '../i18n'
 import SocialLinks from "./social-links";
+import {defaultStrings, footerStrings} from "../helpers/strings";
 
 class FooterInfo extends Component {
     constructor(props) {
@@ -15,12 +15,12 @@ class FooterInfo extends Component {
 
     render() {
         return (
-            <Hero size="fullheight">
+            <Hero>
                 <Hero.Footer>
                     <Footer>
                         <Content style={{ textAlign: 'center'}}>
                             <SocialLinks/>
-                            <p>Copyright © {this.year} Louis Cailleux. {i18n.t('All rights reserved.')}</p>
+                            <p>Copyright © {this.year} {defaultStrings.full_name}. {footerStrings.all_right_reserved}</p>
                         </Content>
                     </Footer>
                 </Hero.Footer>

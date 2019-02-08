@@ -1,3 +1,22 @@
+import i18n from "../i18n"
+
+export const defaultStrings = {
+  full_name: i18n.t("Louis Cailleux")
+};
+
+export const contactStrings = {
+  email: i18n.t("Email"),
+  subject: i18n.t("Subject"),
+  message: i18n.t("Message"),
+  full_name: i18n.t("Full Name"),
+  phone_number: i18n.t("Phone Number"),
+  send_message: i18n.t("Send Message")
+};
+
+export const errorStrings = {
+  required_identifier: i18n.t("Block identifier is a required field.")
+};
+
 export const footerStrings = {
-  copyright: `Copyright © ${(new Date()).getFullYear()} Omar Albeik All rights reserved.`
-}
+  all_right_reserved: i18n.t("All rights reserved.")
+};

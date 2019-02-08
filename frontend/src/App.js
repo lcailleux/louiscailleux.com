@@ -29,8 +29,6 @@ class App extends Component {
                     </Columns.Column>
                     <Columns.Column />
                 </Columns>
-
-
             </div>
         );
     }

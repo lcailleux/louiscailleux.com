@@ -3,8 +3,6 @@ import Navbar from 'react-bulma-components/lib/components/navbar';
 import {about, contact} from '.././helpers/urls';
 import LanguageSwitcher from './language-switcher'
 
-import i18n from 'i18next'
-
 class NavigationBar extends Component {
     state = { active : false };
 
@@ -21,8 +19,8 @@ class NavigationBar extends Component {
                 </Navbar.Brand>
                 <Navbar.Menu active="true">
                     <Navbar.Container position="start">
-                        <Navbar.Item href={about.url}>{i18n.t("About")}</Navbar.Item>
-                        <Navbar.Item href={contact.url}>{i18n.t(contact.name)}</Navbar.Item>
+                        <Navbar.Item href={about.url}>{about.name}</Navbar.Item>
+                        <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
                     </Navbar.Container>
                     <Navbar.Container position="end">
                         <Navbar.Item active={false} hoverable={false} renderAs="span">
