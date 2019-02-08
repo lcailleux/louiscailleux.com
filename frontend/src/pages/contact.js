@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import axios from 'axios';
 import ReCAPTCHA from "react-google-recaptcha";
 
 /* React bulma components */
@@ -12,6 +11,7 @@ import Textarea from "react-bulma-components/lib/components/form/components/text
 import Button from "react-bulma-components/lib/components/button/button";
 import Heading from 'react-bulma-components/lib/components/heading';
 
+import Api from "../helpers/api"
 import {contact} from "../helpers/urls";
 import {contactStrings} from "../helpers/strings";
 
@@ -59,11 +59,13 @@ class Contact extends Component {
     this.recaptchaRef.current.execute();
 
     if (this.validate()) {
-      axios.post('V1/api/contact', data)
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
-          })
+      let postCall = Api.callApi(Api.CONTACT_URL, Api.TYPE_POST, data);
+      if (postCall) {
+        postCall.then(res => {
+          console.log(res);
+          console.log(res.data);
+        })
+      }
     }
   };
 
