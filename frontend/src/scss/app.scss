@@ -1,4 +1,4 @@
-@import "~react-bulma-components/src/index.sass";
+@import "~bulma/bulma.sass";
 
 .form-container {
   background: rgb(246, 246, 246);
@@ -53,7 +53,6 @@ fieldset {
   position: relative;
   width: 100%;
   padding-right: 15px;
-  padding-left: 15px;
 }
 
 
@@ -66,46 +65,8 @@ label {
   width: 30%
 }
 
-input {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: none;
-  display: inline-flex;
-  font-size: 1rem;
-  height: 2.25em;
-  justify-content: flex-start;
-  line-height: 1.5;
-  width: 100%;
-  padding: calc(0.375em - 1px) calc(0.625em - 1px) calc(.375em - 1px) calc(0.625em - 1px);
-  position: relative;
-  vertical-align: top;
-}
-
-textarea {
-  display: block;
-  width: 100%;
-  min-width: 100%;
-  resize: vertical;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  box-shadow: none;
-  font-size: 1rem;
-  justify-content: flex-start;
-  line-height: 1.5;
-  padding: calc(0.375em - 1px) calc(0.625em - 1px) 1em calc(0.625em - 1px);
-  position: relative;
-  vertical-align: top;
-}
-
 button {
   -webkit-appearance: none;
-  background-color: black;
   color: whitesmoke;
   cursor: pointer;
   justify-content: center;

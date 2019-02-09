@@ -14,7 +14,9 @@ export const contactStrings = {
 };
 
 export const errorStrings = {
-  required_identifier: i18n.t("Block identifier is a required field.")
+  invalid_email: i18n.t("This email is invalid."),
+  required_identifier: i18n.t("Block identifier is a required field."),
+  required_field: i18n.t("This field is a required field.")
 };
 
 export const footerStrings = {
