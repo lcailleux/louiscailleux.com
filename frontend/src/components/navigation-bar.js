@@ -13,7 +13,7 @@ class NavigationBar extends Component {
 
     render() {
         return (
-            <Navbar color="dark" active={this.state.active} transparent={false} >
+            <Navbar active={this.state.active} transparent={false} >
                 <Navbar.Brand>
                     <Navbar.Burger active={this.state.active.toString()} onClick={this.handleClick} />
                 </Navbar.Brand>

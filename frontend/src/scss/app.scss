@@ -1,19 +1,27 @@
 @import "~bulma/bulma.sass";
 
+/* Header */
+.navbar{
+  color: white;
+  border-bottom: 3px solid #e7e7e7;
+}
+
+
+/* Form */
+
 .fa-label{
   vertical-align: top;
 }
 
 .form-container {
   padding: 50px 50px 30px;
-  border-radius: 8px;
-  margin: 15px 0px 30px;
+  margin: 15px 0 30px;
 }
 
 
 .link-button {
   background-color: transparent;
-  color: whitesmoke;
+  color: black;
   border: none;
   cursor: pointer;
   text-decoration: underline;
@@ -26,7 +34,6 @@
 .link-button:focus {
   text-decoration: none;
 }
-
 
 form {
   width: 100%;
@@ -86,10 +93,12 @@ button {
   float: right;
 }
 
+/* Footer */
+
 .footer {
   text-align: center;
   background-color: white;
-  border-top: 3px solid #E7E7E7;
+  border-top: 3px solid #e7e7e7;
 }
 
 .footer .content .social-links {

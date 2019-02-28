@@ -13,7 +13,7 @@ class LanguageSwitcher extends Component {
 
         return (
             <div>
-                <button className="link-button" onClick={(e) => changeLanguage('en', e)}>EN</button>
+                <button className="link-button" onClick={(e) => changeLanguage('en', e)}></button>
                 <button className="link-button" onClick={(e) => changeLanguage('fr', e)}>FR</button>
                 <button className="link-button" onClick={(e) => changeLanguage('ko', e)}>KO</button>
             </div>
