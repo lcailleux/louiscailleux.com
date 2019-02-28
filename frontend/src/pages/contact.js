@@ -127,12 +127,11 @@ class Contact extends Component {
     return (
         <main className="container-wrap inside-content">
           <div>
-            <Heading size={1}>{contact.name}</Heading>
             <div className="form-container">
+              <Heading size={1}>{contact.name}</Heading>
               <form onSubmit={this.handleSubmit}>
                 <fieldset className="personal-information">
                   <Field className="row">
-                    <Label>{contactStrings.full_name}</Label>
                     <Control className="col">
                       <Input type="text" name="full_name" placeholder={contactStrings.full_name} className={formErrors.full_name.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.full_name} onChange={this.onChange.bind(this)}/>
                       {formErrors.full_name.length > 0 && (
@@ -141,7 +140,6 @@ class Contact extends Component {
                     </Control>
                   </Field>
                   <Field className="row">
-                    <Label>{contactStrings.email}</Label>
                     <Control iconLeft className="col">
                       <Input type="email" name="email" placeholder={contactStrings.email} className={formErrors.email.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.email} onChange={this.onChange.bind(this)} />
                       {formErrors.email.length > 0 && (
@@ -153,7 +151,6 @@ class Contact extends Component {
                     </Control>
                   </Field>
                   <Field className="row">
-                    <Label>{contactStrings.phone_number}</Label>
                     <Control iconLeft className="col">
                       <Input type="tel" name="phone_number" placeholder={contactStrings.phone_number} className={formErrors.phone_number.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.phone_number} onChange={this.onChange.bind(this)} />
                       {formErrors.phone_number.length > 0 && (
@@ -167,7 +164,6 @@ class Contact extends Component {
                 </fieldset>
                 <fieldset className="message-detail">
                   <Field className="row">
-                    <Label>{contactStrings.subject}</Label>
                     <Control className="col">
                       <Input type="text" id="subject" name="subject" placeholder={contactStrings.subject} className={formErrors.subject.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.subject} onChange={this.onChange.bind(this)} />
                       {formErrors.subject.length > 0 && (
@@ -176,7 +172,6 @@ class Contact extends Component {
                     </Control>
                   </Field>
                   <Field className="row">
-                    <Label>{contactStrings.message}</Label>
                     <Control className="col">
                       <Textarea name="message" placeholder={contactStrings.message} className={formErrors.message.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.message} onChange={this.onChange.bind(this)} />
                       {formErrors.message.length > 0 && (
@@ -193,7 +188,7 @@ class Contact extends Component {
                 </fieldset>
                 <fieldset className="action">
                   <Control>
-                    <Button type="submit" color="black" rounded={true}>{contactStrings.send_message}</Button>
+                    <Button type="submit" color="black" rounded={false}>{contactStrings.send_message}</Button>
                   </Control>
                 </fieldset>
               </form>

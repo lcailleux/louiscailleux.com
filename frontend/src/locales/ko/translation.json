@@ -12,6 +12,7 @@
   "Phone Number": "전화번호",
   "Send Message": "메시지를 보내라요",
   "Subject": "주제",
+  "This field is a required field.": "이 입력란은 필수 입력란입니다.",
   "This email is invalid": "이 이메일은 유효하지 않음",
   "This phone number is invalid": "이 전화 번호가 잘못됨"
 }

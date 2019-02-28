@@ -1,7 +1,10 @@
 @import "~bulma/bulma.sass";
 
+.fa-label{
+  vertical-align: top;
+}
+
 .form-container {
-  background: rgb(246, 246, 246);
   padding: 50px 50px 30px;
   border-radius: 8px;
   margin: 15px 0px 30px;
@@ -84,7 +87,9 @@ button {
 }
 
 .footer {
-    background-color: white;
+  text-align: center;
+  background-color: white;
+  border-top: 3px solid #E7E7E7;
 }
 
 .footer .content .social-links {
@@ -96,7 +101,7 @@ button {
 }
 
 .footer .content .social-links a:hover {
-    color: rgb(255, 5, 5);
+  color: rgb(255, 5, 5);
 }
 
 @import 'responsive/phone';

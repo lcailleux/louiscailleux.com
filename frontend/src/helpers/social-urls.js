@@ -12,6 +12,6 @@ export const linkedIn = {
 
 export const stackOverflow = {
   name: 'StackOverflow',
-  url: '',
+  url: 'https://stackoverflow.com/users/11026714/louis-cailleux',
   icon: 'https://unpkg.com/simple-icons@latest/icons/stackoverflow.svg'
 };

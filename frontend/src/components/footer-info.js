@@ -18,7 +18,7 @@ class FooterInfo extends Component {
             <Hero>
                 <Hero.Footer>
                     <Footer>
-                        <Content style={{ textAlign: 'center'}}>
+                        <Content>
                             <SocialLinks/>
                             <p>Copyright © {this.year} {defaultStrings.full_name}. {footerStrings.all_right_reserved}</p>
                         </Content>

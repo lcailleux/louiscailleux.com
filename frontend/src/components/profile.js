@@ -23,8 +23,14 @@ class Profile extends Component {
                         </Media.Item>
                     </Media>
                     <Content>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                        <br />
+                        <div>
+                            <span className="icon is-left"><i className="fas fa-envelope"/></span>
+                            <span className="fa-label">: louiscailleux@gmail.com</span>
+                        </div>
+                        <div>
+                            <span className="icon is-left"><i className="fas fa-mobile-alt"/></span>
+                            <span className="fa-label">: (+33) 7 83 64 90 48</span>
+                        </div>
                     </Content>
                 </Card.Content>
             </Card>
