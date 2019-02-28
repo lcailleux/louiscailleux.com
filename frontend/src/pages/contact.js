@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import ReCAPTCHA from "react-google-recaptcha";
+//import ReCAPTCHA from "react-google-recaptcha";
 
 /* React bulma components */
 import Field from "react-bulma-components/lib/components/form/components/field";
