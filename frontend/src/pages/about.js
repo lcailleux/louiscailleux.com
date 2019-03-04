@@ -20,7 +20,7 @@ class About extends Component {
         return (
             <main className="container-wrap inside-content">
                 <Heading size={1}>{about.name}</Heading>
-                <Image src={AboutPicture} size={100}/>
+                <Image src={AboutPicture}/>
                 <Block identifier="test_block_1" />
             </main>
         );

@@ -1,9 +1,26 @@
 @import "~bulma/bulma.sass";
 
 /* Header */
-.navbar{
+.navbar {
   color: white;
   border-bottom: 3px solid #e7e7e7;
+}
+.navbar .navbar-item {
+  color: grey;
+  font-weight: bold;
+}
+
+.navbar .navbar-item:hover{
+  color: black;
+  background-color: white;
+}
+
+.flag-icon {
+  width: 1.75em;
+  height: 1.50em;
+  padding: 0;
+  margin: 0;
+  border: 2px solid black;
 }
 
 
@@ -27,7 +44,7 @@
   text-decoration: underline;
   display: inline;
   margin: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0 0.45rem;
 }
 
 .link-button:hover,
