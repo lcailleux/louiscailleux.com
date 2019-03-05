@@ -19,7 +19,9 @@ services:
     depends_on:
       - db
   louiscailleux_backend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     environment:
       WAIT_HOSTS: db:3306
     ports:
