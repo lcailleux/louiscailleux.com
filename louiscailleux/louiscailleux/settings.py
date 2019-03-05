@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django_user_agents',
     'corsheaders',
     'rest_framework',
-    'django_filters',
     'cms',
     'contact',
     'core',
@@ -91,7 +90,7 @@ if 'TRAVIS' in os.environ:
             'USER': 'travis',
             'PASSWORD': '',
             'HOST': 'localhost',
-            'PORT': '',
+            'PORT': '3306',
         }
     }
 else:
@@ -101,6 +100,8 @@ else:
             'NAME': config('DATABASE_NAME'),
             'USER': config('DATABASE_USER'),
             'PASSWORD': config('DATABASE_PASSWORD'),
+            'HOST': config('DATABASE_HOST'),
+            'PORT': config('DATABASE_PORT'),
         }
     }
 
