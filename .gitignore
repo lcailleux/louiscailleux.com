@@ -1,0 +1,8 @@
+### Python ###
+.idea/
+__pycache__/
+/django/.env
+/django/.coverage
+/django/*.py[cod]
+/django/env/
+/django/db.sqlite3
