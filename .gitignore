@@ -22,3 +22,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+### Python ###
+.idea/
+__pycache__/
+/django/.env
+/django/.coverage
+/django/*.py[cod]
+/django/env/
+/django/db.sqlite3
