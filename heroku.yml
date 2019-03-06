@@ -1,7 +1,0 @@
-setup:
-  addons:
-    - plan: jawsdb-maria
-    - plan: jawsdb
-build:
-  docker:
-    web: react/Dockerfile.prod
