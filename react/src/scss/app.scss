@@ -1,0 +1,135 @@
+@import "~bulma/bulma.sass";
+
+/* Header */
+.navbar {
+  color: white;
+  border-bottom: 3px solid #e7e7e7;
+}
+.navbar .navbar-item {
+  color: grey;
+  font-weight: bold;
+}
+
+.navbar .navbar-item:hover{
+  color: black;
+  background-color: white;
+}
+
+.flag-icon {
+  width: 1.75em;
+  height: 1.50em;
+  padding: 0;
+  margin: 0;
+  border: 2px solid black;
+}
+
+
+/* Form */
+
+.fa-label{
+  vertical-align: top;
+}
+
+.form-container {
+  padding: 50px 50px 30px;
+  margin: 15px 0 30px;
+}
+
+
+.link-button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline;
+  margin: 0;
+  padding: 0 0.45rem;
+}
+
+.link-button:hover,
+.link-button:focus {
+  text-decoration: none;
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 0.75rem;
+}
+
+
+fieldset {
+  margin: 1em 1em 1em 1em;
+}
+
+
+.field:not(:last-child) {
+  margin-bottom: 0.75rem
+}
+
+
+.row {
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+}
+
+
+fieldset {
+  border: none;
+}
+
+label {
+  display: inline-block;
+  width: 30%
+}
+
+button {
+  -webkit-appearance: none;
+  color: whitesmoke;
+  cursor: pointer;
+  justify-content: center;
+  padding: calc(0.375em - 1px) 1em calc(0.375em - 1px) 1em;
+  text-align: center;
+  white-space: nowrap;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.25em;
+  float: right;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  background-color: white;
+  border-top: 3px solid #e7e7e7;
+}
+
+.footer .content .social-links {
+  margin: 0.5em 0.5em;
+}
+
+.footer .content .social-links a {
+  margin: 12px 8px;
+}
+
+.footer .content .social-links a:hover {
+  color: rgb(255, 5, 5);
+}
+
+@import 'responsive/phone';
+@import 'responsive/tablet';
+@import 'responsive/small-phone';
