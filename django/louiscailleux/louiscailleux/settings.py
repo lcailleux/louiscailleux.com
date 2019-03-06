@@ -104,7 +104,7 @@ elif 'HEROKU' in os.environ:
             env='JAWSDB_MARIA_URL',
             engine='django.db.backends.mysql',
             conn_max_age=600,
-            ssl_require=True
+            ssl_require=False
         )
     }
 else:
