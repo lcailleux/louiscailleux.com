@@ -1,7 +1,7 @@
 setup:
   addons:
-    - plan: jawsdb:kitefin
+    jawsdb:
+      - plan: kitefin
 build:
   docker:
     web: react/Dockerfile.prod
-    worker: django/Dockerfile
