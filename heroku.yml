@@ -1,8 +1,0 @@
-setup:
-  addons:
-    - plan: jawsdb-maria
-      as: DATABASE
-build:
-  docker:
-    frontend: react/Dockerfile.prod
-    backend: django/Dockerfile
