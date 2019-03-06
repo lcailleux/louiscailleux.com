@@ -1,6 +1,6 @@
 setup:
   addons:
-    - plan: jawsdb-maria
+    - plan: jawsdb:kitefin
 build:
   docker:
     web: react/Dockerfile.prod
