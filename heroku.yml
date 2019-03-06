@@ -1,0 +1,7 @@
+setup:
+  addons:
+    - plan: jawsdb-maria:kitefin
+      as: DATABASE
+build:
+  docker:
+    web: django/Dockerfile
