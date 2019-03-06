@@ -7,19 +7,6 @@ services:
       - "3306:3306"
     env_file:
       - ./django/.env
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    links:
-      - db
-    environment:
-      - PMA_ARBITRARY=1
-    restart: always
-    ports:
-      - "8080:80"
-    volumes:
-      - /sessions
-    depends_on:
-      - db
   louiscailleux_backend:
     build:
       context: ./django
