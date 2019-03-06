@@ -26,8 +26,8 @@ SECRET_KEY = '_nv_n8!3swr_xsoj%xach-w!7s=yfudk36jm^7j0uwc=*!@+vr'
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'https://louiscailleux-backend-staging.herokuapp.com',
-    'https://louiscailleux-frontend-staging.herokuapp.com'
+    'louiscailleux-backend-staging.herokuapp.com',
+    'louiscailleux-frontend-staging.herokuapp.com'
 ]
 
 
@@ -161,7 +161,7 @@ STATIC_URL = '/static/'
 # Authorizing React SPA
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000/',
-    'https://louiscailleux-frontend-staging.herokuapp.com:3000/'
+    'louiscailleux-frontend-staging.herokuapp.com:3000/'
 )
 
 # REST framework
