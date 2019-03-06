@@ -23,8 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_nv_n8!3swr_xsoj%xach-w!7s=yfudk36jm^7j0uwc=*!@+vr'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'https://louiscailleux-backend-staging.herokuapp.com',
@@ -87,6 +85,7 @@ WSGI_APPLICATION = 'louiscailleux.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 if 'TRAVIS' in os.environ:
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -97,7 +96,10 @@ if 'TRAVIS' in os.environ:
             'PORT': '3306',
         }
     }
+elif 'HEROKU' in os.environ:
+    DEBUG = False
 else:
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': config('DATABASE_ENGINE'),
