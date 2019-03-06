@@ -1,8 +1,8 @@
 ### Python ###
-.env
-.coverage
 .idea/
-*.py[cod]
 __pycache__/
-env/
-db.sqlite3
+/django/.env
+/django/.coverage
+/django/*.py[cod]
+/django/env/
+/django/db.sqlite3
