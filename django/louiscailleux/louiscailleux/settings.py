@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,8 +25,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_nv_n8!3swr_xsoj%xach-w!7s=yfudk36jm^7j0uwc=*!@+vr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1']
+DEBUG = False
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'https://louiscailleux-backend-staging.herokuapp.com',
+    'https://louiscailleux-frontend-staging.herokuapp.com'
+]
 
 
 # Application definition
@@ -93,6 +98,10 @@ if 'TRAVIS' in os.environ:
             'PORT': '3306',
         }
     }
+elif 'HEROKU' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    }
 else:
     DATABASES = {
         'default': {
@@ -145,7 +154,8 @@ STATIC_URL = '/static/'
 
 # Authorizing React SPA
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
+    'localhost:3000/',
+    'https://louiscailleux-frontend-staging.herokuapp.com:3000/'
 )
 
 # REST framework
