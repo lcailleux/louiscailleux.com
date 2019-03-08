@@ -3,7 +3,7 @@ heroku create louiscailleux-staging --region=eu
 heroku buildpacks:add --index 1 heroku/nodejs --app louiscailleux-staging
 heroku buildpacks:add --index 2 heroku/python --app louiscailleux-staging
 heroku config:set DISABLE_COLLECTSTATIC=1
-heroku config:add PYTHONPATH=/app:/app/.heroku/python/lib/python3.7/site-packages
+heroku config:add PYTHONPATH=/app:/app/.heroku/python/lib/python3.7/site-packages:/app/.heroku/python/lib/python3.7/dist-packages
 
 heroku addons:create jawsdb-maria:kitefin
 
