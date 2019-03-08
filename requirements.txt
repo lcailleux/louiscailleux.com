@@ -1,1 +1,15 @@
-honcho
+coverage
+django
+djangorestframework
+django-cors-headers
+django-heroku
+django-messages
+django-user-agents
+dj-database-url
+gunicorn
+mysqlclient
+pytest
+pyyaml
+python-decouple
+ua-parser
+user-agents
