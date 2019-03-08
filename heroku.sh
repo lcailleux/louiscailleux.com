@@ -1,8 +1,8 @@
 #!/bin/bash
-heroku create louiscailleux-staging --region=eu --remote staging
+heroku create louiscailleux-staging --region=eu
 heroku buildpacks:add --index 1 heroku/python --app louiscailleux-staging
 
-#heroku addons:create jawsdb-maria:kitefin
+
 #heroku local:run python django/louiscailleux/manage.py migrate
 
 git add *;
