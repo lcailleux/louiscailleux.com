@@ -1,6 +1,5 @@
 #!/bin/bash
 heroku create louiscailleux-backend-staging --region=eu --manifest;
-heroku config:set HEROKU=true
 heroku addons:create jawsdb-maria:kitefin
 heroku stack:set container --app louiscailleux-backend-staging;
 git add *;
