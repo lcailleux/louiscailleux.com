@@ -13,3 +13,4 @@ pyyaml
 python-decouple
 ua-parser
 user-agents
+whitenoise
