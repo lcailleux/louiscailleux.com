@@ -10,4 +10,4 @@ git add *;
 git commit -m "Updated heroku configuration."
 git push heroku master;
 
-heroku addons:destroy heroku-postgresql:hobby-dev
+heroku addons:destroy heroku-postgresql:hobby-dev --confirm louiscailleux-staging
