@@ -94,7 +94,6 @@ if 'TRAVIS' in os.environ:
     }
 elif 'HEROKU' in os.environ:
     DEBUG = False
-    django_heroku.settings(locals())
     DATABASES = {
         'default': dj_database_url.config(
             env='JAWSDB_MARIA_URL',
