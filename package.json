@@ -6,7 +6,6 @@
   "dependencies": {
     "ajv": "^6.10.0",
     "axios": "^0.18.0",
-    "cypress": "^3.1.5",
     "flag-icon-css": "^3.3.0",
     "i": "^0.3.6",
     "i18next": "^14.0.1",
@@ -31,8 +30,7 @@
     "build": "NODE_PATH=./src react-app-rewired build",
     "test": "NODE_PATH=./src react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
-    "flush": "pipenv run python ./project/manage.py flush --no-input",
-    "e2e": "cypress open --project ./"
+    "flush": "pipenv run python ./project/manage.py flush --no-input"
   },
   "eslintConfig": {
     "extends": "react-app"
