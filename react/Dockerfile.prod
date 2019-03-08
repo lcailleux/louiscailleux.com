@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 RUN sed -i 's%http://127.0.0.1:8000%$BACKEND_URL%' /usr/src/app/package.json
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN npm install --silent
 RUN npm install react-scripts@1.1.1 -g --silent
