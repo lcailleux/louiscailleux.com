@@ -5,7 +5,7 @@ import Image from 'react-bulma-components/lib/components/image';
 
 import {about} from '.././helpers/urls';
 import Block from '../components/block';
-import AboutPicture from '../images/about-picture.JPG'
+import AboutPicture from '../images/about-picture.jpg'
 
 class About extends Component {
     componentWillMount() {

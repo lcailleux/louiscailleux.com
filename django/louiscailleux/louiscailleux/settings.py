@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
+import django_heroku
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -23,10 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_nv_n8!3swr_xsoj%xach-w!7s=yfudk36jm^7j0uwc=*!@+vr'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1']
-
 
 # Application definition
 
@@ -83,6 +81,7 @@ WSGI_APPLICATION = 'louiscailleux.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 if 'TRAVIS' in os.environ:
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -93,7 +92,19 @@ if 'TRAVIS' in os.environ:
             'PORT': '3306',
         }
     }
+elif 'HEROKU' in os.environ:
+    DEBUG = False
+    django_heroku.settings(locals())
+    DATABASES = {
+        'default': dj_database_url.config(
+            env='JAWSDB_MARIA_URL',
+            engine='django.db.backends.mysql',
+            conn_max_age=600,
+            ssl_require=False
+        )
+    }
 else:
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': config('DATABASE_ENGINE'),
@@ -139,13 +150,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Authorizing React SPA
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
+    'localhost:3000/',
+    'louiscailleux-frontend-staging.herokuapp.com:3000/'
 )
 
 # REST framework
