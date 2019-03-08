@@ -4,22 +4,6 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y \
-    nginx \
-    supervisor
-
-RUN rm -rf /var/lib/apt/lists/*
-RUN pip install uwsgi
-
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY supervisor.conf /etc/supervisor/conf.d/
-
-RUN mkdir -p /tmp/nginx /tmp/app/logs && chown -R www-data: /tmp/nginx /tmp/app/logs
-RUN chown -R www-data:www-data /var/lib/nginx
-
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 
@@ -28,10 +12,9 @@ COPY . /code/
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
 RUN chmod +x /wait
 
-RUN cd ./louiscailleux/ && mkdir static/ && python manage.py collectstatic --noinput
-#CMD /wait python manage.py migrate
-CMD python manage.py migrate
+RUN mkdir louiscailleux/static/ && python louiscailleux/manage.py collectstatic --noinput
 
 EXPOSE 80
 
-CMD ["supervisord", "-u", "www-data", "-n", "-c", "/etc/supervisor/conf.d/supervisor.conf"]
+WORKDIR /code/louiscailleux
+CMD /wait && python manage.py migrate && gunicorn louiscailleux.wsgi:application --bind 0.0.0.0:8000 --workers 3

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import dj_database_url
+import django_heroku
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,12 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_nv_n8!3swr_xsoj%xach-w!7s=yfudk36jm^7j0uwc=*!@+vr'
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'louiscailleux-backend-staging.herokuapp.com',
-    'louiscailleux-frontend-staging.herokuapp.com'
-]
-
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -168,3 +164,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
+
+if 'HEROKU' in os.environ:
+    django_heroku.settings(locals())
