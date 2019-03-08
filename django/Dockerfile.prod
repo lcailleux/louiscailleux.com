@@ -17,4 +17,4 @@ RUN mkdir louiscailleux/static/ && python louiscailleux/manage.py collectstatic 
 EXPOSE 80
 
 WORKDIR /code/louiscailleux
-CMD /wait && python manage.py migrate && gunicorn louiscailleux.wsgi:application --bind 0.0.0.0:8000 --workers 3
+CMD /wait && python manage.py migrate && gunicorn louiscailleux.wsgi:application --bind 0.0.0.0:$PORT --workers 3
