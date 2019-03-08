@@ -1,7 +1,6 @@
 #!/bin/bash
 heroku buildpacks:add --index 1 heroku/nodejs
 heroku buildpacks:add --index 2 heroku/python
-python django/louiscailleux/manage.py collectstatic
 
 heroku create louiscailleux-staging --region=eu;
 #heroku addons:create jawsdb-maria:kitefin
