@@ -1,6 +1,5 @@
 #!/bin/bash
 heroku create louiscailleux-frontend-staging --region=eu --manifest;
-heroku features:enable runtime-heroku-exec
 heroku stack:set container --app louiscailleux-frontend-staging;
 heroku config:set BACKEND_URL=https://louiscailleux-backend-staging.herokuapp.com
 git add *;
