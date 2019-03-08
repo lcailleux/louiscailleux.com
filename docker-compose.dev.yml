@@ -34,12 +34,12 @@ services:
       - db
   louiscailleux_frontend:
     build:
-      context: ./react/frontend
+      context: ./react
       dockerfile: Dockerfile.dev
     links:
       - louiscailleux_backend
     volumes:
-      - './react/frontend:/usr/src/app'
+      - './react:/usr/src/app'
       - '/usr/src/app/node_modules'
     ports:
       - '3000:3000'
