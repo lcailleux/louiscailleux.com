@@ -1,5 +1,5 @@
 #!/bin/bash
-heroku create louiscailleux-staging --region=eu --remote staging
+heroku create louiscailleux-staging --region=eu
 heroku buildpacks:add --index 1 heroku/nodejs --app louiscailleux-staging
 heroku buildpacks:add --index 2 heroku/python --app louiscailleux-staging
 heroku config:set DISABLE_COLLECTSTATIC=1
