@@ -156,8 +156,8 @@ STATIC_URL = '/static/'
 
 # Authorizing React SPA
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/',
-    'louiscailleux-frontend-staging.herokuapp.com:3000/'
+    'localhost',
+    '127.0.0.1'
 )
 
 # REST framework
