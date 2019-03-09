@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_nv_n8!3swr_xsoj%xach-w!7s=yfudk36jm^7j0uwc=*!@+vr'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'louiscailleux-staging.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -103,6 +103,9 @@ elif 'HEROKU' in os.environ:
             conn_max_age=600,
             ssl_require=False
         )
+    }
+    DATABASES['default']['OPTIONS'] = {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
     }
 else:
     DEBUG = True

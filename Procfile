@@ -1,2 +1,2 @@
-release: cd django/louiscailleux && python manage.py migrate
+release: django/louiscailleux/python manage.py migrate && NODE_PATH=./react/src react-app-rewired build
 web: honcho -f honcho.conf start
