@@ -7,6 +7,7 @@
     "ajv": "^6.10.0",
     "axios": "^0.18.0",
     "cypress": "^3.1.5",
+    "express": "^4.16.4",
     "flag-icon-css": "^3.3.0",
     "i": "^0.3.6",
     "i18next": "^14.0.1",
@@ -45,5 +46,9 @@
   ],
   "devDependencies": {
     "react-app-rewired": "^2.0.3"
+  },
+  "engines": {
+    "node": "9.11.2",
+    "npm": "6.9.0"
   }
 }
