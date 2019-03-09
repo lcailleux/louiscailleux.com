@@ -1,6 +1,7 @@
 ### React ###
 
 # dependencies
+/react/build
 /react/node_modules
 /react/.pnp
 /react/.pnp.js
