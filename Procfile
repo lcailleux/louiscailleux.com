@@ -1,0 +1,1 @@
+web: cd ./react && NODE_PATH=./src react-app-rewired build && node server.js

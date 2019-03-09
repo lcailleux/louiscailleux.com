@@ -1,8 +1,16 @@
 #!/bin/bash
-heroku create louiscailleux-frontend-staging --region=eu --manifest;
-heroku stack:set container --app louiscailleux-frontend-staging;
-heroku config:set BACKEND_URL=https://louiscailleux-backend-staging.herokuapp.com
-git add *;
-git commit -m "Updated heroku configuration."
-git push origin client;
-git push heroku client:master;
+if [[ $1 == "staging" ]]
+then
+    heroku create louiscailleux-frontend-staging --region=eu --remote staging
+    heroku buildpacks:set heroku/nodejs
+    heroku config:set BACKEND_URL=https://louiscailleux-backend-staging.herokuapp.com
+    git push staging client:master;
+elif [[ $1 == "production" ]]
+then
+    heroku create louiscailleux-frontend --region=eu
+    heroku buildpacks:set heroku/nodejs
+    heroku config:set BACKEND_URL=https://louiscailleux-backend.herokuapp.com
+    git push heroku client:master;
+else
+    echo "Usage: ./heroku.sh (staging|production)"
+fi;

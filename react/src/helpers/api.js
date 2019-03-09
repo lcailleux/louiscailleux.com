@@ -19,13 +19,25 @@ class Api {
         return 'post';
     }
 
+        /**
+     *
+     * @returns {string}
+     * @constructor
+     */
+    static get API_URL() {
+        if (process.env.BACKEND_URL) {
+            return process.env.BACKEND_URL;
+        }
+        return '';
+    }
+
     /**
      *
      * @returns {string}
      * @constructor
      */
     static get API_PREFIX() {
-        return 'V1/api/'
+        return `${this.API_URL}V1/api/`
     }
 
     /**
