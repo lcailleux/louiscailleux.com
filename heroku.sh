@@ -11,7 +11,7 @@ then
     heroku config:set HEROKU=true
     heroku config:set PYTHONPATH=/app/.heroku/python/lib/python3.7/site-packages
     heroku addons:create jawsdb-maria:kitefin
-    heroku addons:create papertrail:choklad
+    heroku addons:create logentries:le_tryit
     git push staging server:master;
     heroku addons:destroy heroku-postgresql:hobby-dev --confirm louiscailleux-backend-staging
 elif [[ $1 == "production" ]]
@@ -24,7 +24,7 @@ then
     heroku config:set HEROKU=true
     heroku config:set PYTHONPATH=/app/.heroku/python/lib/python3.7/site-packages
     heroku addons:create jawsdb-maria:kitefin
-    heroku addons:create papertrail:choklad
+    heroku addons:create logentries:le_tryit
     git push heroku server:master;
     heroku addons:destroy heroku-postgresql:hobby-dev --confirm louiscailleux-staging
 else
