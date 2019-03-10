@@ -22,9 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_nv_n8!3swr_xsoj%xach-w!7s=yfudk36jm^7j0uwc=*!@+vr'
+if 'HEROKU' in os.environ:
+    SECRET_KEY = ''
+else:
+    SECRET_KEY = config('SECRET_KEY')
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -76,13 +79,14 @@ TEMPLATES = [
     },
 ]
 
+DEBUG = True
+
 WSGI_APPLICATION = 'louiscailleux.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 if 'TRAVIS' in os.environ:
-    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -94,18 +98,8 @@ if 'TRAVIS' in os.environ:
         }
     }
 elif 'HEROKU' in os.environ:
-    DEBUG = False
-    django_heroku.settings(locals())
-    DATABASES = {
-        'default': dj_database_url.config(
-            env='JAWSDB_MARIA_URL',
-            engine='django.db.backends.mysql',
-            conn_max_age=600,
-            ssl_require=False
-        )
-    }
+    DATABASES = {'default': {}}
 else:
-    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': config('DATABASE_ENGINE'),
@@ -160,13 +154,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # Authorizing React SPA
 CORS_ORIGIN_WHITELIST = (
     'localhost',
-    '127.0.0.1',
-    'louiscailleux-frontend-staging.herokuapp.com'
+    '127.0.0.1'
 )
 
 # REST framework
@@ -174,3 +165,28 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
+
+# PRODUCTION (heroku)
+if 'HEROKU' in os.environ:
+    DEBUG = False
+    SECRET_KEY = os.environ['SECRET_KEY']
+
+    django_heroku.settings(locals())
+    DATABASES['default'] = dj_database_url.config(
+        env='JAWSDB_MARIA_URL',
+        engine='django.db.backends.mysql',
+        conn_max_age=600,
+        ssl_require=False
+    )
+    DATABASES['default']['OPTIONS'] = {
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+    }
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+    ALLOWED_HOSTS.append('.herokuapp.com')
+    CORS_ORIGIN_WHITELIST = (
+        'localhost',
+        '127.0.0.1',
+        'louiscailleux-frontend-staging.herokuapp.com'
+    )
