@@ -16,6 +16,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'louiscailleux.settings')
 application = get_wsgi_application()
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.WARNING,
     format="%(asctime)s %(name)s %(levelname)-8s %(message)s",
 )

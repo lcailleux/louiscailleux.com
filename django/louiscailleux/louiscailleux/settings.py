@@ -187,7 +187,8 @@ if 'HEROKU' in os.environ:
     }
 
     # Static files (CSS, JavaScript, Images)
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    # Removing CompressedManifestStaticFilesStorage as it poses problems with heroku.
+    # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Authorizing React SPA
     CORS_ORIGIN_WHITELIST = (
