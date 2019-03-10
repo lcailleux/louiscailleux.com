@@ -170,7 +170,7 @@ REST_FRAMEWORK = {
 if 'HEROKU' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['SECRET_KEY']
-    ALLOWED_HOSTS.append('.herokuapp.com')
+    ALLOWED_HOSTS = ['.herokuapp.com']
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
