@@ -10,6 +10,7 @@ then
     heroku config:set DISABLE_COLLECTSTATIC=1
     heroku config:set HEROKU=true
     heroku config:set PYTHONPATH=/app/.heroku/python/lib/python3.7/site-packages
+    heroku run python django/louiscailleux/manage.py collectstatic --noinput
     heroku addons:create jawsdb-maria:kitefin
     git push staging server:master;
     heroku addons:destroy heroku-postgresql:hobby-dev --confirm louiscailleux-backend-staging
@@ -22,6 +23,7 @@ then
     heroku config:set DISABLE_COLLECTSTATIC=1
     heroku config:set HEROKU=true
     heroku config:set PYTHONPATH=/app/.heroku/python/lib/python3.7/site-packages
+    heroku run python django/louiscailleux/manage.py collectstatic --noinput
     heroku addons:create jawsdb-maria:kitefin
     git push heroku server:master;
     heroku addons:destroy heroku-postgresql:hobby-dev --confirm louiscailleux-staging
