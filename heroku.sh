@@ -1,8 +1,14 @@
 #!/bin/bash
-heroku create louiscailleux-backend-staging --region=eu --manifest;
-heroku addons:create jawsdb-maria:kitefin
-heroku stack:set container --app louiscailleux-backend-staging;
-git add *;
-git commit -m "Updated heroku configuration."
-git push origin server;
-git push heroku server:master;
+if [[ $1 == "staging" ]]
+then
+    heroku create louiscailleux-backend-staging --region=eu --remote staging
+    heroku buildpacks:set heroku/python
+    git push staging server:master;
+elif [[ $1 == "production" ]]
+then
+    heroku create louiscailleux-backend --region=eu
+    heroku buildpacks:set heroku/python
+    git push heroku server:master;
+else
+    echo "Usage: ./heroku.sh (staging|production)"
+fi;
