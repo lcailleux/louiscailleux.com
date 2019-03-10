@@ -7,3 +7,4 @@ __pycache__/
 /django/.coverage
 /django/env/
 /django/db.sqlite3
+/django/louiscailleux/staticfiles/
