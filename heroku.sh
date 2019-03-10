@@ -1,6 +1,6 @@
 #!/bin/bash
 # Add env file in django/.env
-DJANGO_SECRET_KEY=$(grep SECRET_KEY django/.env | cut -d '=' -f2)
+DJANGO_SECRET_KEY=$(grep SECRET_KEY django/.env | cut -d '=' -f2-)
 if [[ $1 == "staging" ]]
 then
     python django/louiscailleux/manage.py collectstatic --noinput

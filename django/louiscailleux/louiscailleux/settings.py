@@ -170,8 +170,12 @@ REST_FRAMEWORK = {
 if 'HEROKU' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['SECRET_KEY']
+    ALLOWED_HOSTS.append('.herokuapp.com')
 
-    django_heroku.settings(locals())
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # Databases
     DATABASES['default'] = dj_database_url.config(
         env='JAWSDB_MARIA_URL',
         engine='django.db.backends.mysql',
@@ -182,11 +186,32 @@ if 'HEROKU' in os.environ:
         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
     }
 
+    # Static files (CSS, JavaScript, Images)
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-    ALLOWED_HOSTS.append('.herokuapp.com')
+    # Authorizing React SPA
     CORS_ORIGIN_WHITELIST = (
         'localhost',
         '127.0.0.1',
         'louiscailleux-frontend-staging.herokuapp.com'
     )
+
+    # Logging
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console': {
+                'class': 'logging.StreamHandler',
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['console'],
+                'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            },
+        },
+    }
+
+    # Activate Django-Heroku.
+    django_heroku.settings(locals())
