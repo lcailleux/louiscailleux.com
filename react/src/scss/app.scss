@@ -15,20 +15,65 @@
   background-color: white;
 }
 
-.flag-icon {
-  width: 1.75em;
-  height: 1.50em;
+.navbar .name-item {
+  color: darkred;
+  font-weight: bold;
+  font-size: 1.2em;
+  pointer-events:none;
+  padding-left: 0;
+}
+
+.flag-icon-background {
+  display: block;
+  width: 2em;
+  height: 1.5em;
   padding: 0;
   margin: 0;
-  border: 2px solid black;
+  border: 1px solid black;
+  background-position: 0;
+  background-size: contain;
 }
 
+/* Profile card */
+.card .card-content {
+  padding: 1.5rem 0 1.5rem 0.10rem;
+}
+
+.card .card-content .icon{
+  width: 1.3rem
+}
+
+.card .card-content .fa-label{
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+}
+
+.card .card-content .media-left {
+  margin-right: 0.20rem;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.card .card-content .media-content {
+  display:inline-block;
+  vertical-align:middle;
+}
+
+/* Body */
+body, button, input, select, textarea {
+    font-family: Merriweather, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.container-wrap.inside-content {
+  padding-top: 10px;
+}
+
+.columns .column:nth-child(1) {
+  padding-right: 0.1em;
+}
 
 /* Form */
-
-.fa-label{
-  vertical-align: top;
-}
 
 .form-container {
   padding: 50px 50px 30px;

@@ -19,10 +19,9 @@ class App extends Component {
                     <meta name="keyword" content="programming, python, django, react"/>
                     <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
                             integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
-                            crossOrigin="anonymous"></script>
+                            crossOrigin="anonymous"/>
                 </Helmet>
-
-                <Columns>
+                <Columns multiline={false}>
                     <Columns.Column>
                         <Profile/>
                     </Columns.Column>

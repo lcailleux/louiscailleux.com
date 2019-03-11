@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navbar from 'react-bulma-components/lib/components/navbar';
 import {about, contact} from '.././helpers/urls';
+import {defaultStrings} from '.././helpers/strings';
 import LanguageSwitcher from './language-switcher'
 
 class NavigationBar extends Component {
@@ -19,10 +20,11 @@ class NavigationBar extends Component {
                 </Navbar.Brand>
                 <Navbar.Menu active="true">
                     <Navbar.Container position="start">
-                        <Navbar.Item href={about.url}>{about.name}</Navbar.Item>
-                        <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
+                        <Navbar.Item className="name-item" active={false} hoverable={false}>{defaultStrings.full_name}</Navbar.Item>
                     </Navbar.Container>
                     <Navbar.Container position="end">
+                        <Navbar.Item href={about.url}>{about.name}</Navbar.Item>
+                        <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
                         <Navbar.Item active={false} hoverable={false} renderAs="span">
                             <LanguageSwitcher />
                         </Navbar.Item>

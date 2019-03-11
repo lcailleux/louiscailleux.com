@@ -1,7 +1,7 @@
 import i18n from "../i18n"
 
 export const defaultStrings = {
-  full_name: i18n.t("Louis Cailleux")
+  full_name: "Louis Cailleux"
 };
 
 export const contactStrings = {
