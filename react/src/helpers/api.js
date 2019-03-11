@@ -37,7 +37,7 @@ class Api {
      * @constructor
      */
     static get API_PREFIX() {
-        return `${this.API_URL}V1/api/`
+        return `${this.API_URL}'/V1/api/`
     }
 
     /**
