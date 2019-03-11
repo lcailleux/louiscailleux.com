@@ -8,4 +8,26 @@ $information-small-phone: "screen and (max-width: 469px)";
       max-width: 75%
     }
   }
+
+  .navbar-item:last-child {
+    height: 2em;
+  }
+
+  .navbar-item:last-child .link-button {
+    float: left;
+    padding: 0 0.45rem 0.45em 0;
+  }
+
+  .columns .column:first-child{
+    display: none;
+  }
+
+  .columns .column{
+    max-width: 540px;
+  }
+
+  .navbar-burger {
+    color: black;
+    float: right;
+  }
 }

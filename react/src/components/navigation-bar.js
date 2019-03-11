@@ -16,12 +16,12 @@ class NavigationBar extends Component {
         return (
             <Navbar active={this.state.active} transparent={false} >
                 <Navbar.Brand>
-                    <Navbar.Burger active={this.state.active.toString()} onClick={this.handleClick} />
-                </Navbar.Brand>
-                <Navbar.Menu active="true">
                     <Navbar.Container position="start">
                         <Navbar.Item className="name-item" active={false} hoverable={false}>{defaultStrings.full_name}</Navbar.Item>
                     </Navbar.Container>
+                    <Navbar.Burger active={this.state.active.toString()} onClick={this.handleClick} />
+                </Navbar.Brand>
+                <Navbar.Menu active="true">
                     <Navbar.Container position="end">
                         <Navbar.Item href={about.url}>{about.name}</Navbar.Item>
                         <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
