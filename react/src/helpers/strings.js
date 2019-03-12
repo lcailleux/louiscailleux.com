@@ -10,7 +10,10 @@ export const contactStrings = {
   message: i18n.t("Message"),
   full_name: i18n.t("Full Name"),
   phone_number: i18n.t("Phone Number"),
-  send_message: i18n.t("Send Message")
+  send_message: i18n.t("Send Message"),
+  success_message: i18n.t("Message sent successfully! I will get back to you very soon."),
+  error_message: i18n.t("An error occurred. Please contact me at this email address"),
+  email_address: "louiscailleux@gmail.com."
 };
 
 export const errorStrings = {

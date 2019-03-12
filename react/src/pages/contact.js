@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 
-//import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 /* React bulma components */
 import Field from "react-bulma-components/lib/components/form/components/field";
-import Label from "react-bulma-components/lib/components/form/components/label";
 import Control from "react-bulma-components/lib/components/form/components/control";
 import Input from "react-bulma-components/lib/components/form/components/input";
 import Help from "react-bulma-components/lib/components/form/components/help";
 import Textarea from "react-bulma-components/lib/components/form/components/textarea";
 import Button from "react-bulma-components/lib/components/button/button";
 import Heading from 'react-bulma-components/lib/components/heading';
+import Message from 'react-bulma-components/lib/components/message';
 
 import Api from "../helpers/api"
 import {contact} from "../helpers/urls";
@@ -21,21 +21,25 @@ class Contact extends Component {
     super(props);
 
     this.state = {
-      full_name: '',
+      name: '',
       email: '',
-      phone_number: '',
+      phone: '',
       subject: '',
       message: '',
       formErrors: {
-        full_name: '',
+        name: '',
         email: '',
-        phone_number: '',
+        phone: '',
         subject: '',
-        message: ''
+        message: '',
+        captcha: ''
       }
     };
 
+    this.formError = false;
+    this.formSuccess = false;
     this.recaptchaRef = React.createRef();
+    this.onCaptchaChange = this.onCaptchaChange.bind(this);
   }
 
   componentWillMount() {
@@ -44,6 +48,25 @@ class Contact extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0)
+  }
+
+  resetState() {
+    let state = {
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: '',
+      formErrors: {
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        captcha: ''
+      }
+    };
+    this.setState(state);
   }
 
   onChange = event => {
@@ -57,8 +80,23 @@ class Contact extends Component {
     this.setState({formErrors, [name]: value})
   };
 
+  onCaptchaChange(captchaValue) {
+    let formErrors = this.validateCaptcha(captchaValue, {...this.state.formErrors});
+    this.setState({formErrors});
+  };
+
+  validateCaptcha(captchaValue, formErrors) {
+    if (captchaValue.length === 0) {
+      formErrors.captcha = errorStrings.required_field;
+    } else {
+      formErrors.captcha = '';
+    }
+    return formErrors;
+  }
+
   handleSubmit = event => {
     event.preventDefault();
+    let self = this;
 
     if (this.validate(this.state)) {
       let data = {
@@ -72,8 +110,16 @@ class Contact extends Component {
       let postCall = Api.callApi(Api.CONTACT_URL, Api.TYPE_POST, data);
       if (postCall) {
         postCall.then(res => {
-          console.log(res);
-          console.log(res.data);
+          if (res.status === 201) {
+            self.formSuccess = true;
+            self.formError = false;
+
+            self.resetState();
+            window.grecaptcha.reset();
+          } else {
+            self.formSuccess = false;
+            self.formError = true;
+          }
         })
       }
     }
@@ -89,7 +135,11 @@ class Contact extends Component {
       formErrors[name] = self.validateField(name, value);
     });
 
-    this.setState({formErrors})
+    /* Verifying captcha */
+    let captchaValue = window.grecaptcha.getResponse();
+    formErrors = this.validateCaptcha(captchaValue, formErrors);
+
+    this.setState({formErrors});
 
     Object.values(formErrors).forEach(val => {
       val.length > 0 && (valid = false);
@@ -130,12 +180,28 @@ class Contact extends Component {
             <div className="form-container">
               <Heading size={1}>{contact.name}</Heading>
               <form onSubmit={this.handleSubmit}>
+                <fieldset className="form-message">
+                  {this.formSuccess === true && (
+                      <Message color="success">
+                        <Message.Header>
+                          {contactStrings.success_message}
+                        </Message.Header>
+                      </Message>
+                  )}
+                  {this.formError === true && (
+                      <Message color="danger">
+                        <Message.Header>
+                          {contactStrings.error_message}: {contactStrings.email_address}
+                        </Message.Header>
+                      </Message>
+                  )}
+                </fieldset>
                 <fieldset className="personal-information">
                   <Field className="row">
                     <Control className="col">
-                      <Input type="text" name="full_name" placeholder={contactStrings.full_name} className={formErrors.full_name.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.full_name} onChange={this.onChange.bind(this)}/>
-                      {formErrors.full_name.length > 0 && (
-                          <Help color="danger">{formErrors.full_name}</Help>
+                      <Input type="text" name="name" placeholder={contactStrings.full_name} className={formErrors.name.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.name} onChange={this.onChange.bind(this)}/>
+                      {formErrors.name.length > 0 && (
+                          <Help color="danger">{formErrors.name}</Help>
                       )}
                     </Control>
                   </Field>
@@ -152,9 +218,9 @@ class Contact extends Component {
                   </Field>
                   <Field className="row">
                     <Control iconLeft className="col">
-                      <Input type="tel" name="phone_number" placeholder={contactStrings.phone_number} className={formErrors.phone_number.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.phone_number} onChange={this.onChange.bind(this)} />
-                      {formErrors.phone_number.length > 0 && (
-                          <Help color="danger">{formErrors.phone_number}</Help>
+                      <Input type="tel" name="phone" placeholder={contactStrings.phone_number} className={formErrors.phone.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.phone} onChange={this.onChange.bind(this)} />
+                      {formErrors.phone.length > 0 && (
+                          <Help color="danger">{formErrors.phone}</Help>
                       )}
                       <span className="icon is-left">
                         <i className="fas fa-phone"/>
@@ -180,9 +246,11 @@ class Contact extends Component {
                     </Control>
                   </Field>
                   <Field className="row">
-                    <Label />
                     <Control className="col">
-
+                      <ReCAPTCHA sitekey="6LfxHpcUAAAAAFtIyong1poMgkB_CmCXCKSU0uDT" onChange={this.onCaptchaChange}/>
+                      {formErrors.captcha.length > 0 && (
+                          <Help color="danger">{formErrors.captcha}</Help>
+                      )}
                     </Control>
                   </Field>
                 </fieldset>

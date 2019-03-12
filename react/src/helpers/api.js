@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "./cookies"
 
 class Api {
     /**
@@ -46,7 +47,7 @@ class Api {
      * @constructor
      */
     static get CONTACT_URL() {
-        return `${this.API_PREFIX}contact`;
+        return `${this.API_PREFIX}contact/`;
     }
 
     /**
@@ -75,6 +76,7 @@ class Api {
             case this.TYPE_GET:
                 return axios.get(url, {headers: config});
             case this.TYPE_POST:
+                config['X-CSRFToken'] = Cookies.getCookie('csrftoken');
                 return axios.post(url, params, {headers: config});
             default:
                 break;
