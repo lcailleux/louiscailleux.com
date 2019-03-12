@@ -8,6 +8,7 @@ django-user-agents
 dj-database-url
 gunicorn
 mysqlclient
+psycopg2-binary
 pytest
 pyyaml
 python-decouple
