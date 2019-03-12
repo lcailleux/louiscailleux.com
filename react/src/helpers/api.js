@@ -67,11 +67,15 @@ class Api {
      * @returns {*}
      */
     static callApi(url, type, params) {
+        let config = {
+            "Api-Key": process.env.REACT_APP_API_KEY
+        };
+
         switch (type) {
             case this.TYPE_GET:
-                return axios.get(url);
+                return axios.get(url, {headers: config});
             case this.TYPE_POST:
-                return axios.post(url, params);
+                return axios.post(url, params, {headers: config});
             default:
                 break;
         }
