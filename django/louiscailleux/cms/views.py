@@ -1,5 +1,5 @@
 # cms/views.py
-from rest_framework import viewsets, mixins, generics
+from rest_framework import generics
 from .models import Block
 from .serializers import BlockSerializer
 

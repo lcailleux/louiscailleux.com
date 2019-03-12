@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_user_agents',
     'corsheaders',
     'rest_framework',
+    'rest_framework_api_key',
     'cms',
     'contact',
     'core',
@@ -169,7 +170,7 @@ CORS_ORIGIN_WHITELIST = (
 
 # REST framework
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework_api_key.permissions.HasAPIAccess'],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 

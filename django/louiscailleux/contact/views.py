@@ -12,6 +12,4 @@ class ContactViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
         response = super(ContactViewSet, self).create(request, args, kwargs)
         if response and response.status_code == status.HTTP_201_CREATED:
             ContactEmail.send(request.data)
-
         return response
-

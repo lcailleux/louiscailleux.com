@@ -6,6 +6,7 @@ django-heroku
 django-messages
 django-user-agents
 dj-database-url
+drfapikey
 gunicorn
 mysqlclient
 psycopg2-binary
