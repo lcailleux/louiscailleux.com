@@ -13,6 +13,7 @@ psycopg2-binary
 pytest
 pyyaml
 python-decouple
+sqlparse
 ua-parser
 user-agents
 whitenoise

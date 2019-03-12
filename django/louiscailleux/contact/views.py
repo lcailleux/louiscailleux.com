@@ -1,6 +1,7 @@
 # contact/views.py
 from rest_framework import mixins, viewsets, status
-from .models import Contact, ContactEmail
+from .utils.contact_email import ContactEmail
+from .models import Contact
 from .serializers import ContactSerializer
 
 
