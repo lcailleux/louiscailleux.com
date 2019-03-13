@@ -6,6 +6,12 @@ export const about = {
   url: '/about'
 };
 
+export const projects = {
+  name: i18n.t('Projects'),
+  documentTitle: i18n.t('Projects | Louis Cailleux'),
+  url: '/projects'
+};
+
 export const contact = {
   name: i18n.t('Contact'),
   documentTitle: i18n.t('Contact | Louis Cailleux'),

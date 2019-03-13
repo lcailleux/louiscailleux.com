@@ -8,6 +8,12 @@ export const aboutStrings = {
   block_description_identifier: "description_about_block"
 };
 
+export const projectStrings = {
+  github: "Github →",
+  more_to_come: i18n.t("More projects coming soon.")
+};
+
+
 export const contactStrings = {
   email: i18n.t("Email"),
   subject: i18n.t("Subject"),

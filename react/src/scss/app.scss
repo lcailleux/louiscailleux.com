@@ -163,6 +163,44 @@ button {
   float: right;
 }
 
+/* Projects List */
+
+.projects-list {
+  margin: 25px 0 0;
+}
+
+.projects-list .project-content {
+  overflow: auto;
+  vertical-align: center;
+  margin: 3em 0 0 0;
+}
+
+.projects-list .project-image {
+  float: left;
+  margin-right: 1em;
+  max-width: 32%;
+}
+
+.projects-list .project-image img {
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.projects-list .project-info a {
+  color: darkred;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.projects-list .project-info a:hover {
+  color: black;
+  font-weight: bold;
+}
+
+.coming-soon {
+  margin-top: 1em;
+}
+
 /* Footer */
 
 .footer {

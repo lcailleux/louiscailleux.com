@@ -31,7 +31,7 @@ class Block extends Component {
         let getCall = Api.callApi(Api.BLOCK_URL(this.props.identifier, i18n.languages[0]), Api.TYPE_GET);
         if (getCall) {
             getCall.then(response => {
-                var blockResult = response.data[0] !== undefined ? response.data[0] : null;
+                let blockResult = response.data[0] !== undefined ? response.data[0] : null;
                 this.setState({
                     block: blockResult,
                     isLoading: false

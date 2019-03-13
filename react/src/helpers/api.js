@@ -62,6 +62,15 @@ class Api {
 
     /**
      *
+     * @param language
+     * @returns {*}
+     */
+    static PROJECTS_URL(language) {
+        return `${this.API_PREFIX}projects?language=` + language
+    }
+
+    /**
+     *
      * @param url
      * @param type
      * @param params
