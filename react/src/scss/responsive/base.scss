@@ -56,6 +56,15 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
     margin-top: 0;
   }
 
+  /* Projects */
+  .projects-list .project-image {
+    max-width: 32%;
+  }
+
+  .projects-list .project-info {
+    max-width: 60%;
+  }
+
   /* Footer */
   .footer {
     padding: 3rem 0 6rem;

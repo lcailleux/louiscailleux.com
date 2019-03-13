@@ -173,17 +173,20 @@ button {
   overflow: auto;
   vertical-align: center;
   margin: 3em 0 0 0;
+  display: flex;
 }
 
 .projects-list .project-image {
   float: left;
   margin-right: 1em;
-  max-width: 32%;
 }
 
 .projects-list .project-image img {
   vertical-align: middle;
   border-radius: 10px;
+}
+.projects-list .project-info {
+  text-align: justify;
 }
 
 .projects-list .project-info a {
