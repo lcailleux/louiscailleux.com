@@ -4,6 +4,7 @@ $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
   /* Columns */
   .columns .column{
     max-width: 991px;
+    margin: 0.75rem 0.75rem 0 0.75rem;
   }
 
   .columns .column:first-child{
@@ -16,12 +17,12 @@ $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
 
   /* Navigation bar and burger */
   .navbar-item:last-child {
-    height: 2em;
+    height: 3em;
   }
 
   .navbar-item:last-child .link-button {
     float: left;
-    padding: 0 0.45rem 0.45em 0;
+    padding: 0 0.45rem 1em 0;
   }
 
   .navbar-burger {
@@ -36,6 +37,7 @@ $small-pc: "(min-width: 1024px) and (max-width: 1281px)";
   /* Columns */
   .columns .column {
     max-width: 1281px;
+    margin: 0.75rem 0.75rem 0 0.75rem;
   }
 
   .columns .column:first-child{

@@ -23,12 +23,12 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   }
 
   .navbar-item:last-child {
-    height: 2em;
+    height: 3em;
   }
 
   .navbar-item:last-child .link-button {
     float: left;
-    padding: 0 0.45rem 0.45em 0;
+    padding: 0 0.45rem 1em 0;
   }
 
   /* Form */
