@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'contact',
     'core',
     'core.apps.LouisCailleuxAdminConfig',
+    'projects'
 ]
 
 MIDDLEWARE = [

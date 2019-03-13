@@ -1,4 +1,4 @@
-# contact/urls.py
+# cms/urls.py
 from django.conf.urls import url
 from .views import BlockApiView
 
