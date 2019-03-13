@@ -2,7 +2,7 @@
 
 /* Header */
 .navbar {
-  color: white;
+  background-color: unset;
   border-bottom: 2px solid #003847;
 }
 .navbar .navbar-item {
@@ -11,8 +11,7 @@
 }
 
 .navbar .navbar-item:hover{
-  color: black;
-  background-color: white;
+  background-color: unset;
 }
 
 .navbar .name-item {
@@ -34,7 +33,34 @@
   background-size: contain;
 }
 
+/* Body */
+body, button, input, select, textarea {
+  font-family: Merriweather, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+html.light-mode {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+html.dark-mode {
+  background-color: #10171e;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.title {
+  color: inherit;
+}
+
 /* Profile card */
+.card.dark-mode {
+  background-color: #10171e;
+  color: white;
+  box-shadow: 0 2px 3px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
 .card .card-content {
   padding: 1.5rem 0 1.5rem 0.10rem;
 }
@@ -58,11 +84,6 @@
 .card .card-content .media-content {
   display:inline-block;
   vertical-align:middle;
-}
-
-/* Body */
-body, button, input, select, textarea {
-  font-family: Merriweather, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .title.is-1 {
@@ -205,10 +226,9 @@ button {
 }
 
 /* Footer */
-
 .footer {
   text-align: center;
-  background-color: white;
+  background-color: unset;
   border-top: 2px solid #003847;
 }
 
@@ -230,6 +250,10 @@ button {
 
 .footer .content .social-links .fa-github:hover {
   color: black;
+}
+
+.footer .content .social-links .fa-github.dark-mode:hover {
+  color: white;
 }
 
 .footer .content .social-links .fa-linkedin-in:hover {

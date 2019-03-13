@@ -3,6 +3,7 @@ import Navbar from 'react-bulma-components/lib/components/navbar';
 import {about, projects, contact} from '.././helpers/urls';
 import {defaultStrings} from '.././helpers/strings';
 import LanguageSwitcher from './language-switcher'
+import ModeSwitcher from "./mode-switcher";
 
 class NavigationBar extends Component {
     state = { active : false };
@@ -28,6 +29,9 @@ class NavigationBar extends Component {
                         <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
                         <Navbar.Item active={false} hoverable={false} renderAs="span">
                             <LanguageSwitcher />
+                        </Navbar.Item>
+                        <Navbar.Item active={false} hoverable={false} renderAs="span">
+                            <ModeSwitcher/>
                         </Navbar.Item>
                     </Navbar.Container>
                 </Navbar.Menu>
