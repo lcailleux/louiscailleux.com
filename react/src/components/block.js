@@ -4,6 +4,8 @@ import i18n from "../i18n"
 import Api from "../helpers/api";
 import {errorStrings} from "../helpers/strings";
 
+import Content from 'react-bulma-components/lib/components/content';
+
 class Block extends Component {
     state = {
         isLoading: true,
@@ -46,11 +48,18 @@ class Block extends Component {
 
         if (!this.state.isLoading && this.state.block && this.state.block.is_active) {
             return (
-                <React.Fragment>
+                <Content>
                     <div id={this.state.block.title}>
-                        <p>{this.state.block.content}</p>
+                        {this.state.block.show_title === true && (
+                            <h2>{this.state.block.title}</h2>
+                        )}
+                        <p className="display-block">
+                            {this.state.block.content.split('\n').map((item, key) => {
+                                return <React.Fragment key={key}>{item}<br/></React.Fragment>
+                            })}
+                        </p>
                     </div>
-                </React.Fragment>
+                </Content>
             )
         }
 

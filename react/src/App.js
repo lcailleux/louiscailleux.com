@@ -25,7 +25,7 @@ class App extends Component {
                     <Columns.Column>
                         <Profile/>
                     </Columns.Column>
-                    <Columns.Column tablet={{size: 'two-thirds'}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
+                    <Columns.Column tablet={{size: null}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
                         <NavigationBar />
                         <Routes/>
                         <FooterInfo />

@@ -5,7 +5,6 @@ import Content from 'react-bulma-components/lib/components/content';
 import Hero from 'react-bulma-components/lib/components/hero';
 
 import SocialLinks from "./social-links";
-import {defaultStrings, footerStrings} from "../helpers/strings";
 
 class FooterInfo extends Component {
     constructor(props) {
@@ -20,7 +19,7 @@ class FooterInfo extends Component {
                     <Footer>
                         <Content>
                             <SocialLinks/>
-                            <p>Copyright © {this.year} {defaultStrings.full_name}. {footerStrings.all_right_reserved}</p>
+                            {/*<p>Copyright © {this.year} {defaultStrings.full_name}. {footerStrings.all_right_reserved}</p>*/}
                         </Content>
                     </Footer>
                 </Hero.Footer>

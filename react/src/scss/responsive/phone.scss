@@ -1,25 +1,11 @@
-$information-phone: "(max-width: 767px)";
-
-@media #{$information-phone} {
-  .columns .column:first-child{
-    display: none;
-  }
-
-  .navbar-item:last-child {
-    height: 2em;
-  }
-
-  .navbar-item:last-child .link-button {
-    float: left;
-    padding: 0 0.45rem 0.45em 0;
-  }
-
+@media (min-width:481px) and (max-width: 568px) {
   .columns .column{
-    max-width: 720px;
+    max-width: 567px;
   }
+}
 
-  .navbar-burger {
-    color: black;
-    float: right;
+@media (min-width:569px) and (max-width: 640px) {
+  .columns .column{
+    max-width: 640px;
   }
 }

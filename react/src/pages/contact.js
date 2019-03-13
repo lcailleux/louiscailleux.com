@@ -176,9 +176,9 @@ class Contact extends Component {
 
     return (
         <main className="container-wrap inside-content">
+          <Heading size={1}>{contact.name}</Heading>
           <div>
             <div className="form-container">
-              <Heading size={1}>{contact.name}</Heading>
               <form onSubmit={this.handleSubmit}>
                 <fieldset className="form-message">
                   {this.formSuccess === true && (
@@ -245,8 +245,10 @@ class Contact extends Component {
                       )}
                     </Control>
                   </Field>
+                </fieldset>
+                <fieldset className="fieldset-captcha">
                   <Field className="row">
-                    <Control className="col">
+                    <Control className="col captcha-col">
                       <ReCAPTCHA sitekey="6LfxHpcUAAAAAFtIyong1poMgkB_CmCXCKSU0uDT" onChange={this.onCaptchaChange}/>
                       {formErrors.captcha.length > 0 && (
                           <Help color="danger">{formErrors.captcha}</Help>

@@ -4,6 +4,10 @@ export const defaultStrings = {
   full_name: "Louis Cailleux"
 };
 
+export const aboutStrings = {
+  block_description_identifier: "description_about_block"
+};
+
 export const contactStrings = {
   email: i18n.t("Email"),
   subject: i18n.t("Subject"),
