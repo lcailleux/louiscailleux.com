@@ -24,10 +24,10 @@ class BlockAdminForm(forms.ModelForm):
 class BlockAdmin(admin.ModelAdmin):
     form = BlockAdminForm;
     fieldsets = [
-        ('Contact Info', {'fields': ['title', 'identifier', 'is_active']}),
+        ('Contact Info', {'fields': ['title', 'show_title', 'identifier', 'is_active']}),
         ('Content', {'fields': ['content', 'language_code']}),
     ]
-    list_display = ('title', 'identifier', 'is_active', 'content', 'language_code')
+    list_display = ('title', 'show_title', 'identifier', 'is_active', 'content', 'language_code')
     list_filter = ['identifier']
     search_fields = ['identifier']
 
