@@ -3,15 +3,30 @@
 /* Header */
 .navbar {
   background-color: unset;
-  border-bottom: 2px solid #003847;
+  border-bottom: 1px solid #003847;
 }
 .navbar .navbar-item {
-  color: grey;
   font-weight: bold;
 }
 
-.navbar .navbar-item:hover{
+.navbar .navbar-item:last-child {
+  padding-left: 0;
+}
+
+.navbar .navbar-item:hover {
   background-color: unset;
+}
+
+.navbar .navbar-item.light-mode:hover {
+  color: darkred;
+}
+
+.navbar .navbar-start .navbar-item.dark-mode {
+  color: #3273dc
+}
+
+a {
+  color: white;
 }
 
 .navbar .name-item {
@@ -24,11 +39,11 @@
 
 .flag-icon-background {
   display: block;
-  width: 2em;
+  width: 1.6em;
   height: 1.5em;
   padding: 0;
   margin: 0;
-  border: 1px solid black;
+  border-radius: 2px;
   background-position: 0;
   background-size: contain;
 }
@@ -50,8 +65,8 @@ html.dark-mode {
   transition: background-color 0.3s ease;
 }
 
-.title {
-  color: inherit;
+.container-wrap.inside-content.dark-mode {
+  color: white;
 }
 
 /* Profile card */
@@ -84,6 +99,10 @@ html.dark-mode {
 .card .card-content .media-content {
   display:inline-block;
   vertical-align:middle;
+}
+
+.title.dark-mode, h2.dark-mode, a.dark-mode {
+  color: white;
 }
 
 .title.is-1 {
@@ -168,20 +187,28 @@ label {
 
 button {
   -webkit-appearance: none;
-  color: whitesmoke;
   cursor: pointer;
   justify-content: center;
   padding: calc(0.375em - 1px) 1em calc(0.375em - 1px) 1em;
   text-align: center;
   white-space: nowrap;
   align-items: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  color: white !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px;
   box-shadow: none;
   display: inline-flex;
   font-size: 1.25rem !important;
   height: 2.25em;
   float: right;
+}
+
+.submit-button {
+  background-color: darkred;
+}
+
+.submit-button.dark-mode {
+  background-color: #3273dc;
 }
 
 /* Projects List */
@@ -216,6 +243,10 @@ button {
   font-size: 1.3em;
 }
 
+.projects-list .project-info a.dark-mode {
+  color: #3273dc;
+}
+
 .projects-list .project-info a:hover {
   color: black;
   font-weight: bold;
@@ -229,7 +260,7 @@ button {
 .footer {
   text-align: center;
   background-color: unset;
-  border-top: 2px solid #003847;
+  border-top: 1px solid #003847;
 }
 
 .footer .content .social-links {

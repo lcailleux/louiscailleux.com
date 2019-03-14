@@ -1,7 +1,9 @@
 import React from 'react';
 import useDarkMode from 'use-dark-mode';
 
-import Toggle from './toggle';
+import Switch from "react-switch";
+import Moon from '../images/moon.png';
+import Sun from '../images/sun.png';
 
 const ModeSwitcher = () => {
     const classNameDark = 'dark-mode';
@@ -11,7 +13,11 @@ const ModeSwitcher = () => {
         const elementsToChange = [
             document.documentElement,
             document.getElementsByClassName('card'),
-            document.getElementsByClassName('fa-github')
+            document.getElementsByClassName('fa-github'),
+            document.getElementsByClassName('title'),
+            document.getElementsByClassName('inside-content'),
+            document.getElementsByClassName('navbar-item'),
+            document.getElementsByClassName('submit-button')
         ];
 
         elementsToChange.map((item) => {
@@ -24,20 +30,32 @@ const ModeSwitcher = () => {
                     childItem.classList.remove(val ? classNameLight : classNameDark);
                 });
             }
+            return true;
         });
     }
     const darkMode = useDarkMode(false, {onChange: onModeChange});
 
+    function switchMode(val) {
+        darkMode.toggle();
+        if (val) {
+            darkMode.enable();
+        } else {
+            darkMode.disable();
+        }
+    }
+
     return (
-        <div>
-            <button type="button" onClick={darkMode.disable}>
-                ☀
-            </button>
-            <Toggle checked={darkMode.value} onChange={darkMode.toggle} />
-            <button type="button" onClick={darkMode.enable}>
-                ☾
-            </button>
-        </div>
+        <Switch
+            onChange={switchMode}
+            onColor="#3273dc"
+            checkedIcon={
+                <img src={Moon} alt="moon-icon" />
+            }
+            uncheckedIcon={
+                <img src={Sun} alt="sun-icon" />
+            }
+            checked={darkMode.value}
+        />
     );
 };
 

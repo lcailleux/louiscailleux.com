@@ -258,7 +258,7 @@ class Contact extends Component {
                 </fieldset>
                 <fieldset className="action">
                   <Control>
-                    <Button type="submit" color="black" rounded={false}>{contactStrings.send_message}</Button>
+                    <Button type="submit" className="submit-button" rounded={false}>{contactStrings.send_message}</Button>
                   </Control>
                 </fieldset>
               </form>

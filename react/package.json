@@ -25,6 +25,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.8",
+    "react-switch": "^4.1.0",
     "rewire": "^4.0.1",
     "typescript": "^3.3.3333",
     "use-dark-mode": "^2.3.1"

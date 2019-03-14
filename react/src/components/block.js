@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import ModeClass from "../helpers/mode-class";
 import i18n from "../i18n"
 import Api from "../helpers/api";
 import {errorStrings} from "../helpers/strings";
@@ -51,7 +52,7 @@ class Block extends Component {
                 <Content>
                     <div id={this.state.block.title}>
                         {this.state.block.show_title === true && (
-                            <h2>{this.state.block.title}</h2>
+                            <h2 className={ModeClass.getValue()}>{this.state.block.title}</h2>
                         )}
                         <p className="display-block">
                             {this.state.block.content.split('\n').map((item, key) => {

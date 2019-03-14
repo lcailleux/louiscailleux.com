@@ -5,6 +5,7 @@ import Api from "../helpers/api";
 import {projectStrings} from "../helpers/strings";
 
 import Content from 'react-bulma-components/lib/components/content';
+import ModeClass from "../helpers/mode-class";
 
 class ProjectsList extends Component {
     state = {
@@ -45,13 +46,13 @@ class ProjectsList extends Component {
                                 <img src={project.image} alt={project.title} />
                             </div>
                             <div className="project-info">
-                                <h2>{project.title}</h2>
+                                <h2 className={ModeClass.getValue()}>{project.title}</h2>
                                 <p className="display-project">
                                     {project.description.split('\n').map((item, key) => {
                                         return <React.Fragment key={key}>{item}<br/></React.Fragment>
                                     })}
                                 </p>
-                                <a href={project.link}>{projectStrings.github}</a>
+                                <a href={project.link} className={ModeClass.getValue()}>{projectStrings.github}</a>
                             </div>
                         </div>
                     </Content>

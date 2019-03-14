@@ -28,10 +28,10 @@ class NavigationBar extends Component {
                         <Navbar.Item href={projects.url}>{projects.name}</Navbar.Item>
                         <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
                         <Navbar.Item active={false} hoverable={false} renderAs="span">
-                            <LanguageSwitcher />
+                            <ModeSwitcher/>
                         </Navbar.Item>
                         <Navbar.Item active={false} hoverable={false} renderAs="span">
-                            <ModeSwitcher/>
+                            <LanguageSwitcher />
                         </Navbar.Item>
                     </Navbar.Container>
                 </Navbar.Menu>
