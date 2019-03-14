@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
-import ModeClass from "../helpers/mode-class";
 import i18n from "../i18n"
 import Api from "../helpers/api";
 import {errorStrings} from "../helpers/strings";
 
 import Content from 'react-bulma-components/lib/components/content';
+import {onModeChange} from "./mode-switcher";
 
 class Block extends Component {
     state = {
@@ -16,6 +16,10 @@ class Block extends Component {
 
     componentDidMount() {
         this.fetchBlock();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        onModeChange(localStorage.getItem('darkMode'));
     }
 
     fetchBlock() {
@@ -52,7 +56,7 @@ class Block extends Component {
                 <Content>
                     <div id={this.state.block.title}>
                         {this.state.block.show_title === true && (
-                            <h2 className={ModeClass.getValue()}>{this.state.block.title}</h2>
+                            <h2 className="title">{this.state.block.title}</h2>
                         )}
                         <p className="display-block">
                             {this.state.block.content.split('\n').map((item, key) => {

@@ -5,34 +5,36 @@ import Switch from "react-switch";
 import Moon from '../images/moon.png';
 import Sun from '../images/sun.png';
 
-const ModeSwitcher = () => {
+export const onModeChange = (val) => {
     const classNameDark = 'dark-mode';
     const classNameLight = 'light-mode';
+    const elementsToChange = [
+        document.documentElement,
+        document.getElementsByClassName('card'),
+        document.getElementsByClassName('fa-github'),
+        document.getElementsByClassName('title'),
+        document.getElementsByClassName('inside-content'),
+        document.getElementsByClassName('navbar-item'),
+        document.getElementsByClassName('submit-button'),
+        document.getElementsByClassName('project-link')
+    ];
 
-    function onModeChange(val) {
-        const elementsToChange = [
-            document.documentElement,
-            document.getElementsByClassName('card'),
-            document.getElementsByClassName('fa-github'),
-            document.getElementsByClassName('title'),
-            document.getElementsByClassName('inside-content'),
-            document.getElementsByClassName('navbar-item'),
-            document.getElementsByClassName('submit-button')
-        ];
-
-        elementsToChange.map((item) => {
-            if (item instanceof HTMLElement) {
-                item.classList.add(val ? classNameDark : classNameLight);
-                item.classList.remove(val ? classNameLight : classNameDark);
-            } else {
-                Array.prototype.filter.call(item, function(childItem){
-                    childItem.classList.add(val ? classNameDark : classNameLight);
-                    childItem.classList.remove(val ? classNameLight : classNameDark);
-                });
+    elementsToChange.map((item) => {
+        if (item instanceof HTMLElement) {
+            item.classList.add(val ? classNameDark : classNameLight);
+            item.classList.remove(val ? classNameLight : classNameDark);
+        } else {
+            for (let i = (item.length - 1); i >= 0 ; i--) {
+                console.log(item[i]);
+                item[i].classList.add(val ? classNameDark : classNameLight);
+                item[i].classList.remove(val ? classNameLight : classNameDark);
             }
-            return true;
-        });
-    }
+        }
+        return true;
+    });
+};
+
+export const ModeSwitcher = () => {
     const darkMode = useDarkMode(false, {onChange: onModeChange});
 
     function switchMode(val) {
@@ -58,5 +60,3 @@ const ModeSwitcher = () => {
         />
     );
 };
-
-export default ModeSwitcher;

@@ -3,7 +3,7 @@ import Navbar from 'react-bulma-components/lib/components/navbar';
 import {about, projects, contact} from '.././helpers/urls';
 import {defaultStrings} from '.././helpers/strings';
 import LanguageSwitcher from './language-switcher'
-import ModeSwitcher from "./mode-switcher";
+import {ModeSwitcher} from "./mode-switcher";
 
 class NavigationBar extends Component {
     state = { active : false };

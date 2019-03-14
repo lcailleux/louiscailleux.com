@@ -5,7 +5,7 @@ import Api from "../helpers/api";
 import {projectStrings} from "../helpers/strings";
 
 import Content from 'react-bulma-components/lib/components/content';
-import ModeClass from "../helpers/mode-class";
+import {onModeChange} from "./mode-switcher";
 
 class ProjectsList extends Component {
     state = {
@@ -18,11 +18,16 @@ class ProjectsList extends Component {
         this.fetchProjects();
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        onModeChange(localStorage.getItem('darkMode'));
+    }
+
     fetchProjects() {
         let getCall = Api.callApi(Api.PROJECTS_URL(i18n.languages[0]), Api.TYPE_GET);
         if (getCall) {
             getCall.then(response => {
                 let projectsResult = response.data !== undefined ? response.data : null;
+
                 this.setState({
                     projects: projectsResult,
                     isLoading: false
@@ -46,13 +51,13 @@ class ProjectsList extends Component {
                                 <img src={project.image} alt={project.title} />
                             </div>
                             <div className="project-info">
-                                <h2 className={ModeClass.getValue()}>{project.title}</h2>
+                                <h2 className="title">{project.title}</h2>
                                 <p className="display-project">
                                     {project.description.split('\n').map((item, key) => {
                                         return <React.Fragment key={key}>{item}<br/></React.Fragment>
                                     })}
                                 </p>
-                                <a href={project.link} className={ModeClass.getValue()}>{projectStrings.github}</a>
+                                <a href={project.link} className="project-link">{projectStrings.github}</a>
                             </div>
                         </div>
                     </Content>
@@ -60,8 +65,7 @@ class ProjectsList extends Component {
             );
             return (<ul className="projects-list">{projects_list}</ul>);
         }
-
-        return null;
+        return true;
     }
 }
 

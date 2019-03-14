@@ -237,19 +237,26 @@ button {
   text-align: justify;
 }
 
-.projects-list .project-info a {
-  color: darkred;
+.projects-list .project-info .project-link {
   font-weight: bold;
   font-size: 1.3em;
 }
 
-.projects-list .project-info a.dark-mode {
+.projects-list .project-info .project-link.dark-mode {
   color: #3273dc;
 }
 
-.projects-list .project-info a:hover {
+.projects-list .project-info .project-link.dark-mode:hover {
   color: black;
   font-weight: bold;
+}
+
+.projects-list .project-info .project-link.light-mode {
+  color: darkred;
+}
+
+.projects-list .project-info .project-link.light-mode:hover {
+  color: black;
 }
 
 .coming-soon {
