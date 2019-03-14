@@ -3,7 +3,7 @@ import Navbar from 'react-bulma-components/lib/components/navbar';
 import {about, projects, contact} from '.././helpers/urls';
 import {defaultStrings} from '.././helpers/strings';
 import LanguageSwitcher from './language-switcher'
-import {ModeSwitcher} from "./mode-switcher";
+import {ModeSwitcher, onModeChange} from "./mode-switcher";
 
 class NavigationBar extends Component {
     state = { active : false };
@@ -12,6 +12,10 @@ class NavigationBar extends Component {
         let { active } = this.state;
         this.setState({ active: !active });
     };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        onModeChange(localStorage.getItem('darkMode'));
+    }
 
     render() {
         return (

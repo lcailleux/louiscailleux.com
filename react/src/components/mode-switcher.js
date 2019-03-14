@@ -15,6 +15,8 @@ export const onModeChange = (val) => {
         document.getElementsByClassName('title'),
         document.getElementsByClassName('inside-content'),
         document.getElementsByClassName('navbar-item'),
+        document.getElementsByClassName('navbar-menu'),
+        document.getElementsByClassName('navbar-burger'),
         document.getElementsByClassName('submit-button'),
         document.getElementsByClassName('project-link')
     ];

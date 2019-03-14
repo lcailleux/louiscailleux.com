@@ -18,6 +18,8 @@ $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
   /* Navigation bar and burger */
   .navbar-item:last-child {
     height: 3em;
+    padding-top: 0!important;
+    padding-left: 0.75em!important;
   }
 
   .navbar-item:last-child .link-button {
@@ -51,6 +53,8 @@ $small-pc: "(min-width: 1024px) and (max-width: 1281px)";
   /* Navigation bar and burger */
   .navbar-item:last-child {
     height: 3em;
+    padding-top: 0!important;
+    padding-left: 0.75em!important;
   }
 
   .navbar-item:last-child .link-button {
