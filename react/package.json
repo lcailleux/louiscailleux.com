@@ -6,7 +6,6 @@
   "dependencies": {
     "ajv": "^6.10.0",
     "axios": "^0.18.0",
-    "cypress": "^3.1.5",
     "express": "^4.16.4",
     "flag-icon-css": "^3.3.0",
     "i": "^0.3.6",
@@ -19,6 +18,7 @@
     "react-app-rewired": "^2.1.1",
     "react-bulma-components": "^3.0.1-4",
     "react-dom": "^16.8.4",
+    "react-ga": "^2.5.7",
     "react-google-recaptcha": "^1.0.5",
     "react-helmet": "^5.2.0",
     "react-i18next": "^9.0.10",

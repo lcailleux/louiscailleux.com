@@ -27,7 +27,6 @@ export const onModeChange = (val) => {
             item.classList.remove(val ? classNameLight : classNameDark);
         } else {
             for (let i = (item.length - 1); i >= 0 ; i--) {
-                console.log(item[i]);
                 item[i].classList.add(val ? classNameDark : classNameLight);
                 item[i].classList.remove(val ? classNameLight : classNameDark);
             }
