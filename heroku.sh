@@ -8,10 +8,8 @@ then
     heroku config:set SECRET_KEY="$DJANGO_SECRET_KEY"
     heroku config:set HEROKU=true
     heroku config:set PYTHONPATH=/app/.heroku/python/lib/python3.7/site-packages
-    heroku addons:create jawsdb-maria:kitefin
     heroku addons:create sendgrid:starter
     git push staging server:master;
-    heroku addons:destroy heroku-postgresql:hobby-dev --confirm louiscailleux-backend-staging
 elif [[ $1 == "production" ]]
 then
     heroku create louiscailleux-backend --region=eu
@@ -19,10 +17,8 @@ then
     heroku config:set SECRET_KEY="$DJANGO_SECRET_KEY"
     heroku config:set HEROKU=true
     heroku config:set PYTHONPATH=/app/.heroku/python/lib/python3.7/site-packages
-    heroku addons:create jawsdb-maria:kitefin
     heroku addons:create sendgrid:starter
     git push heroku server:master;
-    heroku addons:destroy heroku-postgresql:hobby-dev --confirm louiscailleux-staging
 else
     echo "Usage: ./heroku.sh (staging|production)"
 fi;
