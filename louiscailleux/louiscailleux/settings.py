@@ -182,8 +182,9 @@ LOGGING = {
 
 # PRODUCTION (heroku)
 if 'HEROKU' in os.environ:
+    # Activate Django-Heroku (Database configuration, ...)
+    django_heroku.settings(locals())
     DEBUG = False
-    SECRET_KEY = os.environ['SECRET_KEY']
     ALLOWED_HOSTS = ['.herokuapp.com']
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
@@ -204,8 +205,5 @@ if 'HEROKU' in os.environ:
     EMAIL_PORT = os.environ.get('EMAIL_PORT')
     EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
     MAILER_EMAIL_BACKEND = os.environ.get('MAILER_EMAIL_BACKEND')
-
-    # Activate Django-Heroku (Database configuration, ...)
-    django_heroku.settings(locals())
 
 
