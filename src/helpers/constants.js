@@ -4,7 +4,10 @@ class Constants {
     static getConstant(name) {
         const env = runtimeEnv();
 
+        console.log("runtime");
         console.log(env);
+        console.log("compiled");
+        console.log(process.env);
 
         /* Runtime variables */
         if (env[name]) {
