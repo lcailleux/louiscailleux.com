@@ -163,7 +163,7 @@ CORS_ALLOW_HEADERS = default_headers + (
 
 # REST framework
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ['rest_framework_api_key.permissions.HasAPIAccess'],
+    'DEFAULT_PERMISSION_CLASSES': ['core.permissions.IsRequestHostAuthorized'],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 
@@ -196,8 +196,6 @@ if 'HEROKU' in os.environ:
 
     # Authorizing React SPA
     CORS_ORIGIN_WHITELIST = (
-        'localhost',
-        '127.0.0.1',
         'louiscailleux-frontend-staging.herokuapp.com'
     )
 
