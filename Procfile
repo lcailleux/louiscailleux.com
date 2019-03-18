@@ -1,1 +1,1 @@
-web: cd ./react && npm run-script build && node server.js
+web: node server.js
