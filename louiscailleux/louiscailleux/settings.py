@@ -158,7 +158,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 CORS_ALLOW_HEADERS = default_headers + (
-    'api-key'
+    'api-key',
 )
 
 # REST framework
