@@ -80,8 +80,6 @@ class Api {
         let apiKey = process.env.REACT_APP_API_KEY;
         let config = {"Api-Key": apiKey};
 
-        console.log(apiKey);
-
         switch (type) {
             case this.TYPE_GET:
                 return axios.get(url, {headers: config});
