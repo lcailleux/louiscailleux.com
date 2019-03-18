@@ -249,7 +249,7 @@ class Contact extends Component {
                 <fieldset className="fieldset-captcha">
                   <Field className="row">
                     <Control className="col captcha-col">
-                      <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA} onChange={this.onCaptchaChange}/>
+                      <ReCAPTCHA sitekey={process.env.RECAPTCHA_KEY} onChange={this.onCaptchaChange}/>
                       {formErrors.captcha.length > 0 && (
                           <Help color="danger">{formErrors.captcha}</Help>
                       )}
