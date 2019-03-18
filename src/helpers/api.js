@@ -78,11 +78,13 @@ class Api {
      */
     static callApi(url, type, params) {
         let apiKey = process.env.REACT_APP_API_KEY;
+        let config = {"Api-Key": apiKey};
+
         console.log(apiKey);
 
         switch (type) {
             case this.TYPE_GET:
-                return axios.get(url, {headers: {"Api-Key": apiKey}});
+                return axios.get(url, {headers: config});
             case this.TYPE_POST:
                 config['X-CSRFToken'] = Cookies.getCookie('csrftoken');
                 return axios.post(url, params, {headers: config});
