@@ -1,0 +1,46 @@
+[
+  {
+    "model": "cms.block",
+    "pk": 1,
+    "fields": {
+      "title": "Test Block 1",
+      "identifier": "test_block_1",
+      "content": "Content block 1",
+      "language_code": "en",
+      "is_active": true
+    }
+  },
+  {
+    "model": "cms.block",
+    "pk": 2,
+    "fields": {
+      "title": "Test Block 1",
+      "identifier": "test_block_1",
+      "content": "Contenu du block 1",
+      "language_code": "fr",
+      "is_active": true
+    }
+  },
+  {
+    "model": "cms.block",
+    "pk": 3,
+    "fields": {
+      "title": "Test Block 1",
+      "identifier": "test_block_1",
+      "content": "내용 블록 1",
+      "language_code": "ko",
+      "is_active": true
+    }
+  },
+  {
+    "model": "cms.block",
+    "pk": 4,
+    "fields": {
+      "title": "Test Block 2",
+      "identifier": "test_block_2",
+      "content": "Content block 2",
+      "language_code": "en",
+      "is_active": true
+    }
+  }
+]
