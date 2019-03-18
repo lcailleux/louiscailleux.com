@@ -77,8 +77,7 @@ class Api {
      * @returns {*}
      */
     static callApi(url, type, params) {
-        let apiKey = process.env.REACT_APP_API_KEY;
-        let config = {"Api-Key": apiKey};
+        let config = {};
 
         switch (type) {
             case this.TYPE_GET:
