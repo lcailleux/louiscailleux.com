@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import dj_database_url
 import django_heroku
+from corsheaders.defaults import default_headers
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -155,6 +155,10 @@ STATICFILES_DIRS = (
 CORS_ORIGIN_WHITELIST = (
     'localhost',
     '127.0.0.1'
+)
+
+CORS_ALLOW_HEADERS = default_headers + (
+    'api-key'
 )
 
 # REST framework
