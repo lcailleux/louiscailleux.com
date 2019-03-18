@@ -1,6 +1,7 @@
 ### React ###
 
 # dependencies
+.env
 build
 node_modules
 .pnp
