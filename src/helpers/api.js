@@ -1,5 +1,6 @@
 import axios from "axios";
-import Cookies from "./cookies"
+import Cookies from "./cookies";
+import Constants from "./constants";
 
 class Api {
     /**
@@ -26,10 +27,7 @@ class Api {
      * @constructor
      */
     static get API_URL() {
-        if (process.env.REACT_APP_BACKEND_URL) {
-            return process.env.REACT_APP_BACKEND_URL;
-        }
-        return '';
+        return Constants.getConstant('REACT_APP_BACKEND_URL');
     }
 
     /**

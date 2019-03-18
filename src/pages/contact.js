@@ -12,7 +12,8 @@ import Button from "react-bulma-components/lib/components/button/button";
 import Heading from 'react-bulma-components/lib/components/heading';
 import Message from 'react-bulma-components/lib/components/message';
 
-import Api from "../helpers/api"
+import Api from "../helpers/api";
+import Contants from "../helpers/constants";
 import {contact} from "../helpers/urls";
 import {contactStrings, errorStrings} from "../helpers/strings";
 
@@ -249,7 +250,7 @@ class Contact extends Component {
                 <fieldset className="fieldset-captcha">
                   <Field className="row">
                     <Control className="col captcha-col">
-                      <ReCAPTCHA sitekey={process.env.REACT_APP_RECAPTCHA_KEY} onChange={this.onCaptchaChange}/>
+                      <ReCAPTCHA sitekey={Contants.getConstant("REACT_APP_RECAPTCHA_KEY")} onChange={this.onCaptchaChange}/>
                       {formErrors.captcha.length > 0 && (
                           <Help color="danger">{formErrors.captcha}</Help>
                       )}
