@@ -95,18 +95,7 @@ WSGI_APPLICATION = 'louiscailleux.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-if 'TRAVIS' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'travisci',
-            'USER': 'travis',
-            'PASSWORD': '',
-            'HOST': 'localhost',
-            'PORT': '3306',
-        }
-    }
-elif 'HEROKU' in os.environ:
+if 'HEROKU' in os.environ:
     DATABASES = {'default': {}}
 else:
     DATABASES = {
@@ -201,16 +190,8 @@ if 'HEROKU' in os.environ:
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-    # Databases
-    DATABASES['default'] = dj_database_url.config(
-        env='JAWSDB_MARIA_URL',
-        engine='django.db.backends.mysql',
-        conn_max_age=600,
-        ssl_require=False
-    )
-    DATABASES['default']['OPTIONS'] = {
-        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-    }
+    # Activate Django-Heroku (Database configuration, ...)
+    django_heroku.settings(locals())
 
     # Static files (CSS, JavaScript, Images)
     # Updating CompressedManifestStaticFilesStorage as it poses problems with heroku.
@@ -232,5 +213,4 @@ if 'HEROKU' in os.environ:
     EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
     MAILER_EMAIL_BACKEND = os.environ.get('MAILER_EMAIL_BACKEND')
 
-    # Activate Django-Heroku.
-    django_heroku.settings(locals())
+

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cms', '0003_set_cms_block_utf8'),
+        ('cms', '0002_block_language_code'),
     ]
 
     operations = [
