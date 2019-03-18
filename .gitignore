@@ -1,16 +1,16 @@
 ### React ###
 
 # dependencies
-/react/.env
-/react/build
-/react/node_modules
-/react/.pnp
-/react/.pnp.js
+.env
+build
+node_modules
+.pnp
+.pnp.js
 
 # testing
-/react/coverage
-/react/cypress/integration/examples/
-/react/project/frontend
+coverage
+cypress/integration/examples/
+project/frontend
 
 # misc
 .idea
