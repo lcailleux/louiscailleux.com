@@ -190,13 +190,6 @@ if 'HEROKU' in os.environ:
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-    # Activate Django-Heroku (Database configuration, ...)
-    django_heroku.settings(locals())
-
-    # Static files (CSS, JavaScript, Images)
-    # Updating CompressedManifestStaticFilesStorage as it poses problems with heroku.
-    STATICFILES_STORAGE = 'louiscailleux.storage.WhiteNoiseStaticFilesStorage'
-
     # Authorizing React SPA
     CORS_ORIGIN_WHITELIST = (
         'localhost',
@@ -212,5 +205,8 @@ if 'HEROKU' in os.environ:
     EMAIL_PORT = os.environ.get('EMAIL_PORT')
     EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
     MAILER_EMAIL_BACKEND = os.environ.get('MAILER_EMAIL_BACKEND')
+
+    # Activate Django-Heroku (Database configuration, ...)
+    django_heroku.settings(locals())
 
 
