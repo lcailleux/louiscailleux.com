@@ -154,12 +154,11 @@ STATICFILES_DIRS = (
 # Authorizing React SPA
 CORS_ORIGIN_WHITELIST = (
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    '127.0.0.1:8000',
 )
 
-CORS_ALLOW_HEADERS = default_headers + (
-    'api-key',
-)
+CORS_ORIGIN_REGEX_WHITELIST = ()
 
 # REST framework
 REST_FRAMEWORK = {
