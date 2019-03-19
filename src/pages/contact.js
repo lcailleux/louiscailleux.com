@@ -27,6 +27,8 @@ class Contact extends Component {
       phone: '',
       subject: '',
       message: '',
+      formError: false,
+      formSuccess: false,
       formErrors: {
         name: '',
         email: '',
@@ -37,8 +39,6 @@ class Contact extends Component {
       }
     };
 
-    this.formError = false;
-    this.formSuccess = false;
     this.recaptchaRef = React.createRef();
     this.onCaptchaChange = this.onCaptchaChange.bind(this);
   }
@@ -58,6 +58,8 @@ class Contact extends Component {
       phone: '',
       subject: '',
       message: '',
+      formError: false,
+      formSuccess: false,
       formErrors: {
         name: '',
         email: '',
@@ -68,6 +70,10 @@ class Contact extends Component {
       }
     };
     this.setState(state);
+  }
+
+  setFormResult(formResult) {
+    this.setState({formSuccess: formResult, formError: !formResult});
   }
 
   onChange = event => {
@@ -112,15 +118,18 @@ class Contact extends Component {
       if (postCall) {
         postCall.then(res => {
           if (res.status === 201) {
-            self.formSuccess = true;
-            self.formError = false;
-
             self.resetState();
             window.grecaptcha.reset();
+            self.setFormResult(true);
           } else {
-            self.formSuccess = false;
-            self.formError = true;
+            self.setFormResult(false);
           }
+        }).catch(error => {
+          window.grecaptcha.reset();
+          let formErrors = {...self.state.formErrors};
+          formErrors.captcha = '';
+          self.setState({formErrors: formErrors});
+          self.setFormResult(false);
         })
       }
     }
@@ -173,7 +182,7 @@ class Contact extends Component {
   };
 
   render() {
-    const { formErrors } = this.state;
+    const { formErrors, formError, formSuccess } = this.state;
 
     return (
         <main className="container-wrap inside-content">
@@ -182,14 +191,14 @@ class Contact extends Component {
             <div className="form-container">
               <form onSubmit={this.handleSubmit}>
                 <fieldset className="form-message">
-                  {this.formSuccess === true && (
+                  {formSuccess === true && (
                       <Message color="success">
                         <Message.Header>
                           {contactStrings.success_message}
                         </Message.Header>
                       </Message>
                   )}
-                  {this.formError === true && (
+                  {formError === true && (
                       <Message color="danger">
                         <Message.Header>
                           {contactStrings.error_message}: {contactStrings.email_address}

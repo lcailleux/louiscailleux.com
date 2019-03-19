@@ -21,14 +21,15 @@ export const onModeChange = (val) => {
         document.getElementsByClassName('project-link')
     ];
 
+    let isTrueSet = (val === 'true' || val === true);
     elementsToChange.map((item) => {
         if (item instanceof HTMLElement) {
-            item.classList.add(val ? classNameDark : classNameLight);
-            item.classList.remove(val ? classNameLight : classNameDark);
+            item.classList.add(isTrueSet ? classNameDark : classNameLight);
+            item.classList.remove(isTrueSet ? classNameLight : classNameDark);
         } else {
             for (let i = (item.length - 1); i >= 0 ; i--) {
-                item[i].classList.add(val ? classNameDark : classNameLight);
-                item[i].classList.remove(val ? classNameLight : classNameDark);
+                item[i].classList.add(isTrueSet ? classNameDark : classNameLight);
+                item[i].classList.remove(isTrueSet ? classNameLight : classNameDark);
             }
         }
         return true;
