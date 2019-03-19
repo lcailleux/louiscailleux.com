@@ -28,6 +28,7 @@ export const contactStrings = {
 
 export const errorStrings = {
   invalid_email: i18n.t("This email is invalid."),
+  invalid_phone: i18n.t("This phone number is invalid."),
   required_identifier: i18n.t("Block identifier is a required field."),
   required_field: i18n.t("This field is a required field.")
 };

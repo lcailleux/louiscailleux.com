@@ -173,6 +173,14 @@ class Contact extends Component {
         result =
             !value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ? errorStrings.invalid_email : "";
         break;
+      case "phone":
+        if (value.length < 1) {
+          result = errorStrings.required_field;
+          break;
+        }
+        result =
+            !value.match(/((?:\+|00)[17](?: |-)?|(?:\+|00)[1-9]\d{0,2}(?: |-)?|(?:\+|00)1-\d{3}(?: |-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |-)[0-9]{3}(?: |-)[0-9]{4})|([0-9]{7}))$/g) ? errorStrings.invalid_phone : "";
+        break;
       default:
         result =
             value.length < 1 ? errorStrings.required_field: "";
