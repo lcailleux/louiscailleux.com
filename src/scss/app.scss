@@ -1,10 +1,14 @@
-@import "~bulma/bulma.sass";
+@import "./terassa/base.scss";
+@import "./terassa/animations.scss";
+@import "./terassa/media-queries.scss";
+@import "./terassa/reset.scss";
+@import "./terassa/style.scss";
 
 /* Header */
 .navbar {
   background-color: unset;
-  border-bottom: 1px solid #003847;
 }
+
 .navbar .navbar-item {
   font-weight: bold;
 }
@@ -38,14 +42,6 @@ a {
   color: white;
 }
 
-.navbar .name-item {
-  color: darkred;
-  font-weight: bold;
-  font-size: 1.2em;
-  pointer-events:none;
-  padding-left: 0;
-}
-
 .flag-icon-background {
   display: block;
   width: 1.6em;
@@ -62,6 +58,10 @@ body, button, input, select, textarea {
   font-family: Merriweather, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+body {
+  padding-top: 60px;
+}
+
 html.light-mode {
   background-color: white;
   color: black;
@@ -76,38 +76,6 @@ html.dark-mode {
 
 .container-wrap.inside-content.dark-mode {
   color: white;
-}
-
-/* Profile card */
-.card.dark-mode {
-  background-color: #10171e;
-  color: white;
-  box-shadow: 0 2px 3px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.card .card-content {
-  padding: 1.5rem 0 1.5rem 0.10rem;
-}
-
-.card .card-content .icon{
-  width: 1.3rem
-}
-
-.card .card-content .fa-label{
-  vertical-align: top;
-  margin: 0;
-  padding: 0;
-}
-
-.card .card-content .media-left {
-  margin-right: 0.20rem;
-  display:inline-block;
-  vertical-align:middle;
-}
-
-.card .card-content .media-content {
-  display:inline-block;
-  vertical-align:middle;
 }
 
 .title.dark-mode, h2.dark-mode, a.dark-mode {
@@ -137,9 +105,16 @@ html.dark-mode {
 }
 
 /* Form */
-.form-container {
-  padding: 0 50px 0;
-  margin: 25px 0 0;
+.contact__form {
+	grid-template-areas: "name email" "phone subject" "msg msg" "submit submit";
+}
+
+.contact__field--phone {
+  grid-area: phone;
+}
+
+.contact__field--subject {
+  grid-area: subject;
 }
 
 .link-button {
@@ -156,61 +131,6 @@ html.dark-mode {
 .link-button:hover,
 .link-button:focus {
   text-decoration: none;
-}
-
-form {
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 0.75rem;
-}
-
-
-fieldset {
-  margin: 1em 1em 1em 1em;
-}
-
-
-.field:not(:last-child) {
-  margin-bottom: 0.75rem
-}
-
-
-.row {
-  display: flex;
-}
-
-
-.col {
-  position: relative;
-  width: 100%;
-}
-
-
-fieldset {
-  border: none;
-}
-
-label {
-  display: inline-block;
-  width: 30%
-}
-
-button {
-  -webkit-appearance: none;
-  cursor: pointer;
-  justify-content: center;
-  padding: calc(0.375em - 1px) 1em calc(0.375em - 1px) 1em;
-  text-align: center;
-  white-space: nowrap;
-  align-items: center;
-  color: white !important;
-  border: 1px solid transparent !important;
-  border-radius: 10px;
-  box-shadow: none;
-  display: inline-flex;
-  font-size: 1.25rem !important;
-  height: 2.25em;
-  float: right;
 }
 
 .submit-button {
@@ -274,48 +194,9 @@ button {
 }
 
 /* Footer */
-.footer {
-  text-align: center;
-  background-color: unset;
-  border-top: 1px solid #003847;
-}
-
-.footer .content .social-links {
-  margin: 0.5em 0.5em;
-  padding-left: 25%;
-  padding-right: 25%;
-}
-
 .footer .content .ad {
   margin: 3em 0.5em;
 }
-
-.footer .content .social-links a {
-  margin: 12px 10%;
-  box-sizing: border-box;
-}
-
-.footer .content .social-links svg {
-  color: #afafaf;
-  background-color: transparent;
-}
-
-.footer .content .social-links .fa-github:hover {
-  color: black;
-}
-
-.footer .content .social-links .fa-github.dark-mode:hover {
-  color: white;
-}
-
-.footer .content .social-links .fa-linkedin-in:hover {
-  color: #3B5998;
-}
-
-.footer .content .social-links .fa-stack-overflow:hover {
-  color: #F48024;
-}
-
 
 @import 'responsive/base';
 @import 'responsive/phone';

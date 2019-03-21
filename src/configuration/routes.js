@@ -9,16 +9,14 @@ import Contact from '../pages/contact';
 class Routes extends Component {
     render() {
         return (
-            <div>
-                <BrowserRouter>
-                    <Switch>
-                        <Route exact path="/" component={withTracker(About)}/>
-                        <Route exact path="/about" component={withTracker(About)}/>
-                        <Route exact path="/projects" component={withTracker(Projects)}/>
-                        <Route exact path="/contact" component={withTracker(Contact)}/>
-                    </Switch>
-                </BrowserRouter>
-            </div>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={withTracker(About)}/>
+                    <Route exact path="/about" component={withTracker(About)}/>
+                    <Route exact path="/projects" component={withTracker(Projects)}/>
+                    <Route exact path="/contact" component={withTracker(Contact)}/>
+                </Switch>
+            </BrowserRouter>
         );
     }
 }

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import Heading from 'react-bulma-components/lib/components/heading';
 import Image from 'react-bulma-components/lib/components/image';
 
 import {about} from '.././helpers/urls';
@@ -19,15 +18,16 @@ class About extends Component {
 
     render() {
         return (
-            <main className="container-wrap inside-content">
-                <Heading size={1}>{about.name}</Heading>
-                <div className="about-image">
-                    <Image src={AboutPicture}/>
+            <article className="post">
+                <div className="container-wrap inside-content">
+                    <div className="about-image">
+                        <Image src={AboutPicture}/>
+                    </div>
+                    <div className="about-description">
+                        <Block identifier={aboutStrings.block_description_identifier} />
+                    </div>
                 </div>
-                <div className="about-description">
-                    <Block identifier={aboutStrings.block_description_identifier} />
-                </div>
-            </main>
+            </article>
         );
     }
 }

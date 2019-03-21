@@ -19,27 +19,37 @@ class NavigationBar extends Component {
 
     render() {
         return (
-            <Navbar active={this.state.active} transparent={false} >
-                <Navbar.Brand>
-                    <Navbar.Container position="start">
-                        <Navbar.Item className="name-item" active={false} hoverable={false}>{defaultStrings.full_name}</Navbar.Item>
+            <header className="header">
+                <div className="header__title">
+                    <a href={about.url} className="header__title__link">{defaultStrings.full_name}</a>
+                </div>
+                <Navbar active={this.state.active} transparent={false} className="menu">
+                    <Navbar.Brand>
+                        <Navbar.Burger active={this.state.active.toString()} onClick={this.handleClick} />
+                    </Navbar.Brand>
+                    <Navbar.Container renderAs="ul">
+                        <li className="menu__items__item">
+                            <Navbar.Item className="menu__items__item__link" href={about.url}>{about.name}</Navbar.Item>
+                        </li>
+                        <li className="menu__items__item">
+                            <Navbar.Item className="menu__items__item__link" href={projects.url}>{projects.name}</Navbar.Item>
+                        </li>
+                        <li className="menu__items__item">
+                            <Navbar.Item className="menu__items__item__link" href={contact.url}>{contact.name}</Navbar.Item>
+                        </li>
+                        <li className="menu__items__item">
+                            <Navbar.Item active={false} hoverable={false} renderAs="span">
+                                <ModeSwitcher/>
+                            </Navbar.Item>
+                        </li>
+                        <li className="menu__items__item">
+                            <Navbar.Item active={false} hoverable={false} renderAs="span">
+                                <LanguageSwitcher />
+                            </Navbar.Item>
+                        </li>
                     </Navbar.Container>
-                    <Navbar.Burger active={this.state.active.toString()} onClick={this.handleClick} />
-                </Navbar.Brand>
-                <Navbar.Menu active="true">
-                    <Navbar.Container position="end">
-                        <Navbar.Item href={about.url}>{about.name}</Navbar.Item>
-                        <Navbar.Item href={projects.url}>{projects.name}</Navbar.Item>
-                        <Navbar.Item href={contact.url}>{contact.name}</Navbar.Item>
-                        <Navbar.Item active={false} hoverable={false} renderAs="span">
-                            <ModeSwitcher/>
-                        </Navbar.Item>
-                        <Navbar.Item active={false} hoverable={false} renderAs="span">
-                            <LanguageSwitcher />
-                        </Navbar.Item>
-                    </Navbar.Container>
-                </Navbar.Menu>
-            </Navbar>
+                </Navbar>
+            </header>
         );
     }
 }

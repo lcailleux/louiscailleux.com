@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 
-import Footer from 'react-bulma-components/lib/components/footer';
-import Content from 'react-bulma-components/lib/components/content';
-import Hero from 'react-bulma-components/lib/components/hero';
-
 import Ad from '../components/ad';
 import SocialLinks from "./social-links";
+import FooterContact from "./footer-contact";
+import FooterCopyright from "./footer-copyright";
 
 class FooterInfo extends Component {
     constructor(props) {
@@ -15,17 +13,12 @@ class FooterInfo extends Component {
 
     render() {
         return (
-            <Hero>
-                <Hero.Footer>
-                    <Footer>
-                        <Content>
-                            <SocialLinks/>
-                            <Ad/>
-                            {/*<p>Copyright © {this.year} {defaultStrings.full_name}. {footerStrings.all_right_reserved}</p>*/}
-                        </Content>
-                    </Footer>
-                </Hero.Footer>
-            </Hero>
+            <footer className="footer">
+                <Ad/>
+                <SocialLinks/>
+                <FooterContact/>
+                <FooterCopyright/>
+            </footer>
         )
     }
 }

@@ -44,7 +44,7 @@ class ProjectsList extends Component {
 
         if (!this.state.isLoading && this.state.projects) {
             const projects_list = this.state.projects.map((project, i) =>
-                <li key={i}>
+                <article className="card" key={i}>
                     <Content>
                         <div id={project.title} className="project-content">
                             <div className="project-image">
@@ -61,9 +61,9 @@ class ProjectsList extends Component {
                             </div>
                         </div>
                     </Content>
-                </li>
+                </article>
             );
-            return (<ul className="projects-list">{projects_list}</ul>);
+            return (<div>{projects_list}</div>);
         }
         return true;
     }
