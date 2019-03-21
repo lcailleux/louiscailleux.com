@@ -17,6 +17,8 @@ import Contants from "../helpers/constants";
 import {contact} from "../helpers/urls";
 import {contactStrings, errorStrings} from "../helpers/strings";
 
+const recaptchaRef = React.createRef();
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -34,13 +36,9 @@ class Contact extends Component {
         email: '',
         phone: '',
         subject: '',
-        message: '',
-        captcha: ''
+        message: ''
       }
     };
-
-    this.recaptchaRef = React.createRef();
-    this.onCaptchaChange = this.onCaptchaChange.bind(this);
   }
 
   componentWillMount() {
@@ -65,8 +63,7 @@ class Contact extends Component {
         email: '',
         phone: '',
         subject: '',
-        message: '',
-        captcha: ''
+        message: ''
       }
     };
     this.setState(state);
@@ -87,25 +84,13 @@ class Contact extends Component {
     this.setState({formErrors, [name]: value})
   };
 
-  onCaptchaChange(captchaValue) {
-    let formErrors = this.validateCaptcha(captchaValue, {...this.state.formErrors});
-    this.setState({formErrors});
-  };
-
-  validateCaptcha(captchaValue, formErrors) {
-    if (captchaValue.length === 0) {
-      formErrors.captcha = errorStrings.required_field;
-    } else {
-      formErrors.captcha = '';
-    }
-    return formErrors;
-  }
-
   handleSubmit = event => {
     event.preventDefault();
     let self = this;
 
     if (this.validate(this.state)) {
+      recaptchaRef.current.execute();
+
       let data = {
         name: this.state.name,
         email: this.state.email,
@@ -126,9 +111,6 @@ class Contact extends Component {
           }
         }).catch(error => {
           window.grecaptcha.reset();
-          let formErrors = {...self.state.formErrors};
-          formErrors.captcha = '';
-          self.setState({formErrors: formErrors});
           self.setFormResult(false);
         })
       }
@@ -144,10 +126,6 @@ class Contact extends Component {
       let value = entry[1];
       formErrors[name] = self.validateField(name, value);
     });
-
-    /* Verifying captcha */
-    let captchaValue = window.grecaptcha.getResponse();
-    formErrors = this.validateCaptcha(captchaValue, formErrors);
 
     this.setState({formErrors});
 
@@ -267,10 +245,11 @@ class Contact extends Component {
                 <fieldset className="fieldset-captcha">
                   <Field className="row">
                     <Control className="col captcha-col">
-                      <ReCAPTCHA sitekey={Contants.getConstant("REACT_APP_RECAPTCHA_KEY")} onChange={this.onCaptchaChange}/>
-                      {formErrors.captcha.length > 0 && (
-                          <Help color="danger">{formErrors.captcha}</Help>
-                      )}
+                      <ReCAPTCHA
+                          ref={recaptchaRef}
+                          sitekey={Contants.getConstant("REACT_APP_RECAPTCHA_KEY")}
+                          size="invisible"
+                      />
                     </Control>
                   </Field>
                 </fieldset>
