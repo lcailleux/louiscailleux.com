@@ -1,69 +1,102 @@
 $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
 
 @media #{$information-tablet} {
-  /* Columns */
-  .columns .column{
-    max-width: 991px;
-    margin: 0.75rem 0.75rem 0 0.75rem;
-  }
-
-  .columns .column:first-child{
+  .menu {
     display: none;
+    visibility: hidden;
   }
 
-  .columns .column:last-child{
-    display: none;
+  .header__title {
+    margin: 1rem 1rem;
   }
 
-  /* Navigation bar and burger */
-  .navbar-item:last-child {
-    height: 3em;
-    padding-top: 0!important;
-    padding-left: 0.75em!important;
+  .toggle {
+    right: 1.5em;
   }
 
-  .navbar-item:last-child .link-button {
-    float: left;
-    padding: 0 0.45rem 1em 0;
+  .post {
+    min-height: 0;
   }
 
-  .navbar-burger {
-    color: black;
-    float: right;
+  .section {
+    margin: 0 1em 0 1em;
+  }
+
+  .hamburger-menu {
+    display: grid;
+    visibility: visible;
+  }
+
+  /* Projects */
+  .content {
+    max-width: 95%;
+  }
+
+  .card {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .content .message {
+    width: 100%;
+    margin-left: 5%;
+  }
+
+  /* footer */
+  .footer__contact {
+    padding: 1.75em 0 1.75em 0;
+    flex-direction: unset;
+  }
+
+  .footer__contact__item {
+    padding-bottom: 0;
   }
 }
 
 $small-pc: "(min-width: 1024px) and (max-width: 1281px)";
 
 @media #{$small-pc} {
-  /* Columns */
-  .columns .column {
-    max-width: 1281px;
-    margin: 0.75rem 0.75rem 0 0.75rem;
+  .header {
+    grid-template-columns: auto auto;
   }
 
-  .columns .column:first-child{
-    display: none;
+  .menu {
+    margin-right: 0;
   }
 
-  .columns .column:last-child{
-    display: none;
+  .header__title {
+    margin: 1rem 1rem;
   }
 
-  /* Navigation bar and burger */
-  .navbar-item:last-child {
-    height: 3em;
-    padding-top: 0!important;
-    padding-left: 0.75em!important;
+  .post {
+    min-height: 56vh;
   }
 
-  .navbar-item:last-child .link-button {
-    float: left;
-    padding: 0 0.45rem 1em 0;
+  .section {
+    margin: 0 1em 0 1em;
   }
 
-  .navbar-burger {
-    color: black;
-    float: right;
+  /* Projects */
+  .content {
+    max-width: 100%;
+  }
+
+  .card {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .content .message {
+    width: 100%;
+  }
+
+  /* footer */
+  .footer__contact {
+    padding: 1.75em 0 1.75em 0;
+    flex-direction: unset;
+  }
+
+  .footer__contact__item {
+    padding-bottom: 0;
   }
 }

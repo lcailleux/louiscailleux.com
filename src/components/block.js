@@ -4,9 +4,6 @@ import i18n from "../i18n"
 import Api from "../helpers/api";
 import {errorStrings} from "../helpers/strings";
 
-import Content from 'react-bulma-components/lib/components/content';
-import {onModeChange} from "./mode-switcher";
-
 class Block extends Component {
     state = {
         isLoading: true,
@@ -16,10 +13,6 @@ class Block extends Component {
 
     componentDidMount() {
         this.fetchBlock();
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        onModeChange(localStorage.getItem('darkMode'));
     }
 
     fetchBlock() {
@@ -53,18 +46,18 @@ class Block extends Component {
 
         if (!this.state.isLoading && this.state.block && this.state.block.is_active) {
             return (
-                <Content>
-                    <div id={this.state.block.title}>
-                        {this.state.block.show_title === true && (
-                            <h2 className="title">{this.state.block.title}</h2>
-                        )}
+                <section className="section">
+                    {this.state.block.show_title === true && (
+                        <h1 className="section__title">{this.state.block.title}</h1>
+                    )}
+                    <div className="section__content">
                         <p className="display-block">
                             {this.state.block.content.split('\n').map((item, key) => {
                                 return <React.Fragment key={key}>{item}<br/></React.Fragment>
                             })}
                         </p>
                     </div>
-                </Content>
+                </section>
             )
         }
 

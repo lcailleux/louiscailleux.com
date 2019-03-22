@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 
 import Routes from './configuration/routes';
-
-import Profile from './components/profile';
 import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
-import Columns from 'react-bulma-components/lib/components/columns';
 
 import './scss/app.scss';
+import Ad from "./components/ad";
 
 class App extends Component {
     render() {
@@ -22,17 +20,10 @@ class App extends Component {
                             crossOrigin="anonymous"/>
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
                 </Helmet>
-                <Columns multiline={false}>
-                    <Columns.Column>
-                        <Profile/>
-                    </Columns.Column>
-                    <Columns.Column tablet={{size: null}} desktop={{size: 'two-thirds'}} widescreen={{size: 'two-thirds'}} fullhd={{size: 'two-thirds'}}>
-                        <NavigationBar />
-                        <Routes/>
-                        <FooterInfo />
-                    </Columns.Column>
-                    <Columns.Column />
-                </Columns>
+                <NavigationBar />
+                <Routes/>
+                <Ad/>
+                <FooterInfo />
             </div>
         );
     }

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import Heading from 'react-bulma-components/lib/components/heading';
 import Message from 'react-bulma-components/lib/components/message';
 
 import {projects} from '../helpers/urls';
@@ -18,8 +17,7 @@ class Projects extends Component {
 
     render() {
         return (
-            <main className="container-wrap inside-content">
-                <Heading size={1}>{projects.name}</Heading>
+            <main className="content">
                 <ProjectsList/>
                 <Message color="warning" className="coming-soon">
                     <Message.Body>

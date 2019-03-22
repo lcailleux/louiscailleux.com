@@ -4,9 +4,6 @@ import i18n from "../i18n"
 import Api from "../helpers/api";
 import {projectStrings} from "../helpers/strings";
 
-import Content from 'react-bulma-components/lib/components/content';
-import {onModeChange} from "./mode-switcher";
-
 class ProjectsList extends Component {
     state = {
         isLoading: true,
@@ -16,10 +13,6 @@ class ProjectsList extends Component {
 
     componentDidMount() {
         this.fetchProjects();
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        onModeChange(localStorage.getItem('darkMode'));
     }
 
     fetchProjects() {
@@ -44,26 +37,26 @@ class ProjectsList extends Component {
 
         if (!this.state.isLoading && this.state.projects) {
             const projects_list = this.state.projects.map((project, i) =>
-                <li key={i}>
-                    <Content>
-                        <div id={project.title} className="project-content">
-                            <div className="project-image">
-                                <img src={project.image} alt={project.title} />
-                            </div>
-                            <div className="project-info">
-                                <h2 className="title">{project.title}</h2>
-                                <p className="display-project">
-                                    {project.description.split('\n').map((item, key) => {
-                                        return <React.Fragment key={key}>{item}<br/></React.Fragment>
-                                    })}
-                                </p>
-                                <a href={project.link} className="project-link">{projectStrings.github}</a>
-                            </div>
+                <article className="card" key={i}>
+                    <header className="card__header">
+                        <h1 className="card__header__title">{project.title}</h1>
+                    </header>
+                    <main className="card__body">
+                        <div className="project-image">
+                            <img src={project.image} alt={project.title} />
                         </div>
-                    </Content>
-                </li>
+                        <div className="project-info">
+                            <p className="project-description">
+                                {project.description.split('\n').map((item, key) => {
+                                    return <React.Fragment key={key}>{item}<br/></React.Fragment>
+                                })}
+                            </p>
+                            <a href={project.link} className="project-link">{projectStrings.github}</a>
+                        </div>
+                    </main>
+                </article>
             );
-            return (<ul className="projects-list">{projects_list}</ul>);
+            return (<div className="projects-list">{projects_list}</div>);
         }
         return true;
     }
