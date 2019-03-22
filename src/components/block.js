@@ -47,11 +47,11 @@ class Block extends Component {
         if (!this.state.isLoading && this.state.block && this.state.block.is_active) {
             return (
                 <section className="section">
-                    <div id={this.state.block.title}>
-                        {this.state.block.show_title === true && (
-                            <h1 className="section__title">{this.state.block.title}</h1>
-                        )}
-                        <p className="display-block section__content">
+                    {this.state.block.show_title === true && (
+                        <h1 className="section__title">{this.state.block.title}</h1>
+                    )}
+                    <div className="section__content">
+                        <p className="display-block">
                             {this.state.block.content.split('\n').map((item, key) => {
                                 return <React.Fragment key={key}>{item}<br/></React.Fragment>
                             })}
