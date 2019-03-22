@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import ReCAPTCHA from "react-google-recaptcha";
+import Recaptcha from 'react-google-invisible-recaptcha';
 
 /* React bulma components */
 import Field from "react-bulma-components/lib/components/form/components/field";
@@ -15,8 +15,6 @@ import Api from "../helpers/api";
 import Contants from "../helpers/constants";
 import {contact} from "../helpers/urls";
 import {contactStrings, errorStrings} from "../helpers/strings";
-
-const recaptchaRef = React.createRef();
 
 class Contact extends Component {
   constructor(props) {
@@ -85,34 +83,34 @@ class Contact extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    let self = this;
-
     if (this.validate(this.state)) {
-      recaptchaRef.current.execute();
+      this.recaptcha.execute();
+    }
+  };
 
-      let data = {
-        name: this.state.name,
-        email: this.state.email,
-        phone: this.state.phone,
-        subject: this.state.subject,
-        message: this.state.message
-      };
+  onResolved = event => {
+    let self = this;
+    let data = {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      subject: this.state.subject,
+      message: this.state.message
+    };
 
-      let postCall = Api.callApi(Api.CONTACT_URL, Api.TYPE_POST, data);
-      if (postCall) {
-        postCall.then(res => {
-          if (res.status === 201) {
-            self.resetState();
-            window.grecaptcha.reset();
-            self.setFormResult(true);
-          } else {
-            self.setFormResult(false);
-          }
-        }).catch(error => {
-          window.grecaptcha.reset();
+    let postCall = Api.callApi(Api.CONTACT_URL, Api.TYPE_POST, data);
+    if (postCall) {
+      postCall.then(res => {
+        if (res.status === 201) {
+          self.resetState();
+          self.setFormResult(true);
+        } else {
           self.setFormResult(false);
-        })
-      }
+        }
+        this.recaptcha.reset();
+      }).catch(error => {
+        self.setFormResult(false);
+      })
     }
   };
 
@@ -172,22 +170,24 @@ class Contact extends Component {
     return (
         <main className="contact">
           <h1 className="contact__title">{contact.name}</h1>
-          <p className="contact__content">Send me a message!</p>
+          <p className="contact__content">{contactStrings.subtitle}</p>
           <form id="contactForm" className="contact__form" onSubmit={this.handleSubmit}>
-            {formSuccess === true && (
-                <Message color="success">
-                  <Message.Header>
-                    {contactStrings.success_message}
-                  </Message.Header>
-                </Message>
-            )}
-            {formError === true && (
-                <Message color="danger">
-                  <Message.Header>
-                    {contactStrings.error_message}: {contactStrings.email_address}
-                  </Message.Header>
-                </Message>
-            )}
+            <Field className="form-message">
+              {formSuccess === true && (
+                  <Message color="success">
+                    <Message.Header>
+                      {contactStrings.success_message}
+                    </Message.Header>
+                  </Message>
+              )}
+              {formError === true && (
+                  <Message color="danger">
+                    <Message.Header>
+                      {contactStrings.error_message}: {contactStrings.email_address}
+                    </Message.Header>
+                  </Message>
+              )}
+            </Field>
             <Field className="contact__field contact__field--name">
               <Label htmlFor="name">{contactStrings.full_name}</Label>
               <Input type="text" name="name" placeholder={contactStrings.full_name} className={formErrors.name.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.name} onChange={this.onChange.bind(this)}/>
@@ -224,10 +224,10 @@ class Contact extends Component {
               )}
             </Field>
             <Field className="contact__field">
-              <ReCAPTCHA
-                  ref={recaptchaRef}
+              <Recaptcha
+                  ref={ref => this.recaptcha = ref}
                   sitekey={Contants.getConstant("REACT_APP_RECAPTCHA_KEY")}
-                  size="invisible"
+                  onResolved={this.onResolved}
               />
             </Field>
             <Field className="contact__field">

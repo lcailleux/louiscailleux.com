@@ -33,7 +33,7 @@ body {
   --primary-light: #ffecb3;
   --primary-text: #212121;
   --secondary-text: #333333;
-  --accent: #ffa000;
+  --accent: #3273dc;
   --divider: #bdbdbd;
   --white: #fdfdfd;
   background-color: #121212;
@@ -52,10 +52,6 @@ body {
 
 :root.dark-mode .content {
   color: white;
-}
-
-:root.dark-mode .footer {
-  background-color: #121212;
 }
 
 :root.dark-mode .section {
@@ -102,7 +98,12 @@ body {
 
 /* Form */
 .contact__form {
-  grid-template-areas: "name email" "phone subject" "msg msg" "submit submit";
+  grid-template-areas: "message message" "name email" "phone subject" "msg msg" "submit submit";
+}
+
+.contact__form .form-message {
+  grid-area: message;
+  margin-bottom: 1em;
 }
 
 .contact__field--phone {

@@ -1,9 +1,69 @@
 $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
 
 @media #{$information-tablet} {
+  .menu {
+    display: none;
+    visibility: hidden;
+  }
+
+  .post {
+    min-height: 0;
+  }
+
+  .section {
+    margin: 0 1em 0 1em;
+  }
+
+  .hamburger-menu {
+    display: grid;
+    visibility: visible;
+  }
+
+  /* Projects */
+  .content {
+    max-width: 90%;
+  }
+
+  .card {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .project-image {
+    width: 30%;
+  }
+
+  .project-info {
+    width: 70%;
+  }
+
+  .content .message {
+    width: 100%;
+    margin-left: 5%;
+  }
+
+  /* footer */
+  .footer {
+    grid-template-columns: none;
+  }
+
+  .copy {
+    display: none;
+  }
+
+  .footer__contact {
+    display: block;
+  }
 }
 
 $small-pc: "(min-width: 1024px) and (max-width: 1281px)";
 
 @media #{$small-pc} {
+  .post {
+    min-height: 0;
+  }
+
+  .section {
+    margin: 0 1em 0 1em;
+  }
 }
