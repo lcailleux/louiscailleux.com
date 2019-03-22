@@ -5,39 +5,8 @@ import Switch from "react-switch";
 import Moon from '../images/moon.png';
 import Sun from '../images/sun.png';
 
-export const onModeChange = (val) => {
-    const classNameDark = 'dark-mode';
-    const classNameLight = 'light-mode';
-    const elementsToChange = [
-        document.documentElement,
-        document.getElementsByClassName('card'),
-        document.getElementsByClassName('fa-github'),
-        document.getElementsByClassName('title'),
-        document.getElementsByClassName('inside-content'),
-        document.getElementsByClassName('navbar-item'),
-        document.getElementsByClassName('navbar-menu'),
-        document.getElementsByClassName('navbar-burger'),
-        document.getElementsByClassName('submit-button'),
-        document.getElementsByClassName('project-link')
-    ];
-
-    let isTrueSet = (val === 'true' || val === true);
-    elementsToChange.map((item) => {
-        if (item instanceof HTMLElement) {
-            item.classList.add(isTrueSet ? classNameDark : classNameLight);
-            item.classList.remove(isTrueSet ? classNameLight : classNameDark);
-        } else {
-            for (let i = (item.length - 1); i >= 0 ; i--) {
-                item[i].classList.add(isTrueSet ? classNameDark : classNameLight);
-                item[i].classList.remove(isTrueSet ? classNameLight : classNameDark);
-            }
-        }
-        return true;
-    });
-};
-
 export const ModeSwitcher = () => {
-    const darkMode = useDarkMode(false, {onChange: onModeChange});
+    const darkMode = useDarkMode(false, {element: document.documentElement});
 
     function switchMode(val) {
         darkMode.toggle();

@@ -6,6 +6,7 @@ import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
 
 import './scss/app.scss';
+import Ad from "./components/ad";
 
 class App extends Component {
     render() {
@@ -21,6 +22,7 @@ class App extends Component {
                 </Helmet>
                 <NavigationBar />
                 <Routes/>
+                <Ad/>
                 <FooterInfo />
             </div>
         );

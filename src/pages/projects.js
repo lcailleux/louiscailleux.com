@@ -19,13 +19,11 @@ class Projects extends Component {
         return (
             <main className="content">
                 <ProjectsList/>
-                <article className="card">
-                    <Message color="warning" className="coming-soon">
-                        <Message.Body>
-                            {projectStrings.more_to_come}
-                        </Message.Body>
-                    </Message>
-                </article>
+                <Message color="warning" className="coming-soon">
+                    <Message.Body>
+                        {projectStrings.more_to_come}
+                    </Message.Body>
+                </Message>
             </main>
         );
     }

@@ -1,3 +1,4 @@
+@import "./bulma/custom.scss";
 @import "./terassa/base.scss";
 @import "./terassa/animations.scss";
 @import "./terassa/media-queries.scss";
@@ -5,94 +6,73 @@
 @import "./terassa/style.scss";
 
 /* Header */
-.navbar {
-  background-color: unset;
-}
-
-.navbar .navbar-item {
-  font-weight: bold;
-}
-
-.navbar .navbar-item:last-child {
-  padding-left: 0;
-}
-
-.navbar .navbar-item:hover {
-  background-color: unset;
-}
-
-.navbar .navbar-item.light-mode:hover {
-  color: darkred;
-}
-
-.navbar .navbar-start .navbar-item.dark-mode {
-  color: #3273dc
-}
-
-.navbar .navbar-menu.is-active.dark-mode {
-  background-color: #10171e;
-  box-shadow: 0 2px 3px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.navbar .navbar-burger.dark-mode {
-  color: white;
-}
-
-a {
-  color: white;
-}
-
 .flag-icon-background {
   display: block;
-  width: 1.6em;
-  height: 1.5em;
-  padding: 0;
-  margin: 0;
+  width: 2.3em;
+  height: 2.2em;
   border-radius: 2px;
   background-position: 0;
   background-size: contain;
 }
 
 /* Body */
-body, button, input, select, textarea {
-  font-family: Merriweather, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
 body {
   padding-top: 60px;
 }
 
-html.light-mode {
+:root.light-mode {
   background-color: white;
   color: black;
   transition: background-color 0.3s ease;
 }
 
-html.dark-mode {
-  background-color: #10171e;
+/* Dark mode */
+:root.dark-mode {
+  --primary: #3273dc;
+  --primary-dark: #3273dc;
+  --primary-light: #ffecb3;
+  --primary-text: #212121;
+  --secondary-text: #333333;
+  --accent: #ffa000;
+  --divider: #bdbdbd;
+  --white: #fdfdfd;
+  background-color: #121212;
   color: white;
   transition: background-color 0.3s ease;
 }
 
-.container-wrap.inside-content.dark-mode {
+:root.dark-mode .header {
+  background-color: #272727;
+  box-shadow: none;
+}
+
+:root.dark-mode .header .menu .menu__items a{
   color: white;
 }
 
-.title.dark-mode, h2.dark-mode, a.dark-mode {
+:root.dark-mode .content {
   color: white;
 }
 
-.title.is-1 {
-  margin-bottom: unset;
+:root.dark-mode .footer {
+  background-color: #121212;
+}
+
+:root.dark-mode .section {
+  color: white;
+}
+
+:root.dark-mode .contact {
+  color: white;
+}
+
+.section__title {
+  font-weight: bold;
 }
 
 .container-wrap.inside-content {
   padding-top: 1em;
   padding-bottom: 1em;
-}
-
-.columns .column:nth-child(1) {
-  padding-right: 0.1em;
 }
 
 .display-block {
@@ -104,9 +84,25 @@ html.dark-mode {
   margin-bottom: 1em;
 }
 
+.card {
+  width: 100%;
+}
+
+.card__body {
+  display: flex;
+  align-items: center;
+}
+
+/* Projects */
+
+.message {
+  width: 100%;
+  max-width: 900px;
+}
+
 /* Form */
 .contact__form {
-	grid-template-areas: "name email" "phone subject" "msg msg" "submit submit";
+  grid-template-areas: "name email" "phone subject" "msg msg" "submit submit";
 }
 
 .contact__field--phone {
@@ -117,15 +113,17 @@ html.dark-mode {
   grid-area: subject;
 }
 
+.language-switcher {
+  display: inline-flex;
+}
+
 .link-button {
   background-color: transparent;
-  color: black;
   border: none;
   cursor: pointer;
   text-decoration: underline;
   display: inline;
-  margin: 0;
-  padding: 0 0.45rem;
+  padding-bottom: 0;
 }
 
 .link-button:hover,
@@ -142,18 +140,6 @@ html.dark-mode {
 }
 
 /* Projects List */
-
-.projects-list {
-  margin: 25px 0 0;
-}
-
-.projects-list .project-content {
-  overflow: auto;
-  vertical-align: center;
-  margin: 3em 0 0 0;
-  display: flex;
-}
-
 .projects-list .project-image {
   float: left;
   margin-right: 1em;
@@ -163,8 +149,13 @@ html.dark-mode {
   vertical-align: middle;
   border-radius: 10px;
 }
+
 .projects-list .project-info {
   text-align: justify;
+}
+
+.projects-list .project-description {
+  margin-bottom: 0.25em!important;
 }
 
 .projects-list .project-info .project-link {
@@ -189,16 +180,18 @@ html.dark-mode {
   color: black;
 }
 
-.coming-soon {
-  margin-top: 1em;
+/* Footer */
+.grecaptcha-badge {
+  z-index: 9999999;
 }
 
-/* Footer */
+.copy {
+  color: white;
+}
+
 .footer .content .ad {
   margin: 3em 0.5em;
 }
 
-@import 'responsive/base';
 @import 'responsive/phone';
 @import 'responsive/tablet';
-@import 'responsive/small-phone';

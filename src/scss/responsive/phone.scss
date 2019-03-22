@@ -1,11 +1,121 @@
-@media (min-width:481px) and (max-width: 568px) {
-  .columns .column{
-    max-width: 567px;
+$phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
+
+@media #{$phone-to-tablet} {
+  .header__title {
+    font-size: 1rem;
+    margin-left: 1em;
+    margin-right: 0;
+  }
+
+  .menu {
+    display: none;
+    visibility: hidden;
+  }
+
+  .hamburger-menu {
+    display: grid;
+    visibility: visible;
+  }
+
+  .hamburger__items__item:last-child {
+    margin-left: 1.1em;
+  }
+
+  .post {
+    min-height: 0;
+  }
+
+  .section {
+    margin: 0 1em 0 1em;
+  }
+
+  /* Projects */
+  .content {
+    max-width: 90%;
+  }
+
+  .card {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .project-image {
+    width: 30%;
+  }
+
+  .project-info {
+    width: 70%;
+  }
+
+  .content .message {
+    width: 100%;
+    margin-left: 10%;
+  }
+
+  /* Contact */
+  .contact__form {
+    grid-template-areas: "name" "email" "phone" "subject" "msg" "submit";
+    width: 90%;
+  }
+
+  .contact__field > input {
+    width: 100%;
+  }
+
+  .contact__field--name {
+    margin-right: 0;
+  }
+
+  .contact__field--phone {
+    margin-right: 0;
+  }
+
+  .contact__field--subject {
+    margin-top: 0;
+  }
+
+  /* footer */
+  .footer {
+    grid-template-columns: none;
+  }
+
+  .copy {
+    display: none;
+  }
+
+  .footer__contact {
+    padding: 1em 15% 0.5em 25%;
+    display: block;
   }
 }
 
-@media (min-width:569px) and (max-width: 640px) {
-  .columns .column{
-    max-width: 640px;
+@media only screen and (max-width: 340px) {
+  .header__title {
+    margin-right: 0;
+  }
+
+  .toggle {
+    right: 1.2em;
+  }
+
+  .hamburger__items__item:last-child {
+    margin-left: 0.5em;
+  }
+
+  .footer__contact {
+    padding: 1em 10% 0.5em 20%;
   }
 }
+
+@media (min-width: 341px) and (max-width: 576px) {
+  .toggle {
+    right: 1.5em;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+
+}
+
+
+

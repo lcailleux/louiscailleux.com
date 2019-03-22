@@ -18,16 +18,14 @@ class About extends Component {
 
     render() {
         return (
-            <article className="post">
-                <div className="container-wrap inside-content">
+            <div>
+                <article className="post">
                     <div className="about-image">
                         <Image src={AboutPicture}/>
                     </div>
-                    <div className="about-description">
-                        <Block identifier={aboutStrings.block_description_identifier} />
-                    </div>
-                </div>
-            </article>
+                </article>
+                <Block identifier={aboutStrings.block_description_identifier} />
+            </div>
         );
     }
 }

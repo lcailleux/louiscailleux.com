@@ -189,35 +189,35 @@ class Contact extends Component {
                 </Message>
             )}
             <Field className="contact__field contact__field--name">
-              <Label for="name">{contactStrings.full_name}</Label>
+              <Label htmlFor="name">{contactStrings.full_name}</Label>
               <Input type="text" name="name" placeholder={contactStrings.full_name} className={formErrors.name.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.name} onChange={this.onChange.bind(this)}/>
               {formErrors.name.length > 0 && (
                   <Help color="danger">{formErrors.name}</Help>
               )}
             </Field>
             <Field className="contact__field contact__field--email">
-              <Label for="name">{contactStrings.email}</Label>
+              <Label htmlFor="email">{contactStrings.email}</Label>
               <Input type="email" name="email" placeholder={contactStrings.email} className={formErrors.email.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.email} onChange={this.onChange.bind(this)} />
               {formErrors.email.length > 0 && (
                   <Help color="danger">{formErrors.email}</Help>
               )}
             </Field>
             <Field className="contact__field contact__field--phone">
-              <Label for="name">{contactStrings.phone_number}</Label>
+              <Label htmlFor="phone">{contactStrings.phone_number}</Label>
               <Input type="tel" name="phone" placeholder={contactStrings.phone_number} className={formErrors.phone.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.phone} onChange={this.onChange.bind(this)} />
               {formErrors.phone.length > 0 && (
                   <Help color="danger">{formErrors.phone}</Help>
               )}
             </Field>
             <Field className="contact__field contact__field--subject">
-              <Label for="name">{contactStrings.subject}</Label>
+              <Label htmlFor="subject">{contactStrings.subject}</Label>
               <Input type="text" id="subject" name="subject" placeholder={contactStrings.subject} className={formErrors.subject.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.subject} onChange={this.onChange.bind(this)} />
               {formErrors.subject.length > 0 && (
                   <Help color="danger">{formErrors.subject}</Help>
               )}
             </Field>
             <Field className="contact__field contact__field--msg">
-              <Label for="name">{contactStrings.message}</Label>
+              <Label htmlFor="message">{contactStrings.message}</Label>
               <Textarea name="message" className={formErrors.message.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.message} onChange={this.onChange.bind(this)} />
               {formErrors.message.length > 0 && (
                   <Help color="danger">{formErrors.message}</Help>
