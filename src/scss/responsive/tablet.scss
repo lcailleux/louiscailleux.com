@@ -1,17 +1,17 @@
 $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
 
 @media #{$information-tablet} {
+  .header {
+    grid-template-columns: auto auto;
+  }
+
   .menu {
-    display: none;
-    visibility: hidden;
+    margin-right: 0;
+    visibility: visible;
   }
 
   .header__title {
     margin: 1rem 1rem;
-  }
-
-  .toggle {
-    right: 1.5em;
   }
 
   .post {
@@ -20,11 +20,6 @@ $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
 
   .section {
     margin: 0 1em 0 1em;
-  }
-
-  .hamburger-menu {
-    display: grid;
-    visibility: visible;
   }
 
   /* Projects */
