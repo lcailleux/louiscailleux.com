@@ -19,5 +19,7 @@
   "An error occurred. Please contact me at this email address": "오류가 발생했습니다. 이 이메일 주소를 통해 저에게 연락 주시기 바랍니다.",
   "More projects coming soon.": "더 많은 프로젝트가 곧 제공될 예정입니다.",
   "Projects": "프로젝트",
-  "Send me a message!": "메시지를 보내세요"
+  "Projects | Louis Cailleux": "프로젝트 | Louis Cailleux",
+  "Send me a message!": "메시지를 보내세요",
+  "Request failed with status code 500": "요청이 상태 코드 500으로 실패했습니다."
 }

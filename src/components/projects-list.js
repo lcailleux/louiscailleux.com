@@ -32,7 +32,7 @@ class ProjectsList extends Component {
 
     render() {
         if (this.state.error) {
-            return (<p>{this.state.error.message}</p>);
+            return (<p>{i18n.t(this.state.error.message)}</p>);
         }
 
         if (!this.state.isLoading && this.state.projects) {

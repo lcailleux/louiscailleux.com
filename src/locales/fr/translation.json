@@ -19,5 +19,7 @@
   "An error occurred. Please contact me at this email address": "Une erreur est survenue, vous pouvez me contacter à l'adresse suivante",
   "More projects coming soon.": "D'autres projets à venir.",
   "Projects": "Projets",
-  "Send me a message!": "N'hésitez pas à me contacter via ce formulaire"
+  "Projects | Louis Cailleux": "Projets | Louis Cailleux",
+  "Send me a message!": "N'hésitez pas à me contacter via ce formulaire",
+  "Request failed with status code 500": "La requête a échouée avec le code d'erreur 500"
 }
