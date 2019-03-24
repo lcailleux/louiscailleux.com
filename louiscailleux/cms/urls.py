@@ -5,5 +5,5 @@ from .views import BlockApiView
 app_name = 'cms'
 
 urlpatterns = [
-    url(r'V1/api/block/$', BlockApiView.as_view())
+    url(r'V1/api/block$', BlockApiView.as_view())
 ]
