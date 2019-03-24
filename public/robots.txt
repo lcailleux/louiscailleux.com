@@ -1,0 +1,3 @@
+Sitemap: https://www.louiscailleux.com/sitemap.xml
+User-agent: *
+Disallow:
