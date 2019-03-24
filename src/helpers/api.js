@@ -55,7 +55,7 @@ class Api {
      * @returns {*}
      */
     static BLOCK_URL(identifier, language) {
-        return `${this.API_PREFIX}block?identifier=` + identifier + '&language=' + language
+        return `${this.API_PREFIX}block/?identifier=` + identifier + '&language=' + language
     }
 
     /**
@@ -64,7 +64,7 @@ class Api {
      * @returns {*}
      */
     static PROJECTS_URL(language) {
-        return `${this.API_PREFIX}projects?language=` + language
+        return `${this.API_PREFIX}projects/?language=` + language
     }
 
     /**
