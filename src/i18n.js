@@ -48,7 +48,9 @@ i18n
     .init({
         detection: detectionOptions,
         resources,
+        preload: ['en', 'fr', 'ko'],
         fallbackLng: ['en', 'fr', 'ko'],
+        load: "languageOnly",
 
         keySeparator: false, // we do not use keys in form messages.welcome
 
