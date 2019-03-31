@@ -204,6 +204,7 @@ if 'HEROKU' in os.environ:
         'louiscailleux-frontend-staging.herokuapp.com',
         'louiscailleux-frontend.herokuapp.com',
         'louiscailleux.com',
+        'www.louiscailleux.com'
     )
 
     # Email
