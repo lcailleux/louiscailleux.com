@@ -171,10 +171,10 @@ class Contact extends Component {
   };
 
   render() {
-    const { formErrors, formError, formSuccess, isLoading } = this.state;
+    const {formErrors, formError, formSuccess, isLoading} = this.state;
 
     return (
-        <LoadingOverlay active={true} spinner>
+        <LoadingOverlay active={isLoading} spinner>
           <main className="contact">
             <h1 className="contact__title">{contact.name}</h1>
             <p className="contact__content">{contactStrings.subtitle}</p>

@@ -31,11 +31,11 @@ body {
 
 /* Loader */
 ._loading_overlay_overlay {
-  position: fixed;
+  position: fixed !important;
 }
 
 ._loading_overlay_spinner circle{
-  stroke: #ffc107!important;
+  stroke: #ffc107 !important;
 }
 
 /* Dark mode */
