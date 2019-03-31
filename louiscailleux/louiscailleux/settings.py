@@ -26,6 +26,8 @@ if 'HEROKU' in os.environ:
     SECRET_KEY = ''
 else:
     SECRET_KEY = config('SECRET_KEY')
+
+    # Email
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = config('EMAIL_HOST')
     EMAIL_HOST_USER = config('EMAIL_HOST_USER')
@@ -33,6 +35,10 @@ else:
     EMAIL_PORT = config('EMAIL_PORT')
     EMAIL_USE_TLS = config('EMAIL_USE_TLS')
     MAILER_EMAIL_BACKEND = config('MAILER_EMAIL_BACKEND')
+
+    # RECAPTCHA
+    GOOGLE_RECAPTCHA_URL = config('GOOGLE_RECAPTCHA_URL')
+    GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -206,5 +212,9 @@ if 'HEROKU' in os.environ:
     EMAIL_PORT = os.environ.get('EMAIL_PORT')
     EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
     MAILER_EMAIL_BACKEND = os.environ.get('MAILER_EMAIL_BACKEND')
+
+    # RECAPTCHA
+    GOOGLE_RECAPTCHA_URL = os.environ.get('GOOGLE_RECAPTCHA_URL')
+    GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 
