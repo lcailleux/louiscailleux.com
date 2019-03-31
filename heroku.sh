@@ -8,8 +8,8 @@ then
 elif [[ $1 == "production" ]]
 then
     heroku create louiscailleux-frontend --region=eu
-    heroku config:set $(cat .env.production | sed '/^$/d; /#[[:print:]]*$/d')
-    heroku buildpacks:set heroku/nodejs
+    heroku config:set $(cat .env.production | sed '/^$/d; /#[[:print:]]*$/d') --app louiscailleux-frontend
+    heroku buildpacks:set heroku/nodejs --app louiscailleux-frontend
     git push heroku client:master;
 else
     echo "Usage: ./heroku.sh (staging|production)"
