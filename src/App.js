@@ -7,7 +7,6 @@ import NavigationBar from './components/navigation-bar';
 
 import './scss/app.scss';
 import AdsBanner from "./components/ads-banner";
-import AdsInitialize from "./components/ads-initialize";
 
 class App extends Component {
     render() {
@@ -17,7 +16,6 @@ class App extends Component {
                     <meta name="description" content="Louis Cailleux's portfolio"/>
                     <meta name="keyword" content="programming, python, django, react"/>
                 </Helmet>
-                <AdsInitialize />
                 <NavigationBar />
                 <Routes />
                 <AdsBanner />
