@@ -6,6 +6,10 @@
 @import "./terassa/style.scss";
 
 /* Header */
+.header {
+  z-index: 700;
+}
+
 .flag-icon-background {
   display: block;
   width: 2.3em;
@@ -23,6 +27,15 @@ body {
 :root {
   --accent: #ffa000;
   transition: background-color 0.3s ease;
+}
+
+/* Loader */
+._loading_overlay_overlay {
+  position: fixed;
+}
+
+._loading_overlay_spinner circle{
+  stroke: #ffc107!important;
 }
 
 /* Dark mode */
@@ -48,6 +61,12 @@ body {
 :root.dark-mode .header .menu .menu__items a{
   color: white;
 }
+
+/* Loader */
+:root.dark-mode ._loading_overlay_spinner circle{
+  stroke: #3273dc !important;
+}
+
 
 :root.dark-mode .toggle {
   color: #3273dc;
