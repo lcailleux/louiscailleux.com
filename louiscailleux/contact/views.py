@@ -25,6 +25,9 @@ class ContactViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def validate_captcha(self, request):
         recaptcha_response = request.data.get('g-recaptcha-response')
+        if recaptcha_response:
+            del request.data['g-recaptcha-response']
+
         url = settings.GOOGLE_RECAPTCHA_URL
         values = {
             'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
