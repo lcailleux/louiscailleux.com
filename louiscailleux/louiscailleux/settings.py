@@ -201,7 +201,9 @@ if 'HEROKU' in os.environ:
 
     # Authorizing React SPA
     CORS_ORIGIN_WHITELIST = (
-        'louiscailleux-frontend-staging.herokuapp.com'
+        'louiscailleux-frontend-staging.herokuapp.com',
+        'louiscailleux-frontend.herokuapp.com',
+        'louiscailleux.com',
     )
 
     # Email
