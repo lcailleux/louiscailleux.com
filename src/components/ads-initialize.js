@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Constants from '../helpers/constants';
 
-export default class Ad extends React.Component {
+export default class AdsInitialize extends Component {
     componentDidMount () {
         (window.adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: Constants.getConstant("REACT_APP_AD_SENSE_CLIENT"),
@@ -11,8 +11,7 @@ export default class Ad extends React.Component {
 
     render () {
         return (
-            <div className='ad'>
-            </div>
+            <div/>
         );
     }
 }

@@ -6,7 +6,8 @@ import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
 
 import './scss/app.scss';
-import Ad from "./components/ad";
+import AdsBanner from "./components/ads-banner";
+import AdsInitialize from "./components/ads-initialize";
 
 class App extends Component {
     render() {
@@ -20,9 +21,10 @@ class App extends Component {
                             crossOrigin="anonymous"/>
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
                 </Helmet>
+                <AdsInitialize />
                 <NavigationBar />
-                <Routes/>
-                <Ad/>
+                <Routes />
+                <AdsBanner />
                 <FooterInfo />
             </div>
         );
