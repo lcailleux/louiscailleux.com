@@ -13,7 +13,7 @@ import Button from "react-bulma-components/lib/components/button/button";
 import Message from 'react-bulma-components/lib/components/message';
 
 import Api from "../helpers/api";
-import Contants from "../helpers/constants";
+import Constants from "../helpers/constants";
 import {contact} from "../helpers/urls";
 import {contactStrings, errorStrings} from "../helpers/strings";
 
@@ -233,7 +233,7 @@ class Contact extends Component {
               <Field className="contact__field">
                 <Recaptcha
                     ref={ref => this.recaptcha = ref}
-                    sitekey={Contants.getConstant("REACT_APP_RECAPTCHA_KEY")}
+                    sitekey={Constants.getConstant("REACT_APP_RECAPTCHA_KEY")}
                     onResolved={this.onResolved}
                 />
               </Field>

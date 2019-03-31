@@ -1,7 +1,8 @@
 import React, { Component, } from "react";
 import GoogleAnalytics from "react-ga";
+import Constants from '../helpers/constants';
 
-GoogleAnalytics.initialize(process.env.REACT_APP_ANALYTICS_CODE);
+GoogleAnalytics.initialize(Constants.getConstant("REACT_APP_ANALYTICS_CODE"));
 
 const withTracker = (WrappedComponent, options = {}) => {
   const trackPage = page => {
