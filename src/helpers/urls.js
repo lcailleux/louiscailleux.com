@@ -2,8 +2,8 @@ import i18n from "../i18n"
 
 export const about = {
   name: i18n.t('About'),
-  documentTitle: i18n.t('About | Louis Cailleux'),
-  url: '/about'
+  documentTitle: i18n.t('Louis Cailleux'),
+  url: '/'
 };
 
 export const projects = {

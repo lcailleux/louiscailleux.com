@@ -12,7 +12,6 @@ class Routes extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={withTracker(About)}/>
-                    <Route exact path="/about" component={withTracker(About)}/>
                     <Route exact path="/projects" component={withTracker(Projects)}/>
                     <Route exact path="/contact" component={withTracker(Contact)}/>
                 </Switch>
