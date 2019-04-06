@@ -13,7 +13,6 @@ class App extends Component {
         return (
             <div id="main">
                 <Helmet>
-                    <meta name="description" content="Louis Cailleux's portfolio"/>
                     <meta name="keyword" content="programming, python, django, react"/>
                 </Helmet>
                 <NavigationBar />

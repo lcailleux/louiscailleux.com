@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import {Helmet} from "react-helmet";
 import Recaptcha from 'react-google-invisible-recaptcha';
 import LoadingOverlay from 'react-loading-overlay';
 
@@ -174,75 +175,81 @@ class Contact extends Component {
     const {formErrors, formError, formSuccess, isLoading} = this.state;
 
     return (
-        <LoadingOverlay active={isLoading} spinner>
-          <main className="contact">
-            <h1 className="contact__title">{contact.name}</h1>
-            <p className="contact__content">{contactStrings.subtitle}</p>
-            <form id="contactForm" className="contact__form" onSubmit={this.handleSubmit}>
-              <Field className="form-message">
-                {formSuccess === true && (
-                    <Message color="success">
-                      <Message.Header>
-                        {contactStrings.success_message}
-                      </Message.Header>
-                    </Message>
-                )}
-                {formError === true && (
-                    <Message color="danger">
-                      <Message.Header>
-                        {contactStrings.error_message}: {contactStrings.email_address}
-                      </Message.Header>
-                    </Message>
-                )}
-              </Field>
-              <Field className="contact__field contact__field--name">
-                <Label htmlFor="name">{contactStrings.full_name}</Label>
-                <Input type="text" name="name" placeholder={contactStrings.full_name} className={formErrors.name.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.name} onChange={this.onChange.bind(this)}/>
-                {formErrors.name.length > 0 && (
-                    <Help color="danger">{formErrors.name}</Help>
-                )}
-              </Field>
-              <Field className="contact__field contact__field--email">
-                <Label htmlFor="email">{contactStrings.email}</Label>
-                <Input type="email" name="email" placeholder={contactStrings.email} className={formErrors.email.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.email} onChange={this.onChange.bind(this)} />
-                {formErrors.email.length > 0 && (
-                    <Help color="danger">{formErrors.email}</Help>
-                )}
-              </Field>
-              <Field className="contact__field contact__field--phone">
-                <Label htmlFor="phone">{contactStrings.phone_number}</Label>
-                <Input type="tel" name="phone" placeholder={contactStrings.phone_number} className={formErrors.phone.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.phone} onChange={this.onChange.bind(this)} />
-                {formErrors.phone.length > 0 && (
-                    <Help color="danger">{formErrors.phone}</Help>
-                )}
-              </Field>
-              <Field className="contact__field contact__field--subject">
-                <Label htmlFor="subject">{contactStrings.subject}</Label>
-                <Input type="text" id="subject" name="subject" placeholder={contactStrings.subject} className={formErrors.subject.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.subject} onChange={this.onChange.bind(this)} />
-                {formErrors.subject.length > 0 && (
-                    <Help color="danger">{formErrors.subject}</Help>
-                )}
-              </Field>
-              <Field className="contact__field contact__field--msg">
-                <Label htmlFor="message">{contactStrings.message}</Label>
-                <Textarea name="message" className={formErrors.message.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.message} onChange={this.onChange.bind(this)} />
-                {formErrors.message.length > 0 && (
-                    <Help color="danger">{formErrors.message}</Help>
-                )}
-              </Field>
-              <Field className="contact__field">
-                <Recaptcha
-                    ref={ref => this.recaptcha = ref}
-                    sitekey={Constants.getConstant("REACT_APP_RECAPTCHA_KEY")}
-                    onResolved={this.onResolved}
-                />
-              </Field>
-              <Field className="contact__field">
-                <Button type="submit" className="ripple-btn submit" rounded={false}>{contactStrings.send_message}</Button>
-              </Field>
-            </form>
-          </main>
-        </LoadingOverlay>
+        <div>
+          <Helmet>
+            <link rel="canonical" href="https://louiscailleux.com/contact" />
+            <meta name="description" content ="Please contact me, I am always open to new opportunities." />
+          </Helmet>
+          <LoadingOverlay active={isLoading} spinner>
+            <main className="contact">
+              <h1 className="contact__title">{contact.name}</h1>
+              <p className="contact__content">{contactStrings.subtitle}</p>
+              <form id="contactForm" className="contact__form" onSubmit={this.handleSubmit}>
+                <Field className="form-message">
+                  {formSuccess === true && (
+                      <Message color="success">
+                        <Message.Header>
+                          {contactStrings.success_message}
+                        </Message.Header>
+                      </Message>
+                  )}
+                  {formError === true && (
+                      <Message color="danger">
+                        <Message.Header>
+                          {contactStrings.error_message}: {contactStrings.email_address}
+                        </Message.Header>
+                      </Message>
+                  )}
+                </Field>
+                <Field className="contact__field contact__field--name">
+                  <Label htmlFor="name">{contactStrings.full_name}</Label>
+                  <Input type="text" name="name" placeholder={contactStrings.full_name} className={formErrors.name.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.name} onChange={this.onChange.bind(this)}/>
+                  {formErrors.name.length > 0 && (
+                      <Help color="danger">{formErrors.name}</Help>
+                  )}
+                </Field>
+                <Field className="contact__field contact__field--email">
+                  <Label htmlFor="email">{contactStrings.email}</Label>
+                  <Input type="email" name="email" placeholder={contactStrings.email} className={formErrors.email.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.email} onChange={this.onChange.bind(this)} />
+                  {formErrors.email.length > 0 && (
+                      <Help color="danger">{formErrors.email}</Help>
+                  )}
+                </Field>
+                <Field className="contact__field contact__field--phone">
+                  <Label htmlFor="phone">{contactStrings.phone_number}</Label>
+                  <Input type="tel" name="phone" placeholder={contactStrings.phone_number} className={formErrors.phone.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.phone} onChange={this.onChange.bind(this)} />
+                  {formErrors.phone.length > 0 && (
+                      <Help color="danger">{formErrors.phone}</Help>
+                  )}
+                </Field>
+                <Field className="contact__field contact__field--subject">
+                  <Label htmlFor="subject">{contactStrings.subject}</Label>
+                  <Input type="text" id="subject" name="subject" placeholder={contactStrings.subject} className={formErrors.subject.length > 0 ? 'contact__form__input is-danger' : 'contact__form__input'} size="medium" value={this.state.subject} onChange={this.onChange.bind(this)} />
+                  {formErrors.subject.length > 0 && (
+                      <Help color="danger">{formErrors.subject}</Help>
+                  )}
+                </Field>
+                <Field className="contact__field contact__field--msg">
+                  <Label htmlFor="message">{contactStrings.message}</Label>
+                  <Textarea name="message" className={formErrors.message.length > 0 ? 'is-danger' : ''} size="medium" value={this.state.message} onChange={this.onChange.bind(this)} />
+                  {formErrors.message.length > 0 && (
+                      <Help color="danger">{formErrors.message}</Help>
+                  )}
+                </Field>
+                <Field className="contact__field">
+                  <Recaptcha
+                      ref={ref => this.recaptcha = ref}
+                      sitekey={Constants.getConstant("REACT_APP_RECAPTCHA_KEY")}
+                      onResolved={this.onResolved}
+                  />
+                </Field>
+                <Field className="contact__field">
+                  <Button type="submit" className="ripple-btn submit" rounded={false}>{contactStrings.send_message}</Button>
+                </Field>
+              </form>
+            </main>
+          </LoadingOverlay>
+        </div>
     )
   }
 }

@@ -38,6 +38,10 @@ body {
   stroke: #ffc107 !important;
 }
 
+.not-found {
+  margin: 10% 30% 50% 42%;
+}
+
 /* Dark mode */
 :root.dark-mode {
   --primary: #3273dc;
@@ -81,6 +85,10 @@ body {
 }
 
 :root.dark-mode .contact {
+  color: white;
+}
+
+:root.dark-mode .not-found {
   color: white;
 }
 
