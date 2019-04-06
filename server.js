@@ -19,7 +19,7 @@ app.get('/sitemap.xml', (req, res) => {
  }
 });
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build'), {maxAge: "30d"}));
 
 app.get('*', function (req, res) {
  res.sendFile(path.join(__dirname, 'build', 'index.html'));
