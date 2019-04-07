@@ -21,7 +21,7 @@ server.get('/sitemap.xml', (req, res) => {
 });
 
 server.use(compression());
-server.use(express.static(path.join(__dirname, 'build'), {maxAge: "30d"}));
+server.use(express.static(path.join(__dirname, 'build'), {maxAge: "0"}));
 
 server.get('*', function (req, res) {
  res.sendFile(path.join(__dirname, 'build', 'index.html'));
