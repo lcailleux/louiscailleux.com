@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
-const app = express();
+const server = express();
 const PORT = process.env.PORT || 5000;
+const compression = require('compression');
 
-app.get('/robots.txt', (req, res) => {
+server.get('/robots.txt', (req, res) => {
  if (process.env.REACT_APP_ENV === "production") {
   res.sendFile(path.join(__dirname, 'build', 'robots.txt'));
  } else {
@@ -11,7 +12,7 @@ app.get('/robots.txt', (req, res) => {
  }
 });
 
-app.get('/sitemap.xml', (req, res) => {
+server.get('/sitemap.xml', (req, res) => {
  if (process.env.REACT_APP_ENV === "production") {
   res.sendFile(path.join(__dirname, 'build', 'sitemap.xml'));
  } else {
@@ -19,11 +20,12 @@ app.get('/sitemap.xml', (req, res) => {
  }
 });
 
-app.use(express.static(path.join(__dirname, 'build'), {maxAge: "30d"}));
+server.use(compression());
+server.use(express.static(path.join(__dirname, 'build'), {maxAge: "30d"}));
 
-app.get('*', function (req, res) {
+server.get('*', function (req, res) {
  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 
-app.listen(PORT);
+server.listen(PORT);
