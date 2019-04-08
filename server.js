@@ -23,9 +23,21 @@ server.get('/sitemap.xml', (req, res) => {
 server.use(compression());
 server.use(express.static(path.join(__dirname, 'build'), {maxAge: "0"}));
 
-server.get('*', function (req, res) {
+server.get('/', function (req, res) {
  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+server.get('/projects', function (req, res) {
+ res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+server.get('/contact', function (req, res) {
+ res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+server.get('*', function (req, res) {
+ res.status(404);
+ res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 server.listen(PORT);
