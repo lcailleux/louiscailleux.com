@@ -53,7 +53,11 @@ server.get('/contact', function (req, res) {
 
 server.get('*', function (req, res) {
     res.status(404);
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    let config = {
+        __CANONICAL__: "https://louiscailleux.com/404",
+        __DESCRIPTION__: "Page not found."
+    };
+    replaceTags(res, config);
 });
 
 function replaceTags(response, config) {
