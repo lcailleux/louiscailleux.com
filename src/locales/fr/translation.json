@@ -22,5 +22,6 @@
   "Projects | Louis Cailleux": "Projets | Louis Cailleux",
   "Send me a message!": "N'hésitez pas à me contacter via ce formulaire",
   "Request failed with status code 500": "La requête a échouée avec le code d'erreur 500",
-  "No match found for ": "Aucun résultat trouvé pour "
+  "No match found for ": "Aucun résultat trouvé pour ",
+  "Loading...": "Chargement..."
 }

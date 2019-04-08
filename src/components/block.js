@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import i18n from "../i18n"
 import Api from "../helpers/api";
-import {errorStrings} from "../helpers/strings";
+import {defaultStrings, errorStrings} from "../helpers/strings";
 
 class Block extends Component {
     state = {
@@ -41,7 +41,22 @@ class Block extends Component {
 
     render() {
         if (this.state.error) {
-            return (<p>{i18n.t(this.state.error.message)}</p>);
+            return (
+                <section className="section">
+                    <h1 className="section__title">{i18n.t(this.state.error.message)}</h1>
+                </section>
+            );
+        }
+
+        if (this.state.isLoading) {
+            return (
+                <section className="section">
+                    <h1 className="section__title">{defaultStrings.loading}</h1>
+                    <div className="section__content">
+                        <p className="display-block" />
+                    </div>
+                </section>
+            );
         }
 
         if (!this.state.isLoading && this.state.block && this.state.block.is_active) {

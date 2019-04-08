@@ -2,7 +2,8 @@ import i18n from "../i18n"
 
 export const defaultStrings = {
   full_name: "Louis Cailleux",
-  not_found: i18n.t("No match found for ")
+  not_found: i18n.t("No match found for "),
+  loading: i18n.t("Loading...")
 };
 
 export const aboutStrings = {

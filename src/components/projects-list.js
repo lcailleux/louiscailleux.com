@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import i18n from "../i18n"
 import Api from "../helpers/api";
-import {projectStrings} from "../helpers/strings";
+import {defaultStrings, projectStrings} from "../helpers/strings";
 
 class ProjectsList extends Component {
     state = {
@@ -32,7 +32,23 @@ class ProjectsList extends Component {
 
     render() {
         if (this.state.error) {
-            return (<p>{i18n.t(this.state.error.message)}</p>);
+            return (
+                <article className="card" key="error">
+                    <header className="card__header">
+                        <h1 className="card__header__title text-center">{i18n.t(this.state.error.message)}</h1>
+                    </header>
+                </article>
+            );
+        }
+
+        if (this.state.isLoading) {
+            return (
+                <article className="card" key="error">
+                    <header className="card__header">
+                        <h1 className="card__header__title text-center">{i18n.t(defaultStrings.loading)}</h1>
+                    </header>
+                </article>
+            );
         }
 
         if (!this.state.isLoading && this.state.projects) {

@@ -22,5 +22,6 @@
   "Projects | Louis Cailleux": "Projects | Louis Cailleux",
   "Send me a message!": "Send me a message!",
   "Request failed with status code 500": "Request failed with status code 500",
-  "No match found for ": "No match found for "
+  "No match found for ": "No match found for ",
+  "Loading...": "Loading..."
 }
