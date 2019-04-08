@@ -9,6 +9,7 @@ server.use(compression());
 
 server.get('/robots.txt', (req, res) => {
     if (process.env.REACT_APP_ENV === "production") {
+        res.status(200);
         res.sendFile(path.join(__dirname, 'build', 'robots.txt'));
     } else {
         res.status(404).send('<pre>Cannot GET /robots.txt</pre>');
@@ -17,6 +18,7 @@ server.get('/robots.txt', (req, res) => {
 
 server.get('/sitemap.xml', (req, res) => {
     if (process.env.REACT_APP_ENV === "production") {
+        res.status(200);
         res.sendFile(path.join(__dirname, 'build', 'sitemap.xml'));
     } else {
         res.status(404).send('<pre>Cannot GET /sitemap.xml</pre>');
