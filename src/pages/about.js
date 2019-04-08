@@ -18,7 +18,6 @@ class About extends Component {
             <div>
                 <main className="hero">
                 </main>
-                <h1>lol</h1>
                 <Block identifier={aboutStrings.block_description_identifier} />
             </div>
         );
