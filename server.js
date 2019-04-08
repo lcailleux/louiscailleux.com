@@ -25,6 +25,11 @@ server.get('/sitemap.xml', (req, res) => {
     }
 });
 
+
+server.get('/index.html', function (req, res) {
+    res.redirect(301, '/');
+});
+
 server.get('/', function (req, res) {
     let config = {
         __CANONICAL__: "https://louiscailleux.com/",
