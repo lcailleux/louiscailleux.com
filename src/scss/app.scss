@@ -39,7 +39,12 @@ body {
 }
 
 .not-found {
-  margin: 10% 30% 50% 42%;
+  margin: 10% 25% 0 25%;
+  min-height: 58.5vh;
+}
+
+.not-found h1 {
+  text-align: center;
 }
 
 /* Dark mode */
