@@ -48,17 +48,6 @@ class Block extends Component {
             );
         }
 
-        if (this.state.isLoading) {
-            return (
-                <section className="section">
-                    <h1 className="section__title">{defaultStrings.loading}</h1>
-                    <div className="section__content">
-                        <p className="display-block" />
-                    </div>
-                </section>
-            );
-        }
-
         if (!this.state.isLoading && this.state.block && this.state.block.is_active) {
             return (
                 <section className="section">
@@ -76,7 +65,14 @@ class Block extends Component {
             )
         }
 
-        return null;
+        return (
+            <section className="section">
+                <h1 className="section__title">{defaultStrings.loading}</h1>
+                <div className="section__content">
+                    <p className="display-block" />
+                </div>
+            </section>
+        );
     }
 }
 

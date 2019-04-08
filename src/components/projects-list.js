@@ -41,16 +41,6 @@ class ProjectsList extends Component {
             );
         }
 
-        if (this.state.isLoading) {
-            return (
-                <article className="card" key="error">
-                    <header className="card__header">
-                        <h1 className="card__header__title text-center">{i18n.t(defaultStrings.loading)}</h1>
-                    </header>
-                </article>
-            );
-        }
-
         if (!this.state.isLoading && this.state.projects) {
             const projects_list = this.state.projects.map((project, i) =>
                 <article className="card" key={i}>
@@ -74,7 +64,14 @@ class ProjectsList extends Component {
             );
             return (<div className="projects-list">{projects_list}</div>);
         }
-        return true;
+
+        return (
+            <article className="card" key="error">
+                <header className="card__header">
+                    <h1 className="card__header__title text-center">{i18n.t(defaultStrings.loading)}</h1>
+                </header>
+            </article>
+        );
     }
 }
 
