@@ -66,6 +66,8 @@ function replaceTags(response, config) {
         let result;
         data = data.replace('__CANONICAL__', config.__CANONICAL__);
         result = data.replace('__DESCRIPTION__', config.__DESCRIPTION__);
+
+        response.status(200);
         response.send(result);
     });
 }
