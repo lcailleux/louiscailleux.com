@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import {Helmet} from "react-helmet";
 import Recaptcha from 'react-google-invisible-recaptcha';
 import LoadingOverlay from 'react-loading-overlay';
 
@@ -176,10 +175,6 @@ class Contact extends Component {
 
     return (
         <div>
-          <Helmet>
-            <link rel="canonical" href="https://louiscailleux.com/contact" />
-            <meta name="description" content ="Please contact me, I am always open to new opportunities." />
-          </Helmet>
           <LoadingOverlay active={isLoading} spinner>
             <main className="contact">
               <h1 className="contact__title">{contact.name}</h1>

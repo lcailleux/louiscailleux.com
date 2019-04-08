@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {Helmet} from "react-helmet";
-
 import Message from 'react-bulma-components/lib/components/message';
 
 import {projects} from '../helpers/urls';
@@ -19,11 +17,6 @@ class Projects extends Component {
     render() {
         return (
             <main className="content">
-                <Helmet>
-                    <link rel="canonical" href="https://louiscailleux.com/projects" />
-                    <meta name="description" content ="The list of projects I enjoyed doing during my free time." />
-
-                </Helmet>
                 <ProjectsList/>
                 <Message color="warning" className="coming-soon">
                     <Message.Body>
