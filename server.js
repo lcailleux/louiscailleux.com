@@ -30,6 +30,7 @@ server.get('/', function (req, res) {
         __CANONICAL__: "https://louiscailleux.com/",
         __DESCRIPTION__: "Hi I am Louis, a developer passionate about AI. I continuously enjoy learning about new technologies."
     };
+    res.status(200);
     replaceTags(res, config);
 });
 
@@ -40,6 +41,7 @@ server.get('/projects', function (req, res) {
         __CANONICAL__: "https://louiscailleux.com/projects",
         __DESCRIPTION__: "The list of projects I enjoyed doing during my free time."
     };
+    res.status(200);
     replaceTags(res, config);
 });
 
@@ -48,15 +50,16 @@ server.get('/contact', function (req, res) {
         __CANONICAL__: "https://louiscailleux.com/contact",
         __DESCRIPTION__: "Please contact me, I am always open to new opportunities."
     };
+    res.status(200);
     replaceTags(res, config);
 });
 
 server.get('*', function (req, res) {
-    res.status(404);
     let config = {
         __CANONICAL__: "https://louiscailleux.com/404",
         __DESCRIPTION__: "Page not found."
     };
+    res.status(404);
     replaceTags(res, config);
 });
 
@@ -72,8 +75,6 @@ function replaceTags(response, config) {
         let result;
         data = data.replace('__CANONICAL__', config.__CANONICAL__);
         result = data.replace('__DESCRIPTION__', config.__DESCRIPTION__);
-
-        response.status(200);
         response.send(result);
     });
 }
