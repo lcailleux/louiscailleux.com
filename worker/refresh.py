@@ -6,14 +6,18 @@ s = sched.scheduler(time.time, time.sleep)
 
 
 def refresh_site(sc):
-    backend = urllib.request.urlopen("https://louiscailleux-backend.herokuapp.com").read()
-    frontend = urllib.request.urlopen("https://louiscailleux.com").read()
+    backend_request = urllib.request.Request("https://louiscailleux-backend.herokuapp.com",
+                                             headers={'User-Agent': "Python"})
+    backend = urllib.request.urlopen(backend_request)
 
-    if backend.length and frontend.length:
-        print("Ping successfull")
+    frontend_request = urllib.request.Request("https://www.louiscailleux.com", headers={'User-Agent': "Python"})
+    frontend = urllib.request.urlopen(frontend_request)
+
+    #if backend.getcode() and frontend.getcode():
+        #print("Ping successfull")
 
     s.enter(25, 1, refresh_site, (sc,))
 
 
-s.enter(1, 1, refresh_site, (s,))
+s.enter(25, 1, refresh_site, (s,))
 s.run()
