@@ -1,0 +1,7 @@
+$tablet-to-desktop: "(min-width: 768px)";
+
+@media #{$tablet-to-desktop} {
+  .projects-list .project-image img {
+    max-width: 123px;
+  }
+}

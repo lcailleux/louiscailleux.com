@@ -47,10 +47,6 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
     width: 30%;
   }
 
-  .project-image img {
-    max-width: none;
-  }
-
   .project-info {
     width: 70%;
   }
@@ -106,10 +102,6 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
     right: 1.2em;
   }
 
-  .project-image img {
-    max-width: none;
-  }
-
   .hamburger__items__item:last-child {
     margin-left: 0.5em;
   }
@@ -123,16 +115,9 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   .toggle {
     right: 1.5em;
   }
-
-  .project-image img {
-    max-width: none;
-  }
 }
 
 @media (min-width: 577px) and (max-width: 767px) {
-  .project-image img {
-    max-width: none;
-  }
 }
 
 
