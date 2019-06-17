@@ -48,7 +48,7 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   }
 
   .project-image img {
-    max-width: unset;
+    max-width: none;
   }
 
   .project-info {
@@ -107,7 +107,7 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   }
 
   .project-image img {
-    max-width: unset;
+    max-width: none;
   }
 
   .hamburger__items__item:last-child {
@@ -125,13 +125,13 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   }
 
   .project-image img {
-    max-width: unset;
+    max-width: none;
   }
 }
 
 @media (min-width: 577px) and (max-width: 767px) {
   .project-image img {
-    max-width: unset;
+    max-width: none;
   }
 }
 
