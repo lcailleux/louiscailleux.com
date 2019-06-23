@@ -26,6 +26,12 @@ $information-tablet: "(min-width: 768px) and (max-width: 1023px)";
     min-height: 77vh;
   }
 
+  /* About */
+  .hero {
+    background-size: contain;
+    background-image: url("../images/about-picture-1024w.jpg");
+  }
+
   /* Projects */
   .content {
     max-width: 95%;
@@ -78,6 +84,11 @@ $small-pc: "(min-width: 1024px) and (max-width: 1281px)";
 
   .not-found {
     min-height: 77vh;
+  }
+
+    /* About */
+  .hero {
+    background-size: contain;
   }
 
   /* Projects */

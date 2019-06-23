@@ -34,6 +34,11 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   }
 
   /* Projects */
+  .hero {
+    background-size: contain;
+  }
+
+  /* Projects */
   .content {
     max-width: 90%;
   }
@@ -109,15 +114,29 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   .footer__contact {
     padding: 1em 10% 0.5em 20%;
   }
+
+  /* About */
+  .hero {
+    background-image: url("../images/about-picture-340w.jpg");
+  }
 }
 
 @media (min-width: 341px) and (max-width: 576px) {
   .toggle {
     right: 1.5em;
   }
+
+  /* About */
+  .hero {
+    background-image: url("../images/about-picture-576w.jpg");
+  }
 }
 
 @media (min-width: 577px) and (max-width: 767px) {
+  /* About */
+  .hero {
+    background-image: url("../images/about-picture-767w.jpg");
+  }
 }
 
 
