@@ -33,8 +33,9 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
     margin: 80% 0 0 0;
   }
 
-  /* Projects */
+  /* About */
   .hero {
+    height: 40vh;
     background-size: contain;
   }
 
@@ -117,6 +118,7 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
 
   /* About */
   .hero {
+    height: 40vh;
     background-image: url("../images/about-picture-340w.jpg");
   }
 }
