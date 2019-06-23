@@ -27,7 +27,13 @@ server.get('/sitemap.xml', (req, res) => {
 
 
 server.get('/index.html', function (req, res) {
-    res.redirect(301, '/');
+    if (process.env.REACT_APP_ENV === "production") {
+        res.status(301);
+        res.redirect("https://" + req.headers.host + req.url);
+    } else {
+        res.redirect(301, '/');
+    }
+
 });
 
 server.get('/', function (req, res) {
