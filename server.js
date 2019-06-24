@@ -41,10 +41,6 @@ server.get('/', function (req, res) {
 
 server.use(express.static(path.join(__dirname, 'build'), {maxAge: "30d"}));
 
-server.get('/static/*', function (req, res) {
-    res.set('Cache-Control', 'public, max-age=43200')
-});
-
 server.get('/projects', function (req, res) {
     let config = {
         __CANONICAL__: "https://louiscailleux.com/projects",
