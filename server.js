@@ -9,13 +9,6 @@ server.use(compression());
 
 if (process.env.REACT_APP_ENV === "production") {
     server.enable('trust proxy');
-    server.use(function (req, res, next) {
-        if (req.secure) {
-            next();
-        } else {
-            res.redirect('https://' + req.headers.host + req.url);
-        }
-    });
 }
 
 server.get('/robots.txt', (req, res) => {
