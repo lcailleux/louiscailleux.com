@@ -5,7 +5,6 @@ import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
 
 import './scss/app.scss';
-import AdsBanner from "./components/ads-banner";
 
 class App extends Component {
     render() {
@@ -13,7 +12,6 @@ class App extends Component {
             <div id="main">
                 <NavigationBar />
                 <Routes />
-                <AdsBanner />
                 <FooterInfo />
             </div>
         );
