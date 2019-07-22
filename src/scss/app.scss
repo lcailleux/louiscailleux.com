@@ -124,6 +124,10 @@ body {
   width: 100%;
 }
 
+.card:last-of-type {
+  margin-bottom: 1rem;
+}
+
 .card__body {
   display: flex;
   align-items: center;
@@ -226,6 +230,10 @@ body {
 
 .projects-list .project-info .project-link.light-mode:hover {
   color: black;
+}
+
+.coming-soon {
+  margin-bottom: 1em;
 }
 
 /* Footer */
