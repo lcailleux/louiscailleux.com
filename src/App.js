@@ -4,9 +4,11 @@ import Routes from './configuration/routes';
 import FooterInfo from './components/footer-info';
 import NavigationBar from './components/navigation-bar';
 
-import './scss/app.scss';
-
 class App extends Component {
+    componentDidMount() {
+        import('./scss/app.scss')
+    }
+
     render() {
         return (
             <div id="main">
