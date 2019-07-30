@@ -41,7 +41,7 @@ server.get('/', function (req, res) {
 
 server.use(express.static(path.join(__dirname, 'build'), {maxAge: "30d"}));
 
-/*server.get('/projects', function (req, res) {
+server.get('/projects', function (req, res) {
     let config = {
         __CANONICAL__: "https://louiscailleux.com/projects",
         __DESCRIPTION__: "The list of projects I enjoyed doing during my free time."
@@ -66,7 +66,7 @@ server.get('*', function (req, res) {
     };
     res.status(404);
     replaceTags(res, config);
-});*/
+});
 
 function replaceTags(response, config) {
     const filePath = path.resolve(path.join(__dirname, 'build', 'index.html'));
