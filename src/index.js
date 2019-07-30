@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import { hydrate, render } from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrate(<App />, rootElement);
+  hydrate(<App />, rootElement);
 } else {
-  ReactDOM.render(<App />, rootElement);
+  render(<App />, rootElement);
 }
 
 // If you want your app to work offline and load faster, you can change
