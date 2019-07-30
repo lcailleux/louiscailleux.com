@@ -39,7 +39,7 @@ server.get('/', function (req, res) {
     replaceTags(res, config);
 });
 
-server.use(express.static(path.join(__dirname, 'build'), {maxAge: "30d"}));
+server.use(express.static(path.join(__dirname, 'build'), {maxAge: "31557600"}));
 
 server.get('/projects', function (req, res) {
     let config = {
