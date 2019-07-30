@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:8000",
-  "homepage" : "/",
+  "homepage" : "./",
   "dependencies": {
     "ajv": "^6.10.0",
     "axios": "^0.18.0",
@@ -39,9 +39,6 @@
     "postbuild": "react-snap"
   },
   "reactSnap": {
-    "cacheAjaxRequests": false,
-    "inlineCss": false,
-    "http2PushManifest": false,
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
   "eslintConfig": {
