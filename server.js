@@ -6,6 +6,7 @@ const server = express();
 const PORT = process.env.PORT || 5000;
 
 server.use(compression());
+server.use(require('prerender-node'));
 
 server.get('/robots.txt', (req, res) => {
     if (process.env.REACT_APP_ENV === "production") {
