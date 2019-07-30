@@ -39,9 +39,9 @@
     "postbuild": "react-snap"
   },
   "reactSnap": {
-    "cacheAjaxRequests": true,
-    "inlineCss": true,
-    "http2PushManifest": true,
+    "cacheAjaxRequests": false,
+    "inlineCss": false,
+    "http2PushManifest": false,
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
   "eslintConfig": {
