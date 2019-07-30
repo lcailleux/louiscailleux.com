@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {about, projects, contact} from '.././helpers/urls';
 import {defaultStrings} from '.././helpers/strings';
-import Link from 'next/link';
 import LanguageSwitcher from './language-switcher'
 import {ModeSwitcher} from "./mode-switcher";
 
@@ -22,13 +21,13 @@ class NavigationBar extends Component {
                 <nav className="menu">
                     <ul className="menu__items" aria-label="menu">
                         <li className="menu__items__item" aria-label="About">
-                            <Link href={about.url}><a className="menu__items__item__link" href={about.url}>{about.name}</a></Link>
+                            <a className="menu__items__item__link" href={about.url}>{about.name}</a>
                         </li>
                         <li className="menu__items__item" aria-label="Projects">
-                            <Link href={projects.url}><a className="menu__items__item__link" href={projects.url}>{projects.name}</a></Link>
+                            <a className="menu__items__item__link" href={projects.url}>{projects.name}</a>
                         </li>
                         <li className="menu__items__item" aria-label="Contact">
-                            <Link href={contact.url}><a className="menu__items__item__link" href={contact.url}>{contact.name}</a></Link>
+                            <a className="menu__items__item__link" href={contact.url}>{contact.name}</a>
                         </li>
                         <ModeSwitcher/>
                         <LanguageSwitcher/>
@@ -43,13 +42,13 @@ class NavigationBar extends Component {
                         </label>
                         <ul className="hamburger__items" aria-label="mobile-menu">
                             <li className="hamburger__items__item" aria-label="About">
-                                <Link href={about.url}><a className="hamburger__items__item__link" href={about.url}>{about.name}</a></Link>
+                                <a className="hamburger__items__item__link" href={about.url}>{about.name}</a>
                             </li>
                             <li className="hamburger__items__item" aria-label="Projects">
-                                <Link href={about.url}><a className="hamburger__items__item__link" href={projects.url}>{projects.name}</a></Link>
+                                <a className="hamburger__items__item__link" href={projects.url}>{projects.name}</a>
                             </li>
                             <li className="hamburger__items__item" aria-label="Contact">
-                                <Link href={about.url}><a className="hamburger__items__item__link" href={contact.url}>{contact.name}</a></Link>
+                                <a className="hamburger__items__item__link" href={contact.url}>{contact.name}</a>
                             </li>
                             <li className="hamburger__items__item">
                                 <ModeSwitcher/>
