@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:8000",
-  "homepage" : "https://louiscailleux.com",
+  "homepage" : "https://louiscailleux.com/",
   "dependencies": {
     "ajv": "^6.10.0",
     "axios": "^0.18.0",
