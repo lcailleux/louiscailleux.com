@@ -30,7 +30,6 @@ server.get('/index.html', function (req, res) {
 });
 
 server.use(express.static(path.join(__dirname, 'build'), {maxAge: "31557600"}));
-server.use(require('express-naked-redirect')());
 
 server.get('/', function (req, res) {
     res.status(200);
