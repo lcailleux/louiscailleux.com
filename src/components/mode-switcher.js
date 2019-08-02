@@ -22,10 +22,10 @@ export const ModeSwitcher = () => {
             onChange={switchMode}
             onColor="#3273dc"
             checkedIcon={
-                <img src={Moon} alt="moon-icon" />
+                <img src={Moon} alt="moon-icon" title="moon-icon" />
             }
             uncheckedIcon={
-                <img src={Sun} alt="sun-icon" />
+                <img src={Sun} alt="sun-icon" title="sun-icon" />
             }
             checked={darkMode.value}
         />
