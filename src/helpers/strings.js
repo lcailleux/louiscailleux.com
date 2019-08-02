@@ -1,7 +1,9 @@
 import i18n from "../i18n"
+import React from "react";
 
 export const defaultStrings = {
   full_name: "Louis Cailleux",
+  title: "Developer passionate about AI and new technologies",
   not_found: i18n.t("No match found for "),
   loading: i18n.t("Loading...")
 };

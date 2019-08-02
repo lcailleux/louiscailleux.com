@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Helmet } from "react-helmet";
 import {about} from '../helpers/urls';
-import {aboutStrings} from '../helpers/strings';
+import {aboutStrings, defaultStrings} from '../helpers/strings';
 
 class About extends Component {
     componentWillMount() {
@@ -16,6 +16,7 @@ class About extends Component {
         return (
             <div>
                 <Helmet>
+                    <title>{defaultStrings.title}</title>
                     <meta name="description" content={aboutStrings.description} />
                     <link rel="canonical" href={about.production_url} />
                 </Helmet>

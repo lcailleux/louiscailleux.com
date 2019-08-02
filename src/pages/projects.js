@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Message from "react-bulma-components/lib/components/message";
 
 import {about, projects} from "../helpers/urls";
-import {aboutStrings, projectStrings} from "../helpers/strings";
+import {aboutStrings, defaultStrings, projectStrings} from "../helpers/strings";
 import ProjectsList from "../components/projects-list";
 import {Helmet} from "react-helmet";
 
@@ -19,6 +19,7 @@ class Projects extends Component {
         return (
             <main className="content">
                 <Helmet>
+                    <title>{defaultStrings.title}</title>
                     <meta name="description" content={projectStrings.description} />
                     <link rel="canonical" href={projects.production_url} />
                 </Helmet>

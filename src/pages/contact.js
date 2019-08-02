@@ -14,7 +14,7 @@ import Message from "react-bulma-components/lib/components/message";
 import Api from "../helpers/api";
 import Constants from "../helpers/constants";
 import {about, contact} from "../helpers/urls";
-import {aboutStrings, contactStrings, errorStrings} from "../helpers/strings";
+import {aboutStrings, contactStrings, defaultStrings, errorStrings} from "../helpers/strings";
 import {Helmet} from "react-helmet";
 
 class Contact extends Component {
@@ -176,6 +176,7 @@ class Contact extends Component {
     return (
         <div>
           <Helmet>
+            <title>{defaultStrings.title}</title>
             <meta name="description" content={contactStrings.description} />
             <link rel="canonical" href={contact.production_url} />
           </Helmet>
