@@ -25,51 +25,34 @@ server.get('/sitemap.xml', (req, res) => {
     }
 });
 
+server.use(express.static(path.join(__dirname, '/build'), {maxAge: "31557600"}));
+server.use(express.static(path.join(__dirname, '/build/static'), {maxAge: "31557600"}));
 
 server.get('/index.html', function (req, res) {
     res.redirect(301, '/');
 });
 
 server.get('/', function (req, res) {
-    let config = {
-        __CANONICAL__: "https://louiscailleux.com/",
-        __DESCRIPTION__: "Hi I am Louis, a developer passionate about AI. I continuously enjoy learning about new technologies."
-    };
     res.status(200);
-    replaceTags(res, config);
+    sendResponse(res);
 });
 
-server.use(express.static(path.join(__dirname, 'build'), {maxAge: "31557600"}));
-server.use(express.static(path.join(__dirname, 'static'), {maxAge: "31557600"}));
-
 server.get('/projects', function (req, res) {
-    let config = {
-        __CANONICAL__: "https://louiscailleux.com/projects",
-        __DESCRIPTION__: "The list of projects I enjoyed doing during my free time."
-    };
     res.status(200);
-    replaceTags(res, config);
+    sendResponse(res);
 });
 
 server.get('/contact', function (req, res) {
-    let config = {
-        __CANONICAL__: "https://louiscailleux.com/contact",
-        __DESCRIPTION__: "Please contact me, I am always open to new opportunities."
-    };
     res.status(200);
-    replaceTags(res, config);
+    sendResponse(res);
 });
 
 server.get('*', function (req, res) {
-    let config = {
-        __CANONICAL__: "https://louiscailleux.com/404",
-        __DESCRIPTION__: "Page not found."
-    };
     res.status(404);
-    replaceTags(res, config);
+    sendResponse(res);
 });
 
-function replaceTags(response, config) {
+function sendResponse(response) {
     const filePath = path.resolve(path.join(__dirname, 'build', 'index.html'));
 
     fs.readFile(filePath, 'utf8', function (err, data) {
@@ -77,11 +60,7 @@ function replaceTags(response, config) {
             response.status(404);
             response.sendFile(path.join(__dirname, 'build', 'index.html'));
         }
-
-        let result;
-        data = data.replace('__CANONICAL__', config.__CANONICAL__);
-        result = data.replace('__DESCRIPTION__', config.__DESCRIPTION__);
-        response.send(result);
+        response.send(data);
     });
 }
 
