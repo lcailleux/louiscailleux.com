@@ -13,8 +13,9 @@ import Message from "react-bulma-components/lib/components/message";
 
 import Api from "../helpers/api";
 import Constants from "../helpers/constants";
-import {contact} from "../helpers/urls";
-import {contactStrings, errorStrings} from "../helpers/strings";
+import {about, contact} from "../helpers/urls";
+import {aboutStrings, contactStrings, errorStrings} from "../helpers/strings";
+import {Helmet} from "react-helmet";
 
 class Contact extends Component {
   constructor(props) {
@@ -174,6 +175,10 @@ class Contact extends Component {
 
     return (
         <div>
+          <Helmet>
+            <meta name="description" content={contactStrings.description} />
+            <link rel="canonical" href={contact.production_url} />
+          </Helmet>
           <LoadingOverlay active={isLoading} spinner>
             <main className="contact">
               <h1 className="contact__title">{contact.name}</h1>

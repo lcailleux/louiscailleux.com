@@ -3,19 +3,22 @@ import i18n from "../i18n"
 export const about = {
   name: i18n.t('About'),
   documentTitle: i18n.t('Louis Cailleux'),
-  url: '/'
+  url: '/',
+  production_url: 'https://louiscailleux.com/'
 };
 
 export const projects = {
   name: i18n.t('Projects'),
   documentTitle: i18n.t('Projects | Louis Cailleux'),
-  url: '/projects'
+  url: '/projects',
+  production_url: 'https://louiscailleux.com/projects'
 };
 
 export const contact = {
   name: i18n.t('Contact'),
   documentTitle: i18n.t('Contact | Louis Cailleux'),
-  url: '/contact'
+  url: '/contact',
+  production_url: 'https://louiscailleux.com/contact'
 };
 
 export const page404 = {

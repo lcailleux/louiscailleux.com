@@ -16,7 +16,8 @@ class About extends Component {
         return (
             <div>
                 <Helmet>
-                    <meta name="description" content="Hi I am Louis, a developer passionate about AI. I continuously enjoy learning about new technologies." />
+                    <meta name="description" content={aboutStrings.description} />
+                    <link rel="canonical" href={about.production_url} />
                 </Helmet>
                 <main className="hero">
                 </main>

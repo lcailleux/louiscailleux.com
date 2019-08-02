@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import Message from "react-bulma-components/lib/components/message";
 
-import {projects} from "../helpers/urls";
-import {projectStrings} from "../helpers/strings";
+import {about, projects} from "../helpers/urls";
+import {aboutStrings, projectStrings} from "../helpers/strings";
 import ProjectsList from "../components/projects-list";
+import {Helmet} from "react-helmet";
 
 class Projects extends Component {
     componentWillMount() {
@@ -17,6 +18,10 @@ class Projects extends Component {
     render() {
         return (
             <main className="content">
+                <Helmet>
+                    <meta name="description" content={projectStrings.description} />
+                    <link rel="canonical" href={projects.production_url} />
+                </Helmet>
                 <ProjectsList/>
                 <Message color="warning" className="coming-soon">
                     <Message.Body>
