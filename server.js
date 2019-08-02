@@ -29,8 +29,8 @@ server.get('/index.html', function (req, res) {
     res.redirect(301, '/');
 });
 
-server.use(require('express-force-domain')('http://www.louiscailleux.com'));
 server.use(express.static(path.join(__dirname, 'build'), {maxAge: "31557600"}));
+server.use(require('express-force-domain')('https://www.louiscailleux.com'));
 
 server.get('/', function (req, res) {
     res.status(200);
