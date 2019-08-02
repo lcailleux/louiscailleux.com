@@ -13,8 +13,8 @@ import Message from "react-bulma-components/lib/components/message";
 
 import Api from "../helpers/api";
 import Constants from "../helpers/constants";
-import {about, contact} from "../helpers/urls";
-import {aboutStrings, contactStrings, defaultStrings, errorStrings} from "../helpers/strings";
+import {contact} from "../helpers/urls";
+import {contactStrings, defaultStrings, errorStrings} from "../helpers/strings";
 import {Helmet} from "react-helmet";
 
 class Contact extends Component {

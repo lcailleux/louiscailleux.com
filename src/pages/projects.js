@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Message from "react-bulma-components/lib/components/message";
 
-import {about, projects} from "../helpers/urls";
-import {aboutStrings, defaultStrings, projectStrings} from "../helpers/strings";
+import {projects} from "../helpers/urls";
+import {defaultStrings, projectStrings} from "../helpers/strings";
 import ProjectsList from "../components/projects-list";
 import {Helmet} from "react-helmet";
 
