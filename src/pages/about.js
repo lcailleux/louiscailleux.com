@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import { Helmet } from "react-helmet";
 import {about} from '../helpers/urls';
 import {aboutStrings} from '../helpers/strings';
 
@@ -15,6 +15,9 @@ class About extends Component {
     render() {
         return (
             <div>
+                <Helmet>
+                    <meta name="description" content="Hi I am Louis, a developer passionate about AI. I continuously enjoy learning about new technologies." />
+                </Helmet>
                 <main className="hero">
                 </main>
                 <section className="section">
