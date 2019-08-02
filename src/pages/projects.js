@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import Message from 'react-bulma-components/lib/components/message';
+import Message from "react-bulma-components/lib/components/message";
 
-import {projects} from '../helpers/urls';
-import {projectStrings} from '../helpers/strings';
-import ProjectsList from '../components/projects-list';
+import {projects} from "../helpers/urls";
+import {projectStrings} from "../helpers/strings";
+import ProjectsList from "../components/projects-list";
 
 class Projects extends Component {
     componentWillMount() {

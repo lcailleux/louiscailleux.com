@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { withNamespaces } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import 'flag-icon-css/css/flag-icon.css';
 
 import i18n from '../i18n'
@@ -22,4 +22,4 @@ class LanguageSwitcher extends Component {
     }
 }
 
-export default withNamespaces('translations')(LanguageSwitcher);
+export default withTranslation('translations')(LanguageSwitcher);

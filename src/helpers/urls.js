@@ -17,3 +17,8 @@ export const contact = {
   documentTitle: i18n.t('Contact | Louis Cailleux'),
   url: '/contact'
 };
+
+export const page404 = {
+  name: i18n.t('404 Not Found'),
+  documentTitle: i18n.t('404 Not Found | Louis Cailleux')
+};

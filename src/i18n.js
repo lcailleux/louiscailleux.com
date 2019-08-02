@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import detector from "i18next-browser-languagedetector";
-import { reactI18nextModule } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 
 import translationEN from './locales/en/translation.json';
 import translationFR from './locales/fr/translation.json';
@@ -44,7 +44,7 @@ const detectionOptions = {
 
 i18n
     .use(detector)
-    .use(reactI18nextModule) // passes i18n down to react-i18next
+    .use(initReactI18next) // passes i18n down to react-i18next
     .init({
         detection: detectionOptions,
         resources,

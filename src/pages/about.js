@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import {about} from '../helpers/urls';
-import {aboutStrings} from '../helpers/strings'
+import {aboutStrings} from '../helpers/strings';
 
 class About extends Component {
     componentWillMount() {

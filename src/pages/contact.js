@@ -1,16 +1,15 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
-import Recaptcha from 'react-google-invisible-recaptcha';
-import LoadingOverlay from 'react-loading-overlay';
+import Recaptcha from "react-google-invisible-recaptcha";
+import LoadingOverlay from "react-loading-overlay";
 
-/* React bulma components */
 import Field from "react-bulma-components/lib/components/form/components/field";
 import Label from "react-bulma-components/lib/components/form/components/label";
 import Input from "react-bulma-components/lib/components/form/components/input";
 import Help from "react-bulma-components/lib/components/form/components/help";
 import Textarea from "react-bulma-components/lib/components/form/components/textarea";
 import Button from "react-bulma-components/lib/components/button/button";
-import Message from 'react-bulma-components/lib/components/message';
+import Message from "react-bulma-components/lib/components/message";
 
 import Api from "../helpers/api";
 import Constants from "../helpers/constants";
