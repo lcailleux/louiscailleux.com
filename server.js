@@ -25,12 +25,15 @@ server.get('/sitemap.xml', (req, res) => {
     }
 });
 
-server.use(express.static(path.join(__dirname, '/build'), {maxAge: "31557600"}));
-server.use(express.static(path.join(__dirname, '/build/static'), {maxAge: "31557600"}));
-
 server.get('/index.html', function (req, res) {
     res.redirect(301, '/');
 });
+
+server.get('/static', function (req, res) {
+    res.set('Cache-Control', 'public, max-age=31557600')
+});
+
+server.use(express.static(path.join(__dirname, 'build'), {maxAge: "31557600"}));
 
 server.get('/', function (req, res) {
     res.status(200);
