@@ -8,13 +8,13 @@ export const defaultStrings = {
 };
 
 export const aboutStrings = {
-  about_first_paragraph: i18n.t("Passionate about object-oriented programming, I am very fond of languages such as C++, PHP and Python. I began my career as a developer of large e-commerce websites, but I would like to reorient myself towards AI (machine learning, R&D engineering)."),
+  about_first_paragraph: i18n.t("Passionate about object-oriented programming, I am very fond of languages such as C++, PHP and Python. During my last position, I was able to build and maintain ambitious e-commerce projects for the multinational corporation Pernod Ricard. Nowadays, I use this expertise as a freelancer, but I would like to find a job within a company once again. I am interested in Machine Learning as well, especially in computer vision. I like developing small projects in this domain during my spare time."),
   about_second_paragraph: i18n.t("I am also trying to integrate and strengthen important development processes (test-driven development, unit and integration testing, coding standards) to my day-to-day development practices."),
   about_third_paragraph: i18n.t("I am a graduate of the European Institute of Information Technology with the title of expert in Information Technology."),
   about_fourth_paragraph: i18n.t("Adventurous and open-minded, I spent two semesters at Chung-Ang University in South Korea. There, I took part in many projects, not only around computer science, with students from diverse countries and cultural backgrounds. I always will bear the mark of this unforgettable experience throughout my career."),
   block_description_identifier: "description_about_block",
   greetings: i18n.t("Hello"),
-  description: "Passionate about object-oriented programming, I am very fond of languages such as C++ PHP and Python. I began my career as a developer of large e-commerce websites, but I would like to reorient myself towards AI (machine learning, R&D engineering)."
+  description: "Passionate about object-oriented programming, I am very fond of languages such as C++ PHP and Python."
 };
 
 export const projectStrings = {
