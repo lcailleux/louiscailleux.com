@@ -193,7 +193,7 @@ if 'HEROKU' in os.environ:
     DEBUG = False
     ALLOWED_HOSTS = [
         '.herokuapp.com'
-        'louiscailleux.com'
+        '.louiscailleux.com'
     ]
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
