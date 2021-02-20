@@ -200,14 +200,14 @@ if 'HEROKU' in os.environ:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Authorizing React SPA
-    CORS_ORIGIN_WHITELIST = (
+    CORS_ALLOWED_ORIGINS = [
         'https://louiscailleux-backend-staging.herokuapp.com',
         'https://louiscailleux-backend.herokuapp.com',
         'https://louiscailleux-frontend-staging.herokuapp.com',
         'https://louiscailleux-frontend.herokuapp.com',
         'https://louiscailleux.com',
         'https://www.louiscailleux.com'
-    )
+    ]
 
     # Email
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
