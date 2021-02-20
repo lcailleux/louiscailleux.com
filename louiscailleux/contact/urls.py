@@ -5,7 +5,7 @@ from .views import ContactViewSet
 app_name = 'contact'
 
 router = routers.SimpleRouter()
-router.register(r'V1/api/contact', ContactViewSet)
+#router.register(r'V1/api/contact', ContactViewSet)
 
 urlpatterns = []
 urlpatterns += router.urls
