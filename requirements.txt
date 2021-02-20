@@ -1,7 +1,7 @@
 coverage
 django==2.1.7
-djangorestframework
-django-cors-headers
+djangorestframework==2.1.7
+django-cors-headers==2.1.7
 django-heroku
 django-messages
 django-user-agents
