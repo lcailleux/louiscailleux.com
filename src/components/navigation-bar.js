@@ -26,9 +26,9 @@ class NavigationBar extends Component {
                         <li className="menu__items__item" aria-label="Projects">
                             <a className="menu__items__item__link" href={projects.url}>{projects.name}</a>
                         </li>
-                        <li className="menu__items__item" aria-label="Contact">
+                        {/*<li className="menu__items__item" aria-label="Contact">
                             <a className="menu__items__item__link" href={contact.url}>{contact.name}</a>
-                        </li>
+                        </li>*/}
                         <ModeSwitcher/>
                         <LanguageSwitcher/>
                     </ul>

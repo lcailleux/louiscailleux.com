@@ -119,7 +119,7 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
   /* About */
   .hero {
     height: 40vh;
-    background-image: url("../images/about-picture-340w.webp");
+    background-image: url("../../images/about-picture-340w.webp");
   }
 }
 
@@ -130,14 +130,14 @@ $phone-to-tablet: "(min-width:320px) and (max-width: 767px)";
 
   /* About */
   .hero {
-    background-image: url("../images/about-picture-576w.webp");
+    background-image: url("../../images/about-picture-576w.webp");
   }
 }
 
 @media (min-width: 577px) and (max-width: 767px) {
   /* About */
   .hero {
-    background-image: url("../images/about-picture-767w.webp");
+    background-image: url("../../images/about-picture-767w.webp");
   }
 }
 
