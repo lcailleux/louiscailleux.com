@@ -156,9 +156,9 @@ STATICFILES_DIRS = (
 
 # Authorizing React SPA
 CORS_ORIGIN_WHITELIST = (
-    'localhost',
-    '127.0.0.1',
-    '127.0.0.1:8000',
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://127.0.0.1:8000',
 )
 
 CORS_ORIGIN_REGEX_WHITELIST = ()
@@ -198,12 +198,12 @@ if 'HEROKU' in os.environ:
 
     # Authorizing React SPA
     CORS_ORIGIN_WHITELIST = (
-        'louiscailleux-backend-staging.herokuapp.com',
-        'louiscailleux-backend.herokuapp.com',
-        'louiscailleux-frontend-staging.herokuapp.com',
-        'louiscailleux-frontend.herokuapp.com',
-        'louiscailleux.com',
-        'www.louiscailleux.com'
+        'https://louiscailleux-backend-staging.herokuapp.com',
+        'https://louiscailleux-backend.herokuapp.com',
+        'https://louiscailleux-frontend-staging.herokuapp.com',
+        'https://louiscailleux-frontend.herokuapp.com',
+        'https://louiscailleux.com',
+        'https://www.louiscailleux.com'
     )
 
     # Email
@@ -218,5 +218,6 @@ if 'HEROKU' in os.environ:
     # RECAPTCHA
     GOOGLE_RECAPTCHA_URL = os.environ.get('GOOGLE_RECAPTCHA_URL')
     GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
-
+else:
+    DEBUG = config('DEBUG')
 
