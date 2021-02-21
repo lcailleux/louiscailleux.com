@@ -154,14 +154,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_METHODS = ['GET']
-
-# Authorizing React SPA
-# CORS_ALLOWED_ORIGINS = [
-#    'http://localhost',
-#    'http://127.0.0.1',
-#    'http://127.0.0.1:8000'
-# ]
 
 # REST framework
 REST_FRAMEWORK = {
@@ -197,18 +191,6 @@ if 'HEROKU' in os.environ:
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    CORS_ALLOW_METHODS = ['GET']
-
-    # Authorizing React SPA
-    # CORS_ALLOWED_ORIGINS = [
-    #    'https://louiscailleux-backend-staging.herokuapp.com',
-    #    'https://louiscailleux-backend.herokuapp.com',
-    #    'https://louiscailleux-frontend-staging.herokuapp.com',
-    #    'https://louiscailleux-frontend.herokuapp.com',
-    #    'https://louiscailleux.com',
-    #    'https://www.louiscailleux.com'
-    # ]
 
     # Email
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
