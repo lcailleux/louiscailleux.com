@@ -40,7 +40,7 @@ else:
     GOOGLE_RECAPTCHA_URL = config('GOOGLE_RECAPTCHA_URL')
     GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -93,8 +93,6 @@ TEMPLATES = [
         },
     },
 ]
-
-DEBUG = True
 
 WSGI_APPLICATION = 'louiscailleux.wsgi.application'
 
@@ -184,10 +182,6 @@ if 'HEROKU' in os.environ:
     # Activate Django-Heroku (Database configuration, ...)
     django_heroku.settings(locals())
     DEBUG = False
-    ALLOWED_HOSTS = [
-        '.herokuapp.com'
-        '.louiscailleux.com'
-    ]
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure()
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
